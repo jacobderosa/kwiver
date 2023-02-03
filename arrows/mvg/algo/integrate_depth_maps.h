@@ -10,7 +10,7 @@
 #ifndef KWIVER_ARROWS_MVG_INTEGRATE_DEPTH_MAPS_H_
 #define KWIVER_ARROWS_MVG_INTEGRATE_DEPTH_MAPS_H_
 
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/algo/integrate_depth_maps.h>
 #include <vital/vital_config.h>

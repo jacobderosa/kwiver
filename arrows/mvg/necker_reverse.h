@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_CORE_NECKER_REVERSE_H_
 #define KWIVER_ARROWS_CORE_NECKER_REVERSE_H_
 
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/types/camera_perspective.h>
 #include <vital/types/camera_map.h>

@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_OCV_ESTIMATE_PNP_H_
 
 #include <vital/vital_config.h>
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <vital/algo/estimate_pnp.h>
 

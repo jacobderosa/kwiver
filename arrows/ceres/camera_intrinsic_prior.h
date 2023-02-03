@@ -8,9 +8,9 @@
 #ifndef KWIVER_ARROWS_CERES_CAMERA_INTRINSIC_PRIOR_H_
 #define KWIVER_ARROWS_CERES_CAMERA_INTRINSIC_PRIOR_H_
 
-#include <arrows/ceres/kwiver_algo_ceres_export.h>
+#include <ceres/kwiver_algo_ceres_export.h>
 
-#include <arrows/ceres/types.h>
+#include <ceres/types.h>
 
 #include <ceres/ceres.h>
 

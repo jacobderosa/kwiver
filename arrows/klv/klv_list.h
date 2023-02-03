@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_LIST_H_
 #define KWIVER_ARROWS_KLV_KLV_LIST_H_
 
-#include <arrows/klv/klv_data_format.h>
+#include <klv/klv_data_format.h>
 
 namespace kwiver {
 

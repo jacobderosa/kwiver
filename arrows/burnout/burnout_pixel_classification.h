@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_BURNOUT_PIXEL_CLASSIFICATION
 #define KWIVER_ARROWS_BURNOUT_PIXEL_CLASSIFICATION
 
-#include <arrows/burnout/kwiver_algo_burnout_export.h>
+#include <burnout/kwiver_algo_burnout_export.h>
 
 #include <vital/algo/image_filter.h>
 

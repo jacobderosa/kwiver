@@ -5,9 +5,9 @@
 #include "detected_object_set_output_kpf.h"
 
 #include <vital/vital_config.h>
-#include <arrows/kpf/yaml/kpf_canonical_io_adapter.h>
-#include <arrows/kpf/yaml/kpf_yaml_writer.h>
-#include <arrows/kpf/vital_kpf_adapters.h>
+#include <kpf/yaml/kpf_canonical_io_adapter.h>
+#include <kpf/yaml/kpf_yaml_writer.h>
+#include <kpf/vital_kpf_adapters.h>
 
 #include <memory>
 #include <vector>

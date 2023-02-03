@@ -13,8 +13,8 @@
 
 #include <vital/exceptions.h>
 
-#include <arrows/vxl/camera.h>
-#include <arrows/vxl/camera_map.h>
+#include <vxl/camera.h>
+#include <vxl/camera_map.h>
 
 #include <vgl/vgl_homg_point_3d.h>
 #include <vgl/vgl_point_2d.h>

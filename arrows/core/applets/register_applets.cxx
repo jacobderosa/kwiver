@@ -7,13 +7,13 @@
  * \brief register core applets into a plugin
  */
 
-#include <arrows/core/applets/kwiver_algo_core_applets_export.h>
+#include <core/applets/kwiver_algo_core_applets_export.h>
 #include <vital/plugin_loader/plugin_loader.h>
 #include <vital/applets/applet_registrar.h>
 
-#include <arrows/core/applets/dump_klv.h>
-#include <arrows/core/applets/render_mesh.h>
-#include <arrows/core/applets/transcode.h>
+#include <core/applets/dump_klv.h>
+#include <core/applets/render_mesh.h>
+#include <core/applets/transcode.h>
 
 namespace kwiver {
 namespace arrows {

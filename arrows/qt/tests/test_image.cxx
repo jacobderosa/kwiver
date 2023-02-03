@@ -7,10 +7,10 @@
 
 #include <test_tmpfn.h>
 
-#include <arrows/tests/test_image.h>
+#include <tests/test_image.h>
 
-#include <arrows/qt/image_container.h>
-#include <arrows/qt/image_io.h>
+#include <qt/image_container.h>
+#include <qt/image_io.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/util/transform_image.h>
@@ -20,7 +20,7 @@
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 // ----------------------------------------------------------------------------
 int

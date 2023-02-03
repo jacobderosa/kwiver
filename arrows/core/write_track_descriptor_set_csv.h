@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_WRITE_TRACK_DESCRIPTOR_SET_CSV_H
 
 #include <vital/vital_config.h>
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 #include <vital/algo/write_track_descriptor_set.h>
 

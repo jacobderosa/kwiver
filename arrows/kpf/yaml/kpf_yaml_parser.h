@@ -14,8 +14,8 @@
 #ifndef KWIVER_VITAL_KPF_YAML_PARSER_H_
 #define KWIVER_VITAL_KPF_YAML_PARSER_H_
 
-#include <arrows/kpf/yaml/kpf_parse_utils.h>
-#include <arrows/kpf/yaml/kpf_parser_base.h>
+#include <kpf/yaml/kpf_parse_utils.h>
+#include <kpf/yaml/kpf_parser_base.h>
 
 #include <yaml-cpp/yaml.h>
 

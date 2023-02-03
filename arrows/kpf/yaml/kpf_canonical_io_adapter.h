@@ -22,8 +22,8 @@
 #ifndef KWIVER_VITAL_KPF_CANONICAL_IO_ADAPTER_H_
 #define KWIVER_VITAL_KPF_CANONICAL_IO_ADAPTER_H_
 
-#include <arrows/kpf/yaml/kpf_reader.h>
-#include <arrows/kpf/yaml/kpf_canonical_io_adapter_base.h>
+#include <kpf/yaml/kpf_reader.h>
+#include <kpf/yaml/kpf_canonical_io_adapter_base.h>
 
 namespace kwiver {
 namespace vital {

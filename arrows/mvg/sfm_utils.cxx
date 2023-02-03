@@ -10,8 +10,8 @@
 #include <vital/vital_types.h>
 #include <vital/types/bounding_box.h>
 #include <vital/types/feature_track_set.h>
-#include <arrows/mvg/metrics.h>
-#include <arrows/core/match_matrix.h>
+#include <mvg/metrics.h>
+#include <core/match_matrix.h>
 
 using namespace kwiver::vital;
 

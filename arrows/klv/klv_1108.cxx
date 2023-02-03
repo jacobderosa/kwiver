@@ -7,8 +7,8 @@
 
 #include "klv_1108.h"
 
-#include <arrows/klv/klv_1108_metric_set.h>
-#include <arrows/klv/klv_checksum.h>
+#include <klv/klv_1108_metric_set.h>
+#include <klv/klv_checksum.h>
 
 #include <algorithm>
 #include <iomanip>

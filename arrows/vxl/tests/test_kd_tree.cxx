@@ -9,14 +9,14 @@
 
 #include <gtest/gtest.h>
 
-#include <arrows/vxl/kd_tree.h>
+#include <vxl/kd_tree.h>
 
 #include <vital/algo/algorithm_factory.h>
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/vital_config.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::vxl;
+using namespace arrows::vxl;
 
 // ----------------------------------------------------------------------------
 int
@@ -95,7 +95,7 @@ TEST ( kd_tree, create )
 // ----------------------------------------------------------------------------
 TEST_F ( kd_tree_test, find_nearest )
 {
-  kwiver::arrows::vxl::kd_tree search_tree;
+  arrows::vxl::kd_tree search_tree;
 
   search_tree.build( points );
 
@@ -137,7 +137,7 @@ TEST_F ( kd_tree_test, find_nearest )
 // ----------------------------------------------------------------------------
 TEST_F ( kd_tree_test, find_within_radius )
 {
-  kwiver::arrows::vxl::kd_tree search_tree;
+  arrows::vxl::kd_tree search_tree;
 
   search_tree.build( points );
 

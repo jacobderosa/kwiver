@@ -8,7 +8,7 @@
 #ifndef ARROWS_PLUGINS_CORE_TRACK_FEATURES_CORE_H_
 #define ARROWS_PLUGINS_CORE_TRACK_FEATURES_CORE_H_
 
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 #include <vital/algo/track_features.h>
 #include <vital/types/image_container.h>

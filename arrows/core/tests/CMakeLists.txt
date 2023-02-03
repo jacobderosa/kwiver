@@ -1,6 +1,6 @@
 project(arrows_test_core)
 
-set(CMAKE_FOLDER "Arrows/Core/Tests")
+set(CMAKE_FOLDER "Core/Tests")
 
 include(kwiver-test-setup)
 

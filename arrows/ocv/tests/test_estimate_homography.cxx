@@ -8,13 +8,13 @@
 #include <test_eigen.h>
 #include <test_random_point.h>
 
-#include <arrows/ocv/estimate_homography.h>
+#include <ocv/estimate_homography.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 using namespace kwiver::vital;
 using namespace kwiver::testing;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 using ocv::estimate_homography;
 
@@ -43,4 +43,4 @@ TEST(estimate_homography, create)
 }
 
 // ----------------------------------------------------------------------------
-#include <arrows/tests/test_estimate_homography.h>
+#include <tests/test_estimate_homography.h>

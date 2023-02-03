@@ -13,7 +13,7 @@
 #include <vital/vital_config.h>
 #include <vital/algo/close_loops.h>
 
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 namespace kwiver {
 namespace arrows {

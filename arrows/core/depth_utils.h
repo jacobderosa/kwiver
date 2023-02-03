@@ -8,7 +8,7 @@
 #ifndef DEPTH_UTILS_H_
 #define DEPTH_UTILS_H_
 
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 #include <vector>
 #include <functional>

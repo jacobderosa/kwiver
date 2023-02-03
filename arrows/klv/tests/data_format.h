@@ -9,15 +9,15 @@
 #ifndef KWIVER_ARROWS_KLV_TESTS_DATA_FORMAT_H_
 #define KWIVER_ARROWS_KLV_TESTS_DATA_FORMAT_H_
 
-#include <arrows/klv/klv_data_format.h>
-#include <arrows/klv/klv_packet.h>
+#include <klv/klv_data_format.h>
+#include <klv/klv_packet.h>
 
 #include <vital/util/demangle.h>
 
 #include <tests/test_gtest.h>
 
 // ----------------------------------------------------------------------------
-using namespace kwiver::arrows::klv;
+using namespace arrows::klv;
 namespace kv = kwiver::vital;
 
 // ----------------------------------------------------------------------------

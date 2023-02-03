@@ -19,7 +19,7 @@
 #include <vital/algo/match_features.h>
 #include <vital/vital_config.h>
 
-#include <arrows/vxl/compute_homography_overlap.h>
+#include <vxl/compute_homography_overlap.h>
 
 using namespace kwiver::vital;
 

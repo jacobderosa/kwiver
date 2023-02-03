@@ -7,7 +7,7 @@
 
 #include "matlab_util.h"
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
@@ -25,9 +25,9 @@ namespace matlab {
 MxArraySptr
 convert_mx_image( const kwiver::vital::image_container_sptr image )
 {
-  cv::Mat ocv_image = kwiver::arrows::ocv::image_container::vital_to_ocv(
+  cv::Mat ocv_image = arrows::ocv::image_container::vital_to_ocv(
     image->get_image(),
-    kwiver::arrows::ocv::image_container::ColorMode::BGR_COLOR );
+    arrows::ocv::image_container::ColorMode::BGR_COLOR );
 
   const size_t planes = ocv_image.channels();
   const size_t rows = ocv_image.rows;
@@ -83,9 +83,9 @@ kwiver::vital::image_container_sptr convert_mx_image( const MxArraySptr mx_image
   }
 
   kwiver::vital::image_container_sptr retval =
-    std::make_shared< kwiver::arrows::ocv::image_container >(
+    std::make_shared< arrows::ocv::image_container >(
       ocv_image,
-      kwiver::arrows::ocv::image_container::ColorMode::BGR_COLOR );
+      arrows::ocv::image_container::ColorMode::BGR_COLOR );
   return retval;
 }
 

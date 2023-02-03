@@ -4,14 +4,14 @@
 
 #include "PipelineWorker.h"
 
-#include <arrows/qt/image_container.h>
+#include <qt/image_container.h>
 
 #include <sprokit/processes/adapters/adapter_data_set.h>
 
 #include <QMessageBox>
 
-using super = kwiver::arrows::qt::EmbeddedPipelineWorker;
-using qt_image_container = kwiver::arrows::qt::image_container;
+using super = arrows::qt::EmbeddedPipelineWorker;
+using qt_image_container = arrows::qt::image_container;
 
 namespace kwiver {
 

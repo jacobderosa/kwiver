@@ -7,12 +7,12 @@
 
 #include "klv_0903.h"
 
-#include <arrows/klv/klv_0903_algorithm_set.h>
-#include <arrows/klv/klv_0903_ontology_set.h>
-#include <arrows/klv/klv_0903_vtarget_pack.h>
-#include <arrows/klv/klv_1204.h>
-#include <arrows/klv/klv_checksum.h>
-#include <arrows/klv/klv_series.hpp>
+#include <klv/klv_0903_algorithm_set.h>
+#include <klv/klv_0903_ontology_set.h>
+#include <klv/klv_0903_vtarget_pack.h>
+#include <klv/klv_1204.h>
+#include <klv/klv_checksum.h>
+#include <klv/klv_series.hpp>
 
 namespace kv = kwiver::vital;
 

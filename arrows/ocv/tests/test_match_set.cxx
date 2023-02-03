@@ -5,12 +5,12 @@
 /// \file
 /// \brief test OCV match set class
 
-#include <arrows/ocv/match_set.h>
+#include <ocv/match_set.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

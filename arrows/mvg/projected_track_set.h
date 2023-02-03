@@ -10,7 +10,7 @@
 #define KWIVER_ARROWS_MVG_PROJECTED_TRACK_SET_H_
 
 #include <vital/vital_config.h>
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/types/feature_track_set.h>
 #include <vital/types/camera_map.h>

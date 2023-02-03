@@ -12,7 +12,7 @@
 
 #include <opencv2/calib3d/calib3d.hpp>
 #include <opencv2/core/eigen.hpp>
-#include <arrows/ocv/camera_intrinsics.h>
+#include <ocv/camera_intrinsics.h>
 
 using namespace kwiver::vital;
 
@@ -35,7 +35,7 @@ static void test_distortion(const Eigen::VectorXd& d)
   cv::Mat d_cvmat;
   cv::eigen2cv(d, d_cvmat);
 
-  std::vector<double> cv_dist = kwiver::arrows::ocv::dist_coeffs_to_ocv(d_cvmat);
+  std::vector<double> cv_dist = arrows::ocv::dist_coeffs_to_ocv(d_cvmat);
 
   cv::Mat dist = cv::Mat(cv_dist);
 

@@ -8,9 +8,9 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_1204_H_
 #define KWIVER_ARROWS_KLV_KLV_1204_H_
 
-#include <arrows/klv/kwiver_algo_klv_export.h>
-#include <arrows/klv/klv_packet.h>
-#include <arrows/klv/klv_uuid.h>
+#include <klv/kwiver_algo_klv_export.h>
+#include <klv/klv_packet.h>
+#include <klv/klv_uuid.h>
 
 #include <vital/optional.h>
 

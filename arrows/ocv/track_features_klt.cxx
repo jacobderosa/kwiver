@@ -6,8 +6,8 @@
 /// \brief Implementation of ocv::track_features_klt
 
 #include "track_features_klt.h"
-//#include <arrows/core/merge_tracks.h>
-#include <arrows/ocv/image_container.h>
+//#include <core/merge_tracks.h>
+#include <ocv/image_container.h>
 
 #include <algorithm>
 #include <numeric>
@@ -26,7 +26,7 @@
 
 #include <opencv2/video/tracking.hpp>
 
-#include <arrows/core/track_set_impl.h>
+#include <core/track_set_impl.h>
 
 using namespace kwiver::vital;
 
@@ -735,7 +735,7 @@ track_features_klt
     {
       typedef std::unique_ptr<track_set_implementation> tsi_uptr;
       cur_tracks = std::make_shared<feature_track_set>(
-        tsi_uptr(new kwiver::arrows::core::frame_index_track_set_impl()));
+        tsi_uptr(new arrows::core::frame_index_track_set_impl()));
     }
 
     // get the last track id in the existing set of tracks and increment it

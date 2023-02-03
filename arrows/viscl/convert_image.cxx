@@ -4,7 +4,7 @@
 
 #include "convert_image.h"
 
-#include <arrows/viscl/image_container.h>
+#include <viscl/image_container.h>
 
 namespace kwiver {
 namespace arrows {

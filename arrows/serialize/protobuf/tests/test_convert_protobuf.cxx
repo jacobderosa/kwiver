@@ -4,8 +4,8 @@
 
 #include <gtest/gtest.h>
 
-#include <arrows/serialize/protobuf/convert_protobuf.h>
-#include <arrows/serialize/protobuf/convert_protobuf_point.h>
+#include <serialize/protobuf/convert_protobuf.h>
+#include <serialize/protobuf/convert_protobuf_point.h>
 
 #include <vital/types/activity.h>
 #include <vital/types/activity_type.h>
@@ -49,7 +49,7 @@
 #include <sstream>
 #include <iostream>
 
-namespace kasp = kwiver::arrows::serialize::protobuf;
+namespace kasp = arrows::serialize::protobuf;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

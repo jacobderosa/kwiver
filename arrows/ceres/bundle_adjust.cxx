@@ -10,9 +10,9 @@
 #include <vital/io/eigen_io.h>
 #include <vital/vital_config.h>
 
-#include <arrows/ceres/options.h>
-#include <arrows/ceres/reprojection_error.h>
-#include <arrows/ceres/types.h>
+#include <ceres/options.h>
+#include <ceres/reprojection_error.h>
+#include <ceres/types.h>
 
 #include <ceres/ceres.h>
 #include <ceres/loss_function.h>

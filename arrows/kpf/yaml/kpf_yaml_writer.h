@@ -13,9 +13,9 @@
 #define KWIVER_VITAL_KPF_YAML_WRITER_H_
 
 #include <iostream>
-#include <arrows/kpf/yaml/kpf_canonical_types.h>
-#include <arrows/kpf/yaml/kpf_canonical_io.h>
-#include <arrows/kpf/yaml/kpf_yaml_schemas.h>
+#include <kpf/yaml/kpf_canonical_types.h>
+#include <kpf/yaml/kpf_canonical_io.h>
+#include <kpf/yaml/kpf_yaml_schemas.h>
 
 namespace kwiver {
 namespace vital {

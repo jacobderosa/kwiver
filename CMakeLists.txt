@@ -249,13 +249,13 @@ set( LIB_SUFFIX "" CACHE STRING
   "Library directory suffix. e.g. suffix=\"kwiver\" will install libraries in \"libkwiver\" rather than \"lib\"")
 mark_as_advanced( LIB_SUFFIX )
 
-if (KWIVER_ENABLE_TRACK_ORACLE)
-  add_subdirectory( track_oracle )
-endif()
+#if (KWIVER_ENABLE_TRACK_ORACLE)
+#  add_subdirectory( track_oracle )
+#endif()
 
-if (KWIVER_ENABLE_ARROWS)
-  add_subdirectory( arrows )
-endif()
+#if (KWIVER_ENABLE_ARROWS)
+#  add_subdirectory( arrows )
+#endif()
 
 if (KWIVER_ENABLE_SPROKIT)
   add_subdirectory(sprokit)
@@ -273,9 +273,9 @@ if (KWIVER_ENABLE_TOOLS)
   add_subdirectory(tools)
 endif()
 
-if (KWIVER_ENABLE_PYTHON)
-  add_subdirectory(python)
-endif()
+#if (KWIVER_ENABLE_PYTHON)
+#  add_subdirectory(python)
+#endif()
 ###
 # include as the last subdir
 add_subdirectory( vital )
@@ -324,7 +324,7 @@ get_property(kwiver_libs GLOBAL PROPERTY kwiver_libraries)
 string(REPLACE ";" " " kwiver_libs "${kwiver_libs}")
 
 # setup general paths to includes and libs for packages we use/provide
-list(APPEND KWIVER_INCLUDE_DIRS "${EIGEN3_INCLUDE_DIR}")
+list(APPEND KWIVER_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 set( KWIVER_LIBRARY_DIRS "")
 
 if ( NOT fletch_ENABLED_Boost)

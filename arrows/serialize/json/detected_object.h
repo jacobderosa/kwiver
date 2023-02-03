@@ -5,7 +5,7 @@
 #ifndef ARROWS_SERIALIZATION_JSON_DETECTED_OBJECT
 #define ARROWS_SERIALIZATION_JSON_DETECTED_OBJECT
 
-#include <arrows/serialize/json/kwiver_serialize_json_export.h>
+#include <serialize/json/kwiver_serialize_json_export.h>
 #include <vital/algo/data_serializer.h>
 #include "load_save.h"
 

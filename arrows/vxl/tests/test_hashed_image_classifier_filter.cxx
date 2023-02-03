@@ -4,9 +4,9 @@
 
 #include <test_gtest.h>
 
-#include <arrows/vxl/hashed_image_classifier_filter.h>
-#include <arrows/vxl/image_container.h>
-#include <arrows/vxl/image_io.h>
+#include <vxl/hashed_image_classifier_filter.h>
+#include <vxl/image_container.h>
+#include <vxl/image_io.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
@@ -16,7 +16,7 @@
 #include <gtest/gtest.h>
 
 namespace kv = kwiver::vital;
-namespace ka = kwiver::arrows;
+namespace ka = arrows;
 
 kv::path_t g_data_dir;
 static std::string feature_images = "images/kitware_logos/features_expected.png";

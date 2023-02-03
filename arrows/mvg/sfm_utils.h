@@ -14,7 +14,7 @@
 #include <vital/vital_config.h>
 #include <vital/vital_types.h>
 #include <vital/types/bounding_box.h>
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/types/feature_track_set.h>
 #include <vital/types/landmark_map.h>

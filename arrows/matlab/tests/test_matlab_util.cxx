@@ -8,8 +8,8 @@
 #include <test_common.h>
 
 #include <vital/types/detected_object.h>
-#include <arrows/matlab/matlab_util.h>
-#include <arrows/ocv/image_container.h>
+#include <matlab/matlab_util.h>
+#include <ocv/image_container.h>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -47,9 +47,9 @@ IMPLEMENT_TEST(image_conversion)
     return;
   }
 
-  auto ic_sptr = std::make_shared< kwiver::arrows::ocv::image_container >(
+  auto ic_sptr = std::make_shared< arrows::ocv::image_container >(
     ocv_image,
-    kwiver::arrows::ocv::image_container::ColorMode::BGR_COLOR );
+    arrows::ocv::image_container::ColorMode::BGR_COLOR );
 
 #if DEBUG
   cv::namedWindow( "input OCV image", cv::WINDOW_AUTOSIZE ); // Create a window for display.
@@ -57,12 +57,12 @@ IMPLEMENT_TEST(image_conversion)
   cv::waitKey( 000 ); // pause for keystroke
 #endif
 
-  kwiver::arrows::matlab::MxArraySptr mx_image = kwiver::arrows::matlab::convert_mx_image( ic_sptr );
+  arrows::matlab::MxArraySptr mx_image = arrows::matlab::convert_mx_image( ic_sptr );
 
-  auto ocv_ic = kwiver::arrows::matlab::convert_mx_image( mx_image );
-  cv::Mat ocv_ic_mat = kwiver::arrows::ocv::image_container::vital_to_ocv(
+  auto ocv_ic = arrows::matlab::convert_mx_image( mx_image );
+  cv::Mat ocv_ic_mat = arrows::ocv::image_container::vital_to_ocv(
     ocv_ic->get_image(),
-    kwiver::arrows::ocv::image_container::ColorMode::BGR_COLOR );
+    arrows::ocv::image_container::ColorMode::BGR_COLOR );
 
 #if DEBUG
   cv::namedWindow( "output OCV image", cv::WINDOW_AUTOSIZE ); // Create a window for display.

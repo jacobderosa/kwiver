@@ -4,9 +4,9 @@
 
 #include <test_gtest.h>
 
-#include <arrows/vxl/pixel_feature_extractor.h>
-#include <arrows/vxl/image_container.h>
-#include <arrows/vxl/image_io.h>
+#include <vxl/pixel_feature_extractor.h>
+#include <vxl/image_container.h>
+#include <vxl/image_io.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
@@ -17,7 +17,7 @@
 #include <vector>
 
 namespace kv = kwiver::vital;
-namespace ka = kwiver::arrows;
+namespace ka = arrows;
 
 kv::path_t g_data_dir;
 static std::string test_color_image_name = "images/kitware_logos/small_color_logo.png";

@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_OCV_IMAGE_CONTAINER_H_
 
 #include <vital/vital_config.h>
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <opencv2/core/core.hpp>
 

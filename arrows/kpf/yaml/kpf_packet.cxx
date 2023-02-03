@@ -9,7 +9,7 @@
  */
 
 #include "kpf_packet.h"
-#include <arrows/kpf/yaml/kpf_canonical_types.h>
+#include <kpf/yaml/kpf_canonical_types.h>
 
 #include <stdexcept>
 #include <sstream>

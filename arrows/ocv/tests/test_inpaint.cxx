@@ -4,9 +4,9 @@
 
 #include <test_gtest.h>
 
-#include <arrows/ocv/image_container.h>
-#include <arrows/ocv/image_io.h>
-#include <arrows/ocv/inpaint.h>
+#include <ocv/image_container.h>
+#include <ocv/image_io.h>
+#include <ocv/inpaint.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
@@ -15,7 +15,7 @@
 #include <gtest/gtest.h>
 
 namespace kv = kwiver::vital;
-namespace ka = kwiver::arrows;
+namespace ka = arrows;
 
 kv::path_t g_data_dir;
 static std::string test_image_name = "images/kitware_logos/small_color_logo.png";

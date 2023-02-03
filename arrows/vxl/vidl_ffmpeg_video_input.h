@@ -10,7 +10,7 @@
 
 #include <vital/algo/video_input.h>
 
-#include <arrows/vxl/kwiver_algo_vxl_export.h>
+#include <vxl/kwiver_algo_vxl_export.h>
 
 namespace kwiver {
 namespace arrows {

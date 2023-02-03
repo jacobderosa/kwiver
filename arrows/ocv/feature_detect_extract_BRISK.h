@@ -8,9 +8,9 @@
 #ifndef KWIVER_ARROWS_FEATURE_DETECT_EXTRACT_BRISK_H_
 #define KWIVER_ARROWS_FEATURE_DETECT_EXTRACT_BRISK_H_
 
-#include <arrows/ocv/detect_features.h>
-#include <arrows/ocv/extract_descriptors.h>
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/detect_features.h>
+#include <ocv/extract_descriptors.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <string>
 

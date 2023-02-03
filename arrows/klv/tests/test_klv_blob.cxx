@@ -5,7 +5,7 @@
 /// \file
 /// Test KLV blob functions.
 
-#include <arrows/klv/klv_blob.h>
+#include <klv/klv_blob.h>
 
 #include <tests/test_gtest.h>
 
@@ -19,7 +19,7 @@ main( int argc, char** argv )
   return RUN_ALL_TESTS();
 }
 
-using namespace kwiver::arrows::klv;
+using namespace arrows::klv;
 
 // ----------------------------------------------------------------------------
 void

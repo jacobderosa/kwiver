@@ -6,8 +6,8 @@
 /// \brief Header defining CERES algorithm implementation of camera optimization.
 
 #include "optimize_cameras.h"
-#include <arrows/ceres/options.h>
-#include <arrows/ceres/reprojection_error.h>
+#include <ceres/options.h>
+#include <ceres/reprojection_error.h>
 #include <vital/exceptions.h>
 #include <vital/vital_config.h>
 

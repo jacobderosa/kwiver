@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_BURNOUT_TRACK_DESCRIPTORS
 #define KWIVER_ARROWS_BURNOUT_TRACK_DESCRIPTORS
 
-#include <arrows/burnout/kwiver_algo_burnout_export.h>
+#include <burnout/kwiver_algo_burnout_export.h>
 
 #include <vital/algo/compute_track_descriptors.h>
 

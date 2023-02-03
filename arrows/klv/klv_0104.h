@@ -8,8 +8,8 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_0104_H_
 #define KWIVER_ARROWS_KLV_KLV_0104_H_
 
-#include <arrows/klv/klv_set.h>
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/klv_set.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include <ostream>
 

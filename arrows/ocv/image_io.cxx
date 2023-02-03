@@ -7,7 +7,7 @@
 
 #include "image_io.h"
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 
 #include <vital/types/metadata_traits.h>
 

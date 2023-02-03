@@ -7,10 +7,10 @@
 
 #include <test_tmpfn.h>
 
-#include <arrows/tests/test_image.h>
+#include <tests/test_image.h>
 
-#include <arrows/vxl/image_container.h>
-#include <arrows/vxl/image_io.h>
+#include <vxl/image_container.h>
+#include <vxl/image_io.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/util/transform_image.h>
@@ -20,7 +20,7 @@
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)
@@ -177,7 +177,7 @@ public:
   void SetUp();
   void TearDown();
 
-  kwiver::arrows::vxl::image_io io;
+  arrows::vxl::image_io io;
   kwiver::vital::image_of<uint16_t> img12;
   std::string const img12_path;
 };

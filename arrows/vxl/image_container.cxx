@@ -8,7 +8,7 @@
 #include "image_container.h"
 
 #include <vital/exceptions/image.h>
-#include <arrows/vxl/vil_image_memory.h>
+#include <vxl/vil_image_memory.h>
 #include <vxl_config.h>
 #include <vil/vil_new.h>
 
@@ -116,7 +116,7 @@ image_container
     CONVERT_CASE( VIL_PIXEL_FORMAT_BOOL)
 #undef CONVERT_CASE
     default:
-      VITAL_THROW( vital::image_type_mismatch_exception, "kwiver::arrows::vxl::image_container::vxl_to_vital(const vil_image_view_base&)");
+      VITAL_THROW( vital::image_type_mismatch_exception, "arrows::vxl::image_container::vxl_to_vital(const vil_image_view_base&)");
   }
   return vital::image();
 }
@@ -199,7 +199,7 @@ image_container
           break;
       }
   }
-  VITAL_THROW( vital::image_type_mismatch_exception, "kwiver::arrows::vxl::image_container::vital_to_vxl(const image&)");
+  VITAL_THROW( vital::image_type_mismatch_exception, "arrows::vxl::image_container::vital_to_vxl(const image&)");
   return vil_image_view_base_sptr();
 }
 

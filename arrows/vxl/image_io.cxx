@@ -13,7 +13,7 @@
 #include <vital/types/metadata_traits.h>
 #include <vital/vital_config.h>
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
 #include <vil/vil_convert.h>
 #include <vil/vil_plane.h>

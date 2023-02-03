@@ -7,9 +7,9 @@
 
 #include <vital/plugin_loader/plugin_manager.h>
 
-#include <arrows/mvg/projected_track_set.h>
-#include <arrows/mvg/epipolar_geometry.h>
-#include <arrows/vxl/estimate_essential_matrix.h>
+#include <mvg/projected_track_set.h>
+#include <mvg/epipolar_geometry.h>
+#include <vxl/estimate_essential_matrix.h>
 
 #include <Eigen/LU>
 
@@ -36,8 +36,8 @@ void print_epipolar_distances(const kwiver::vital::matrix_3x3d& F,
                               const std::vector<kwiver::vital::vector_2d> right_pts,
                               const std::vector<kwiver::vital::vector_2d> left_pts)
 {
-  using namespace kwiver::arrows;
-  using namespace kwiver::arrows::mvg;
+  using namespace arrows;
+  using namespace arrows::mvg;
   matrix_3x3d Ft = F.transpose();
   for(unsigned i=0; i<right_pts.size(); ++i)
   {
@@ -59,8 +59,8 @@ void print_epipolar_distances(const kwiver::vital::matrix_3x3d& F,
 // Test essential matrix estimation with ideal points
 TEST(estimate_essential_matrix, ideal_points)
 {
-  using namespace kwiver::arrows;
-  using namespace kwiver::arrows::mvg;
+  using namespace arrows;
+  using namespace arrows::mvg;
   vxl::estimate_essential_matrix est_e;
 
   // create landmarks at the random locations
@@ -118,8 +118,8 @@ TEST(estimate_essential_matrix, ideal_points)
 // Test essential matrix estimation with noisy points
 TEST(estimate_essential_matrix, noisy_points)
 {
-  using namespace kwiver::arrows;
-  using namespace kwiver::arrows::mvg;
+  using namespace arrows;
+  using namespace arrows::mvg;
   vxl::estimate_essential_matrix est_e;
 
   // create landmarks at the random locations

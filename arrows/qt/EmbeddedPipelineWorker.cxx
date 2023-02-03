@@ -16,7 +16,7 @@
 #include <fstream>
 
 namespace kv = kwiver::vital;
-namespace kaq = kwiver::arrows::qt;
+namespace kaq = arrows::qt;
 
 using kaq::EmbeddedPipelineWorker;
 using kaq::EmbeddedPipelineWorkerPrivate;

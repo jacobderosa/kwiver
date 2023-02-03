@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_OCV_MAT_IMAGE_MEMORY_H_
 
 #include <vital/vital_config.h>
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <vital/types/image.h>
 

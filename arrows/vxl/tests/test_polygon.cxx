@@ -5,7 +5,7 @@
 /// \file
 /// \brief core polygon class tests
 
-#include <arrows/vxl/polygon.h>
+#include <vxl/polygon.h>
 
 #include <gtest/gtest.h>
 
@@ -29,11 +29,11 @@ TEST(polygon, conversions)
   p->push_back( kwiver::vital::polygon::point_t( 50, 50 ) );
   p->push_back( kwiver::vital::polygon::point_t( 30, 30 ) );
 
-  auto xpoly = kwiver::arrows::vxl::vital_to_vxl( p );
+  auto xpoly = arrows::vxl::vital_to_vxl( p );
   ASSERT_EQ( 4, xpoly->num_vertices() );
 
   // Convert back to vital_polygon
-  auto vpoly =  kwiver::arrows::vxl::vxl_to_vital( *xpoly.get() );
+  auto vpoly =  arrows::vxl::vxl_to_vital( *xpoly.get() );
   ASSERT_EQ( 4, vpoly->num_vertices() );
 
   auto x_sheet = xpoly->operator[](0);

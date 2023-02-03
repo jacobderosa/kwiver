@@ -2,121 +2,124 @@
 # Arrows Algorithms CMake file
 #
 
+cmake_minimum_required(VERSION 3.15)
+
+project(ARROWS)
+
+###
+# KWIVER-ARROWS version
+set(ARROWS_VERSION_MAJOR 1)
+set(ARROWS_VERSION_MINOR 7)
+set(ARROWS_VERSION_PATCH 0)
+set(ARROWS_VERSION "${ARROWS_VERSION_MAJOR}.${ARROWS_VERSION_MINOR}.${ARROWS_VERSION_PATCH}")
+
+# Organize target into folders for IDEs that support it
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 set(CMAKE_FOLDER "Arrows")
-set(ARROWS_SOURCE_DIR           "${CMAKE_CURRENT_SOURCE_DIR}")
-set(ARROWS_BINARY_DIR           "${CMAKE_CURRENT_BINARY_DIR}")
+set(ARROWS_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
+set(ARROWS_BINARY_DIR           "${CMAKE_BINARY_DIR}")
+
+# Default library dir
+set(ARROWS_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
+    "Default library directory for arrows")
+mark_as_advanced(ARROWS_DEFAULT_LIBRARY_DIR)
+
+###
+# Look for and use KWIVER
+#
+set( kwiver_DIR "" CACHE PATH "Path to build directory of KWIVER" )
+if ( IS_DIRECTORY ${kwiver_DIR} )
+  find_package( kwiver NO_MODULE )
+  if ( kwiver_FOUND )
+    # Search for libraries in the kwiver install root
+    list(APPEND CMAKE_PREFIX_PATH "${fletch_DIR}")
+  endif()
+endif()
+
+set(ARROWS_CMAKE_DIR "${ARROWS_SOURCE_DIR}/CMake")
+list(INSERT CMAKE_MODULE_PATH 0 ${KWIVER_CMAKE_DIR})
+
+set(BUILD_SHARED_LIBS ${KWIVER_BUILD_SHARED})
+
+# Install rules for CMake utilities
+#include( kwiver-install-utils )
+include( kwiver-utils )
+include( kwiver-depends )
+
+# project includes
+include_directories("${ARROWS_SOURCE_DIR}")
+include_directories("${ARROWS_BINARY_DIR}")
+include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+include_directories(${KWIVER_INCLUDE_DIRS})
+include_directories("/kwiver/vital/internal")
+
+include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 # Base plug-in with default implementations
 add_subdirectory( core )
 
-# Add MVG plugin if enabled
-if( KWIVER_ENABLE_MVG )
-  add_subdirectory( mvg )
-endif()
-
-# Add Ceres plugin if enabled
-if( KWIVER_ENABLE_CERES )
-  add_subdirectory( ceres )
-endif()
-
-# Add OpenCV plugin if enabled
-if( KWIVER_ENABLE_OPENCV )
-  if( KWIVER_ENABLE_DBOW2 )
-    add_subdirectory( dbow2 )
-  endif()
-
-  add_subdirectory( ocv )
-endif()
-
-# Add PROJ plugin if enabled
-if( KWIVER_ENABLE_PROJ )
-  add_subdirectory( proj )
-endif()
-
-# Add Qt plugin if enabled
-if( KWIVER_ENABLE_QT )
-  add_subdirectory( qt )
-endif()
-
-# Add VXL plugin if enabled
-if( KWIVER_ENABLE_VXL )
-  add_subdirectory( vxl )
-
-  # Super3D depends on VXL
-  option( KWIVER_ENABLE_SUPER3D
-    "Enable SUPER3D dependent code and plugins (Arrows)"
-    ON
-    )
-
-  # Add super3d plugin if enabled
-  if( KWIVER_ENABLE_SUPER3D )
-    add_subdirectory( super3d )
-  endif()
-endif()
-
-if ( KWIVER_ENABLE_CUDA )
-  add_subdirectory( cuda )
-endif()
-
-# Add VisCL plugin if enabled
-#  needs VXL
-if( KWIVER_ENABLE_VISCL )
-  add_subdirectory( viscl )
-endif()
-
-# if matlab is enabled
-if( KWIVER_ENABLE_MATLAB )
-  add_subdirectory( matlab )
-endif()
-
-# if darknet is enabled
-if( KWIVER_ENABLE_DARKNET )
-  add_subdirectory( darknet )
-endif()
-
-# if burnout is enabled
-if( KWIVER_ENABLE_BURNOUT )
-  add_subdirectory( burnout )
-endif()
-
-# if kpf is enabled
-if( KWIVER_ENABLE_KPF )
-  add_subdirectory( kpf )
-endif()
-
-# if klv is enabled
-if( KWIVER_ENABLE_KLV )
-  add_subdirectory( klv )
-endif()
-
-# if GDAL is enabled
-if ( KWIVER_ENABLE_GDAL )
-  add_subdirectory( gdal )
-endif()
-
-# if PDAL is enabled
-if ( KWIVER_ENABLE_PDAL )
-  add_subdirectory( pdal )
-endif()
-
-# if uuid is enabled
-if( KWIVER_ENABLE_UUID )
-  add_subdirectory( uuid )
-endif()
-
-# if FFmpeg is enabled
-if( KWIVER_ENABLE_FFMPEG)
-  add_subdirectory( ffmpeg )
-endif()
-
-# if VTK is enabled
-if( KWIVER_ENABLE_VTK)
-  add_subdirectory( vtk )
-endif()
-
 add_subdirectory( serialize )
 
-# Register the colmap arrow with CMake.
-if( KWIVER_ENABLE_COLMAP )
-  add_subdirectory( colmap )
+set( ARROWS_LIBRARY_DIRS "")
+
+set(ARROWS_CONFIG_FILE          "${ARROWS_BINARY_DIR}/arrows-config.cmake")
+configure_file(
+  "${ARROWS_CMAKE_DIR}/arrows-config-build.cmake.in"
+  "${ARROWS_CONFIG_FILE}"
+  @ONLY
+  )
+
+# Configure install-tree CMake config file and export associated targets file
+#set(ARROWS_CONFIG_INSTALL_FILE "${ARROWS_BINARY_DIR}/arrows-config-install.cmake")
+#configure_file(
+#  "${ARROWS_CMAKE_DIR}/arrows-config-install.cmake.in"
+#  "${ARROWS_CONFIG_INSTALL_FILE}"
+#  @ONLY
+#  )
+
+#kwiver_export_targets("${ARROWS_BINARY_DIR}/arrows-config-targets.cmake")
+
+#if(NOT SKBUILD)
+#  kwiver_install(
+#    FILES       "${ARROWS_CONFIG_INSTALL_FILE}"
+#    DESTINATION "${arrows_cmake_install_dir}"
+#    RENAME      arrows-config.cmake
+#    )
+
+#  kwiver_install(
+#    EXPORT      ${arrows_export_name}
+#    NAMESPACE   arrows::
+#    DESTINATION "${arrows_cmake_install_dir}"
+#    FILE        arrows-config-targets.cmake
+#    )
+#endif()
+
+#TODO: Define package dependencies
+set(ARROWS_DEPS "")
+
+if(EXISTS /etc/redhat-release)
+  file(READ /etc/redhat-release RHEL_VERSION)
+  string(REGEX REPLACE ".*release ([^\\. ]*).*" "\\1" RHEL_VERSION "${RHEL_VERSION}")
+  set(CPACK_SYSTEM_NAME "el${RHEL_VERSION}.${CMAKE_SYSTEM_PROCESSOR}")
+  set(CPACK_RPM_PACKAGE_AUTOREQPROV " no")
+  set(CPACK_RPM_PACKAGE_REQUIRES "${ARROWS_DEPS}")
+else()
+  set(CPACK_SYSTEM_NAME "${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}")
 endif()
+
+set(CPACK_PACKAGE_NAME              "ARROWS")
+set(CPACK_PACKAGE_VENDOR            "Kitware, Inc.")
+set(CPACK_PACKAGE_CONTACT           "kitware@kitware.com")
+set(CPACK_MONOLITHIC_INSTALL        true)
+set(CPACK_PACKAGE_VERSION_MAJOR     "${ARROWS_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR     "${ARROWS_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_PATCH     "${ARROWS_VERSION_PATCH}")
+set(CPACK_PACKAGE_VERSION           "${ARROWS_VERSION}")
+#set(CPACK_RESOURCE_FILE_LICENSE     "${KWIVER_DIR}/LICENSE")
+set(CPACK_PACKAGING_INSTALL_PREFIX  "${CMAKE_INSTALL_PREFIX}")
+set(CPACK_PACKAGE_FILE_NAME         "${CPACK_PACKAGE_NAME}-"
+                                    "${CPACK_PACKAGE_VERSION}-"
+                                    "${CPACK_SYSTEM_NAME}")
+
+include (CPack)

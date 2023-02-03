@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_VXL_CONVERT_IMAGE_
 #define KWIVER_ARROWS_VXL_CONVERT_IMAGE_
 
-#include <arrows/vxl/kwiver_algo_vxl_export.h>
+#include <vxl/kwiver_algo_vxl_export.h>
 
 #include <vital/algo/image_filter.h>
 

@@ -7,15 +7,15 @@
 
 #include "klv_0903_vtrackitem_pack.h"
 
-#include <arrows/klv/klv_0903_location_pack.h>
-#include <arrows/klv/klv_0903_vchip_set.h>
-#include <arrows/klv/klv_0903_vfeature_set.h>
-#include <arrows/klv/klv_0903_vmask_set.h>
-#include <arrows/klv/klv_0903_vobject_set.h>
-#include <arrows/klv/klv_0903_vtarget_pack.h>
-#include <arrows/klv/klv_1204.h>
-#include <arrows/klv/klv_series.hpp>
-#include <arrows/klv/klv_util.h>
+#include <klv/klv_0903_location_pack.h>
+#include <klv/klv_0903_vchip_set.h>
+#include <klv/klv_0903_vfeature_set.h>
+#include <klv/klv_0903_vmask_set.h>
+#include <klv/klv_0903_vobject_set.h>
+#include <klv/klv_0903_vtarget_pack.h>
+#include <klv/klv_1204.h>
+#include <klv/klv_series.hpp>
+#include <klv/klv_util.h>
 
 namespace kwiver {
 

@@ -4,9 +4,9 @@
 
 #include "fuse_depth.h"
 
-#include <arrows/core/depth_utils.h>
-#include <arrows/mvg/sfm_utils.h>
-#include <arrows/vtk/depth_utils.h>
+#include <core/depth_utils.h>
+#include <mvg/sfm_utils.h>
+#include <vtk/depth_utils.h>
 
 #include <kwiversys/Directory.hxx>
 #include <kwiversys/SystemTools.hxx>
@@ -52,8 +52,8 @@ using kv::camera_perspective;
 using kv::camera_sptr;
 using kv::landmark_map_sptr;
 
-using kwiver::arrows::core::compute_robust_ROI;
-using kwiver::arrows::mvg::crop_camera;
+using arrows::core::compute_robust_ROI;
+using arrows::mvg::crop_camera;
 
 
 namespace {

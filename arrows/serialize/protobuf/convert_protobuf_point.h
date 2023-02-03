@@ -5,7 +5,7 @@
 #ifndef VITAL_PROTOBUF_CONVERT_PROTOBUF_POINT_H
 #define VITAL_PROTOBUF_CONVERT_PROTOBUF_POINT_H
 
-#include <arrows/serialize/protobuf/kwiver_serialize_protobuf_export.h>
+#include <serialize/protobuf/kwiver_serialize_protobuf_export.h>
 #include <vital/types/point.h>
 
 namespace kwiver {

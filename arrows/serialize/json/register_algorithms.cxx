@@ -5,7 +5,7 @@
 /// \file
 /// \brief Default plugin algorithm registration interface implementation.
 
-#include <arrows/serialize/json/kwiver_serialize_json_plugin_export.h>
+#include <serialize/json/kwiver_serialize_json_plugin_export.h>
 
 #include <vital/algo/algorithm_factory.h>
 
@@ -48,7 +48,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     return;
   }
 
-  using namespace kwiver::arrows::serialize::json;
+  using namespace arrows::serialize::json;
 
   sreg.register_algorithm< activity >();
   sreg.register_algorithm< activity_type >();

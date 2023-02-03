@@ -12,7 +12,7 @@
 
 #include <sstream>
 
-namespace kasj = kwiver::arrows::serialize::json;
+namespace kasj = arrows::serialize::json;
 
 namespace kwiver {
 namespace arrows {

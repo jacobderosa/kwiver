@@ -7,7 +7,7 @@
 
 #include <vital/applets/kwiver_applet.h>
 
-#include <arrows/core/applets/kwiver_algo_core_applets_export.h>
+#include <core/applets/kwiver_algo_core_applets_export.h>
 
 #include <string>
 #include <vector>

@@ -23,8 +23,8 @@
 
 #include <vital/plugin_loader/plugin_manager.h>
 
-#include <arrows/core/mesh_operations.h>
-#include <arrows/core/render_mesh_depth_map.h>
+#include <core/mesh_operations.h>
+#include <core/render_mesh_depth_map.h>
 
 namespace kwiver {
 namespace arrows {
@@ -205,10 +205,10 @@ run()
   if ( mesh->faces().regularity() != 3 )
   {
     std::cout << "Triangulating Mesh" << std::endl;
-    kwiver::arrows::core::mesh_triangulate(*mesh);
+    arrows::core::mesh_triangulate(*mesh);
   }
   std::cout << "Clipping Mesh to Camera Frustum" << std::endl;
-  kwiver::arrows::core::clip_mesh(*mesh, *camera);
+  arrows::core::clip_mesh(*mesh, *camera);
 
   std::cout << "Rendering" << std::endl;
   vital::image_container_sptr image;

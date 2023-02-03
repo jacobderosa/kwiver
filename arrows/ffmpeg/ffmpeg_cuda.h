@@ -10,7 +10,7 @@
 
 #ifdef KWIVER_ENABLE_FFMPEG_CUDA
 
-#include <arrows/ffmpeg/ffmpeg_util.h>
+#include <ffmpeg/ffmpeg_util.h>
 
 #include <cuda.h>
 #include <ffnvcodec/dynlink_cuda.h>

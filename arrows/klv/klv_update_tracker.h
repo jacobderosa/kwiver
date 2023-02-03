@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_UPDATE_TRACKER_H_
 #define KWIVER_ARROWS_KLV_KLV_UPDATE_TRACKER_H_
 
-#include <arrows/klv/klv_update_intervals.h>
+#include <klv/klv_update_intervals.h>
 
 namespace kwiver {
 

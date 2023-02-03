@@ -7,11 +7,11 @@
 
 #include "data_format.h"
 
-#include <arrows/klv/klv_0806.h>
-#include <arrows/klv/klv_0806_aoi_set.h>
-#include <arrows/klv/klv_0806_poi_set.h>
-#include <arrows/klv/klv_0806_user_defined_set.h>
-#include <arrows/klv/klv_packet.h>
+#include <klv/klv_0806.h>
+#include <klv/klv_0806_aoi_set.h>
+#include <klv/klv_0806_poi_set.h>
+#include <klv/klv_0806_user_defined_set.h>
+#include <klv/klv_packet.h>
 
 // ----------------------------------------------------------------------------
 int

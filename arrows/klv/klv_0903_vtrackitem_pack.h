@@ -8,12 +8,12 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_0903_VTRACKITEM_SET_H
 #define KWIVER_ARROWS_KLV_KLV_0903_VTRACKITEM_SET_H
 
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/kwiver_algo_klv_export.h>
 
-#include <arrows/klv/klv_packet.h>
-#include <arrows/klv/klv_series.h>
-#include <arrows/klv/klv_set.h>
-#include <arrows/klv/klv_util.h>
+#include <klv/klv_packet.h>
+#include <klv/klv_series.h>
+#include <klv/klv_set.h>
+#include <klv/klv_util.h>
 
 #include <ostream>
 

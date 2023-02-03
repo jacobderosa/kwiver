@@ -6,7 +6,7 @@
 #define KWIVER_ARROWS_VTK_APPLETS_FUSE_DEPTH_H
 
 #include <vital/applets/kwiver_applet.h>
-#include <arrows/vtk/applets/kwiver_algo_vtk_applets_export.h>
+#include <vtk/applets/kwiver_algo_vtk_applets_export.h>
 
 namespace kwiver {
 namespace arrows {

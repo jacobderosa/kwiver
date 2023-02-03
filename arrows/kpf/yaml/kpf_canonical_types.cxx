@@ -8,7 +8,7 @@
  */
 
 #include "kpf_canonical_types.h"
-#include <arrows/kpf/yaml/kpf_packet.h>
+#include <kpf/yaml/kpf_packet.h>
 
 #include <vital/logger/logger.h>
 static kwiver::vital::logger_handle_t main_logger( kwiver::vital::get_logger( "arrows.kpf.kpf_canonical_types" ) );

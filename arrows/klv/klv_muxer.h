@@ -5,9 +5,9 @@
 /// \file
 /// Declaration of KLV muxer.
 
-#include <arrows/klv/klv_timeline.h>
-#include <arrows/klv/klv_update_intervals.h>
-#include <arrows/klv/klv_update_tracker.h>
+#include <klv/klv_timeline.h>
+#include <klv/klv_update_intervals.h>
+#include <klv/klv_update_tracker.h>
 
 #include <deque>
 

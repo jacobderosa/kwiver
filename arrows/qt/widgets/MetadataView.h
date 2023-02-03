@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_QT_WIDGETS_METADATAVIEW_H_
 #define KWIVER_ARROWS_QT_WIDGETS_METADATAVIEW_H_
 
-#include <arrows/qt/widgets/kwiver_algo_qt_widgets_export.h>
+#include <qt/widgets/kwiver_algo_qt_widgets_export.h>
 #include <vital/types/metadata_map.h>
 
 #include <qtGlobal.h>

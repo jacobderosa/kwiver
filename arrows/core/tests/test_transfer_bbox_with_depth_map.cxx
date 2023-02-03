@@ -6,7 +6,7 @@
 
 #include <tuple>
 
-#include <arrows/core/transfer_bbox_with_depth_map.h>
+#include <core/transfer_bbox_with_depth_map.h>
 
 using namespace kwiver::vital;
 
@@ -47,7 +47,7 @@ TEST_F(transfer_bbox_with_depth_map, backproject_to_depth_map)
   auto img_point = vector_2d(740.0, 260.0);
 
   vector_3d world_point =
-    kwiver::arrows::core::backproject_to_depth_map
+    arrows::core::backproject_to_depth_map
     (src_cam_sptr, img_ptr, img_point);
 
   EXPECT_NEAR(world_point(0), 8.21985243, 1e-6);
@@ -57,7 +57,7 @@ TEST_F(transfer_bbox_with_depth_map, backproject_to_depth_map)
   auto bad_img_point = vector_2d(2000, 2000);
 
   EXPECT_THROW
-    (kwiver::arrows::core::backproject_to_depth_map
+    (arrows::core::backproject_to_depth_map
      (src_cam_sptr, img_ptr, bad_img_point),
      std::invalid_argument);
 }
@@ -80,7 +80,7 @@ TEST_F(transfer_bbox_with_depth_map, backproject_wrt_height)
 
   vector_3d world_point_top;
   std::tie (std::ignore, world_point_top) =
-    kwiver::arrows::core::backproject_wrt_height
+    arrows::core::backproject_wrt_height
     (src_cam_sptr, img_ptr, img_point_bottom, img_point_top);
 
   EXPECT_NEAR(world_point_top(0), -2.54535866, 1e-6);
@@ -107,7 +107,7 @@ TEST_F(transfer_bbox_with_depth_map,
   auto bbox = kwiver::vital::bounding_box<double>(900.0, 154.0, 940.0, 301.0);
 
   kwiver::vital::bounding_box<double> out_bbox =
-    kwiver::arrows::core::transfer_bbox_with_depth_map_stationary_camera
+    arrows::core::transfer_bbox_with_depth_map_stationary_camera
     (src_cam_sptr, dest_cam_sptr, img_ptr, bbox);
 
   EXPECT_NEAR(out_bbox.min_x(), 586.1738903996884, 1e-6);

@@ -4,7 +4,7 @@
 
 #include <algorithm>
 
-#include <arrows/viscl/match_set.h>
+#include <viscl/match_set.h>
 
 #include <viscl/core/manager.h>
 

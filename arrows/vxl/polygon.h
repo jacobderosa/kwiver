@@ -8,7 +8,7 @@
 #ifndef KWIVER_ALGORITHM_VXL_POLYGON_H
 #define KWIVER_ALGORITHM_VXL_POLYGON_H
 
-#include <arrows/vxl/kwiver_algo_vxl_export.h>
+#include <vxl/kwiver_algo_vxl_export.h>
 #include <vital/types/polygon.h>
 #include <vgl/vgl_polygon.h>
 

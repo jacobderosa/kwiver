@@ -11,7 +11,7 @@
 
 #include <kwiversys/SystemTools.hxx>
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 
 #include <opencv2/core/core.hpp>
 

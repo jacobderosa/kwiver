@@ -14,7 +14,7 @@
 
 #include "kpf_yaml_parser.h"
 
-#include <arrows/kpf/yaml/kpf_yaml_schemas.h>
+#include <kpf/yaml/kpf_yaml_schemas.h>
 
 #include <string>
 #include <vector>

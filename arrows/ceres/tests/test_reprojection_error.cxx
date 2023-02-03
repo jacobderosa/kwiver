@@ -7,21 +7,21 @@
 
 #include <test_scene.h>
 
-#include <arrows/ceres/reprojection_error.h>
-#include <arrows/ceres/options.h>
+#include <ceres/reprojection_error.h>
+#include <ceres/options.h>
 
-#include <arrows/mvg/metrics.h>
-#include <arrows/mvg/projected_track_set.h>
+#include <mvg/metrics.h>
+#include <mvg/projected_track_set.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
 
-using kwiver::arrows::mvg::LensDistortionType;
-using kwiver::arrows::mvg::projected_tracks;
-using kwiver::arrows::mvg::reprojection_rmse;
-using kwiver::arrows::ceres::create_cost_func;
-using kwiver::arrows::ceres::num_distortion_params;
+using arrows::mvg::LensDistortionType;
+using arrows::mvg::projected_tracks;
+using arrows::mvg::reprojection_rmse;
+using arrows::ceres::create_cost_func;
+using arrows::ceres::num_distortion_params;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)
@@ -171,7 +171,7 @@ TEST_P(reprojection_error, compare_projections)
 
 // ----------------------------------------------------------------------------
 #define DISTORTION( t, k ) \
-  reprojection_test{ #t, kwiver::arrows::mvg::t, k }
+  reprojection_test{ #t, arrows::mvg::t, k }
 
 INSTANTIATE_TEST_CASE_P(
   ,

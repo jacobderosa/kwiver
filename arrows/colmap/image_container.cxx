@@ -1,4 +1,4 @@
-#include <arrows/colmap/image_container.h>
+#include <colmap/image_container.h>
 #include <colmap/util/version.h>
 
 // TODO: Remove this once everything works
@@ -29,7 +29,7 @@ read_from_img( kwiver::vital::image img, int u, int v )
 }
 
 colmap::Bitmap
-kwiver::arrows::colmap_arrow::image_container
+arrows::colmap_arrow::image_container
 ::vital_to_bitmap( kwiver::vital::image image )
 {
   colmap::Bitmap new_img;
@@ -50,7 +50,7 @@ kwiver::arrows::colmap_arrow::image_container
 }
 
 colmap::mvs::Image
-kwiver::arrows::colmap_arrow::image_container
+arrows::colmap_arrow::image_container
 ::vital_to_colmap( kwiver::vital::image& image )
 {
   return colmap::mvs::Image();

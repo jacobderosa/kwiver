@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_OCV_INPAINT_
 #define KWIVER_ARROWS_OCV_INPAINT_
 
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <vital/algo/merge_images.h>
 

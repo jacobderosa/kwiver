@@ -8,9 +8,9 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_KEY_TRAITS_H_
 #define KWIVER_ARROWS_KLV_KLV_KEY_TRAITS_H_
 
-#include <arrows/klv/klv_tag_traits.h>
-#include <arrows/klv/klv_types.h>
-#include <arrows/klv/klv_read_write.txx>
+#include <klv/klv_tag_traits.h>
+#include <klv/klv_types.h>
+#include <klv/klv_read_write.txx>
 
 namespace kwiver {
 

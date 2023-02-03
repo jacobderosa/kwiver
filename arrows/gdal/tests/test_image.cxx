@@ -7,8 +7,8 @@
 
 #include <test_gtest.h>
 
-#include <arrows/gdal/image_io.h>
-#include <arrows/tests/test_image.h>
+#include <gdal/image_io.h>
+#include <tests/test_image.h>
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/types/metadata.h>
 #include <vital/types/metadata_traits.h>
@@ -16,7 +16,7 @@
 kwiver::vital::path_t g_data_dir;
 
 namespace algo = kwiver::vital::algo;
-namespace gdal = kwiver::arrows::gdal;
+namespace gdal = arrows::gdal;
 static int expected_size = 32;
 static std::string geotiff_file_name = "images/test.tif";
 static std::string nitf_file_name = "images/test.ntf";
@@ -114,7 +114,7 @@ TEST_F(image_io, create)
 
 TEST_F(image_io, load_geotiff)
 {
-  kwiver::arrows::gdal::image_io img_io;
+  arrows::gdal::image_io img_io;
 
   kwiver::vital::path_t file_path = data_dir + "/" + geotiff_file_name;
   auto img_ptr = img_io.load(file_path);
@@ -154,7 +154,7 @@ TEST_F(image_io, load_geotiff)
 
 TEST_F(image_io, load_nitf)
 {
-  kwiver::arrows::gdal::image_io img_io;
+  arrows::gdal::image_io img_io;
 
   kwiver::vital::path_t file_path = data_dir + "/" + nitf_file_name;
   auto img_ptr = img_io.load(file_path);
@@ -181,7 +181,7 @@ TEST_F(image_io, load_nitf)
 
 TEST_F(image_io, load_nitf_2)
 {
-  kwiver::arrows::gdal::image_io img_io;
+  arrows::gdal::image_io img_io;
   kwiver::vital::path_t file_path = data_dir + "/" + nitf_file_name;
   auto img_ptr = img_io.load(file_path);
 
@@ -195,7 +195,7 @@ TEST_F(image_io, load_nitf_2)
 
 TEST_F(image_io, load_jpeg)
 {
-  kwiver::arrows::gdal::image_io img_io;
+  arrows::gdal::image_io img_io;
 
   kwiver::vital::path_t file_path = data_dir + "/" + jpeg_file_name;
   auto img_ptr = img_io.load(file_path);
@@ -238,7 +238,7 @@ class get_image : public ::testing::Test
 // ----------------------------------------------------------------------------
 TEST_F(get_image, crop)
 {
-  kwiver::arrows::gdal::image_io img_io;
+  arrows::gdal::image_io img_io;
 
   kwiver::vital::path_t file_path = data_dir + "/" + png_file_name;
 

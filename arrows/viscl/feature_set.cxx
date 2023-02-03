@@ -4,7 +4,7 @@
 
 #include "feature_set.h"
 
-#include <arrows/viscl/utils.h>
+#include <viscl/utils.h>
 
 #include <viscl/core/manager.h>
 #include <boost/shared_ptr.hpp>

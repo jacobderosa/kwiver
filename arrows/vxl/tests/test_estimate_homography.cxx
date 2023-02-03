@@ -8,12 +8,12 @@
 #include <test_eigen.h>
 #include <test_random_point.h>
 
-#include <arrows/vxl/estimate_homography.h>
+#include <vxl/estimate_homography.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 using namespace kwiver::testing;
 
 using vxl::estimate_homography;
@@ -43,4 +43,4 @@ TEST(estimate_homography, create)
 }
 
 // ----------------------------------------------------------------------------
-#include <arrows/tests/test_estimate_homography.h>
+#include <tests/test_estimate_homography.h>

@@ -10,7 +10,7 @@
 #ifndef KWIVER_ARROWS_MVG_HIERARCHICAL_BUNDLE_ADJUST_H_
 #define KWIVER_ARROWS_MVG_HIERARCHICAL_BUNDLE_ADJUST_H_
 
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/algo/algorithm.h>
 #include <vital/algo/bundle_adjust.h>

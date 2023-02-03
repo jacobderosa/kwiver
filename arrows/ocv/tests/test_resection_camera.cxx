@@ -2,14 +2,14 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/ocv/resection_camera.h>
+#include <ocv/resection_camera.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 using namespace std;
 
 using ocv::resection_camera;
@@ -36,4 +36,4 @@ TEST ( resection_camera, create )
 }
 
 // ----------------------------------------------------------------------------
-#include <arrows/tests/test_resection_camera.h>
+#include <tests/test_resection_camera.h>

@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_VXL_OPTIMIZE_CAMERAS_H_
 #define KWIVER_ARROWS_VXL_OPTIMIZE_CAMERAS_H_
 
-#include <arrows/vxl/kwiver_algo_vxl_export.h>
+#include <vxl/kwiver_algo_vxl_export.h>
 
 #include <vital/algo/algorithm.h>
 #include <vital/algo/optimize_cameras.h>

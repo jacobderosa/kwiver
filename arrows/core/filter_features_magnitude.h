@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_CORE_FILTER_FEATURES_MAGNITUDE_H_
 #define KWIVER_ARROWS_CORE_FILTER_FEATURES_MAGNITUDE_H_
 
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 #include <vital/algo/filter_features.h>
 

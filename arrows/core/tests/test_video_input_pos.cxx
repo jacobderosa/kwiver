@@ -7,7 +7,7 @@
 
 #include <test_gtest.h>
 
-#include <arrows/core/video_input_pos.h>
+#include <core/video_input_pos.h>
 #include <vital/io/metadata_io.h>
 #include <vital/plugin_loader/plugin_manager.h>
 
@@ -19,7 +19,7 @@
 kwiver::vital::path_t g_data_dir;
 
 namespace algo = kwiver::vital::algo;
-namespace kac = kwiver::arrows::core;
+namespace kac = arrows::core;
 static int num_expected_frames = 50;
 static std::string list_file_name = "video_as_images/frame_list.txt";
 static std::string pos_folder_location = "video_as_images/pos";
@@ -55,7 +55,7 @@ TEST_F(video_input_pos, read_list)
   auto config = kwiver::vital::config_block::empty_config();
   config->set_value( "metadata_directory", data_dir + "/" + pos_folder_location );
 
-  kwiver::arrows::core::video_input_pos vip;
+  arrows::core::video_input_pos vip;
 
   vip.check_configuration( config );
   vip.set_configuration( config );
@@ -93,7 +93,7 @@ TEST_F(video_input_pos, is_good)
   auto config = kwiver::vital::config_block::empty_config();
   config->set_value( "metadata_directory", data_dir + "/" + pos_folder_location );
 
-  kwiver::arrows::core::video_input_pos vip;
+  arrows::core::video_input_pos vip;
 
   EXPECT_TRUE( vip.check_configuration( config ) );
   vip.set_configuration( config );
@@ -138,7 +138,7 @@ TEST_F(video_input_pos, seek_frame)
   auto config = kwiver::vital::config_block::empty_config();
   config->set_value( "metadata_directory", data_dir + "/" + pos_folder_location );
 
-  kwiver::arrows::core::video_input_pos vip;
+  arrows::core::video_input_pos vip;
 
   EXPECT_TRUE( vip.check_configuration( config ) );
   vip.set_configuration( config );
@@ -179,7 +179,7 @@ TEST_F(video_input_pos, metadata_map)
   auto config = kwiver::vital::config_block::empty_config();
   config->set_value( "metadata_directory", data_dir + "/" + pos_folder_location );
 
-  kwiver::arrows::core::video_input_pos vip;
+  arrows::core::video_input_pos vip;
 
   EXPECT_TRUE( vip.check_configuration( config ) );
   vip.set_configuration( config );

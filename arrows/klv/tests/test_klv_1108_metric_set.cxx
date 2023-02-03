@@ -7,7 +7,7 @@
 
 #include "data_format.h"
 
-#include <arrows/klv/klv_1108_metric_set.h>
+#include <klv/klv_1108_metric_set.h>
 
 // ----------------------------------------------------------------------------
 int

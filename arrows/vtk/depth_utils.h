@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_VTK_DEPTH_UTILS_H_
 #define KWIVER_ARROWS_VTK_DEPTH_UTILS_H_
 
-#include <arrows/vtk/kwiver_algo_vtk_export.h>
+#include <vtk/kwiver_algo_vtk_export.h>
 
 #include <vital/algo/image_io.h>
 #include <vital/io/camera_io.h>

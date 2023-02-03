@@ -8,8 +8,8 @@
 #ifndef KWIVER_ARROWS_CERES_CAMERA_OPTIONS_H_
 #define KWIVER_ARROWS_CERES_CAMERA_OPTIONS_H_
 
-#include <arrows/ceres/types.h>
-#include <arrows/mvg/camera_options.h>
+#include <ceres/types.h>
+#include <mvg/camera_options.h>
 #include <vital/config/config_block.h>
 #include <vital/types/sfm_constraints.h>
 #include <vital/vital_config.h>

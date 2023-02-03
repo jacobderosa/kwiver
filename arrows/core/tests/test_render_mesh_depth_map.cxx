@@ -6,7 +6,7 @@
 
 #include <vital/plugin_loader/plugin_manager.h>
 
-#include <arrows/core/render_mesh_depth_map.h>
+#include <core/render_mesh_depth_map.h>
 
 #include <vital/types/camera_perspective.h>
 #include <vital/types/camera_rpc.h>
@@ -124,7 +124,7 @@ TEST(render_mesh_depth_map, perspective_camera)
                                                                cam_orientation.inverse(),
                                                                camera_intrinsic));
 
-  image_container_sptr depth_map = kwiver::arrows::core::render_mesh_depth_map(mesh, camera);
+  image_container_sptr depth_map = arrows::core::render_mesh_depth_map(mesh, camera);
 
   // Check barycenter;
   vector_3d barycenter = (A + B + C) / 3;
@@ -173,7 +173,7 @@ TEST(render_mesh_height_map, perspective_camera)
                                                                cam_orientation.inverse(),
                                                                camera_intrinsic));
 
-  image_container_sptr height_map = kwiver::arrows::core::render_mesh_height_map(mesh, camera);
+  image_container_sptr height_map = arrows::core::render_mesh_height_map(mesh, camera);
 
   // Check barycenter;
   vector_3d barycenter = (A + B + C) / 3;
@@ -214,7 +214,7 @@ TEST(render_mesh_height_map, camera_rpc)
   camera->set_image_width(1200);
   camera->set_image_height(1200);
 
-  image_container_sptr height_map = kwiver::arrows::core::render_mesh_height_map(mesh, camera);
+  image_container_sptr height_map = arrows::core::render_mesh_height_map(mesh, camera);
 
   // Check barycenter;
   vector_3d barycenter = (A + B + C) / 3;

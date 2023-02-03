@@ -6,7 +6,7 @@
 
 #include <vital/plugin_loader/plugin_manager.h>
 
-#include <arrows/core/mesh_operations.h>
+#include <core/mesh_operations.h>
 
 #include <vital/types/mesh.h>
 #include <vital/io/mesh_io.h>
@@ -81,7 +81,7 @@ TEST(mesh_operations, triangulate_mesh)
   EXPECT_EQ( mesh->faces().regularity(), 4 );
   EXPECT_EQ( mesh->num_faces(), 6 );
 
-  kwiver::arrows::core::mesh_triangulate(*mesh);
+  arrows::core::mesh_triangulate(*mesh);
 
   EXPECT_EQ( mesh->faces().regularity(), 3 );
   EXPECT_EQ( mesh->num_faces(), 12 );
@@ -93,11 +93,11 @@ TEST(mesh_operations, clip_mesh)
   // No clipping case
   {
     mesh_sptr mesh = generate_mesh();
-    kwiver::arrows::core::mesh_triangulate(*mesh);
+    arrows::core::mesh_triangulate(*mesh);
 
     std::cout << "Clipping case: full mesh preserved" << std::endl;
     kwiver::vital::vector_4d plane(1, 0, 0, 2);
-    bool clipped = kwiver::arrows::core::clip_mesh(*mesh, plane);
+    bool clipped = arrows::core::clip_mesh(*mesh, plane);
 
     EXPECT_FALSE(clipped);
     EXPECT_EQ(mesh->num_faces(), 12);
@@ -108,11 +108,11 @@ TEST(mesh_operations, clip_mesh)
   // Clip everything case
   {
     mesh_sptr mesh = generate_mesh();
-    kwiver::arrows::core::mesh_triangulate(*mesh);
+    arrows::core::mesh_triangulate(*mesh);
 
     std::cout << "Clipping case: full mesh clipped" << std::endl;
     kwiver::vital::vector_4d plane(1, 0, 0, -2);
-    bool clipped = kwiver::arrows::core::clip_mesh(*mesh, plane);
+    bool clipped = arrows::core::clip_mesh(*mesh, plane);
 
     EXPECT_TRUE(clipped);
     EXPECT_EQ(mesh->num_faces(), 0);
@@ -123,11 +123,11 @@ TEST(mesh_operations, clip_mesh)
   // Partial clipping
   {
     mesh_sptr mesh = generate_mesh();
-    kwiver::arrows::core::mesh_triangulate(*mesh);
+    arrows::core::mesh_triangulate(*mesh);
 
     std::cout << "Clipping case: half mesh clipped" << std::endl;
     kwiver::vital::vector_4d plane(1, 0, 0, 0);
-    bool clipped = kwiver::arrows::core::clip_mesh(*mesh, plane);
+    bool clipped = arrows::core::clip_mesh(*mesh, plane);
 
     EXPECT_TRUE(clipped);
     EXPECT_EQ(mesh->num_faces(), 14);
@@ -139,11 +139,11 @@ TEST(mesh_operations, clip_mesh)
   // Partial clipping - vertex on the plane
   {
     mesh_sptr mesh = generate_mesh();
-    kwiver::arrows::core::mesh_triangulate(*mesh);
+    arrows::core::mesh_triangulate(*mesh);
 
     std::cout << "Clipping case: half mesh clipped, vert on plane" << std::endl;
     kwiver::vital::vector_4d plane(1, 1, 0, 0);
-    bool clipped = kwiver::arrows::core::clip_mesh(*mesh, plane);
+    bool clipped = arrows::core::clip_mesh(*mesh, plane);
 
     EXPECT_TRUE(clipped);
     EXPECT_EQ(mesh->num_faces(), 8);
@@ -155,11 +155,11 @@ TEST(mesh_operations, clip_mesh)
   // Partial clipping - edge on the plane
   {
     mesh_sptr mesh = generate_mesh();
-    kwiver::arrows::core::mesh_triangulate(*mesh);
+    arrows::core::mesh_triangulate(*mesh);
 
     std::cout << "Clipping case: half mesh clipped, edge on plane" << std::endl;
     kwiver::vital::vector_4d plane(1, 1, 0, 2);
-    bool clipped = kwiver::arrows::core::clip_mesh(*mesh, plane);
+    bool clipped = arrows::core::clip_mesh(*mesh, plane);
 
     EXPECT_TRUE(clipped);
     EXPECT_EQ(mesh->num_faces(), 12);
@@ -171,11 +171,11 @@ TEST(mesh_operations, clip_mesh)
   // Partial clipping - face on the plane
   {
     mesh_sptr mesh = generate_mesh();
-    kwiver::arrows::core::mesh_triangulate(*mesh);
+    arrows::core::mesh_triangulate(*mesh);
 
     std::cout << "Clipping case: half mesh clipped, face on plane" << std::endl;
     kwiver::vital::vector_4d plane(1, 0, 0, 1);
-    bool clipped = kwiver::arrows::core::clip_mesh(*mesh, plane);
+    bool clipped = arrows::core::clip_mesh(*mesh, plane);
 
     EXPECT_TRUE(clipped);
     EXPECT_EQ(mesh->num_faces(), 10);
@@ -200,8 +200,8 @@ TEST(mesh_operations, clip_mesh_camera)
 
   {
     mesh_sptr mesh = generate_mesh();
-    kwiver::arrows::core::mesh_triangulate(*mesh);
-    bool clipped = kwiver::arrows::core::clip_mesh(*mesh, camera, 1.5, 4.0);
+    arrows::core::mesh_triangulate(*mesh);
+    bool clipped = arrows::core::clip_mesh(*mesh, camera, 1.5, 4.0);
 
     EXPECT_TRUE(clipped);
     EXPECT_EQ(mesh->num_faces(), 51);
@@ -214,8 +214,8 @@ TEST(mesh_operations, clip_mesh_camera)
     camera.look_at({ 0, 0, 0 });
     kwiver::vital::write_krtd_file(camera, "test_clip_cam_plane.krtd");
     mesh_sptr mesh_plane = generate_mesh_plane(10);
-    kwiver::arrows::core::mesh_triangulate(*mesh_plane);
-    bool clipped = kwiver::arrows::core::clip_mesh(*mesh_plane, camera);
+    arrows::core::mesh_triangulate(*mesh_plane);
+    bool clipped = arrows::core::clip_mesh(*mesh_plane, camera);
 
     EXPECT_TRUE(clipped);
     EXPECT_EQ(mesh_plane->num_faces(), 6);

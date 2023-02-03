@@ -10,7 +10,7 @@
 #include "convert_image.h"
 #include "high_pass_filter.h"
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
 #include <vital/config/config_block_io.h>
 #include <vital/range/iota.h>

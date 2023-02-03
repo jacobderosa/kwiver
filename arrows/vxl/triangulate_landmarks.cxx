@@ -11,7 +11,7 @@
 
 #include <vital/vital_config.h>
 
-#include <arrows/vxl/camera_map.h>
+#include <vxl/camera_map.h>
 
 #include <vpgl/algo/vpgl_triangulate_points.h>
 

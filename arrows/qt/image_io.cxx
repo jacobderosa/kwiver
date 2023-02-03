@@ -7,7 +7,7 @@
 
 #include "image_io.h"
 
-#include <arrows/qt/image_container.h>
+#include <qt/image_container.h>
 
 namespace {
 

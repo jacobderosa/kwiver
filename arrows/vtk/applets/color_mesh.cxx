@@ -4,8 +4,8 @@
 
 #include "color_mesh.h"
 
-#include <arrows/core/colorize.h>
-#include <arrows/vtk/mesh_coloration.h>
+#include <core/colorize.h>
+#include <vtk/mesh_coloration.h>
 #include <vital/types/camera_map.h>
 #include <vital/algo/video_input.h>
 #include <vital/algo/pointcloud_io.h>
@@ -103,7 +103,7 @@ bool check_config(kv::config_block_sptr config)
 
 } // end namespace
 
-class color_mesh::priv : public kwiver::arrows::vtk::mesh_coloration
+class color_mesh::priv : public arrows::vtk::mesh_coloration
 {
 public:
   priv() = default;

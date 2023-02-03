@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_VTK_MESH_COLORATION_H_
 #define KWIVER_ARROWS_VTK_MESH_COLORATION_H_
 
-#include <arrows/vtk/kwiver_algo_vtk_export.h>
+#include <vtk/kwiver_algo_vtk_export.h>
 
 #include <vital/algo/video_input.h>
 

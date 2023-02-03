@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_METADATA_MAP_IO_CSV_H
 #define KWIVER_ARROWS_METADATA_MAP_IO_CSV_H
 
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 #include <vital/algo/metadata_map_io.h>
 

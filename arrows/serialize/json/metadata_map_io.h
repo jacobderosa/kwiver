@@ -9,7 +9,7 @@
 #ifndef VITAL_ARROWS_SERIALIZATION_JSON_METADATA_MAP_IO_H_
 #define VITAL_ARROWS_SERIALIZATION_JSON_METADATA_MAP_IO_H_
 
-#include <arrows/serialize/json/kwiver_serialize_json_export.h>
+#include <serialize/json/kwiver_serialize_json_export.h>
 
 #include <vital/algo/metadata_map_io.h>
 

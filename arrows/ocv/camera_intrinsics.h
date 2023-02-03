@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_OCV_CAMERA_INTRINSICS_H_
 #define KWIVER_ARROWS_OCV_CAMERA_INTRINSICS_H_
 
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <vector>
 #include <vital/vital_config.h>

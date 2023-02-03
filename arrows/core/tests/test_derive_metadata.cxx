@@ -5,7 +5,7 @@
 /// \file
 /// \brief test derivation of new metadata traits
 
-#include <arrows/core/derive_metadata.h>
+#include <core/derive_metadata.h>
 
 #include <vital/types/geo_point.h>
 #include <vital/types/geodesy.h>
@@ -82,7 +82,7 @@ class derive_metadata : public ::testing::Test
   void
   SetUp()
   {
-    auto algo = kwiver::arrows::core::derive_metadata{};
+    auto algo = arrows::core::derive_metadata{};
     derived_metadata = algo.filter( make_metadata(), make_image() );
   }
 

@@ -14,7 +14,7 @@
 #ifndef KWIVER_VITAL_KPF_YAML_SCHEMAS_H_
 #define KWIVER_VITAL_KPF_YAML_SCHEMAS_H_
 
-#include <arrows/kpf/yaml/kpf_parse_utils.h>
+#include <kpf/yaml/kpf_parse_utils.h>
 #include <vector>
 
 #include <yaml-cpp/yaml.h>

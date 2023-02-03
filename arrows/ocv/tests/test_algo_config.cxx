@@ -9,20 +9,20 @@
 #include <test_gtest.h>
 
 // Get headers of optional algos for ``MAPTK_OCV_HAS_*`` defines
-#include <arrows/ocv/detect_features_AGAST.h>
-#include <arrows/ocv/detect_features_MSD.h>
-#include <arrows/ocv/detect_features_STAR.h>
-#include <arrows/ocv/extract_descriptors_BRIEF.h>
-#include <arrows/ocv/extract_descriptors_DAISY.h>
-#include <arrows/ocv/extract_descriptors_FREAK.h>
-#include <arrows/ocv/extract_descriptors_LATCH.h>
-#include <arrows/ocv/extract_descriptors_LUCID.h>
-#include <arrows/ocv/feature_detect_extract_SIFT.h>
-#include <arrows/ocv/feature_detect_extract_SURF.h>
+#include <ocv/detect_features_AGAST.h>
+#include <ocv/detect_features_MSD.h>
+#include <ocv/detect_features_STAR.h>
+#include <ocv/extract_descriptors_BRIEF.h>
+#include <ocv/extract_descriptors_DAISY.h>
+#include <ocv/extract_descriptors_FREAK.h>
+#include <ocv/extract_descriptors_LATCH.h>
+#include <ocv/extract_descriptors_LUCID.h>
+#include <ocv/feature_detect_extract_SIFT.h>
+#include <ocv/feature_detect_extract_SURF.h>
 
-#include <arrows/ocv/detect_features.h>
-#include <arrows/ocv/extract_descriptors.h>
-#include <arrows/ocv/match_features.h>
+#include <ocv/detect_features.h>
+#include <ocv/extract_descriptors.h>
+#include <ocv/match_features.h>
 
 #include <vital/exceptions.h>
 #include <vital/logger/logger.h>
@@ -34,7 +34,7 @@
 #include <iostream>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

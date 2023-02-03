@@ -30,14 +30,14 @@
 #include <vital/algo/optimize_cameras.h>
 #include <vital/algo/triangulate_landmarks.h>
 
-#include <arrows/mvg/algo/triangulate_landmarks.h>
-#include <arrows/mvg/epipolar_geometry.h>
-#include <arrows/mvg/metrics.h>
-#include <arrows/core/match_matrix.h>
-#include <arrows/mvg/necker_reverse.h>
-#include <arrows/mvg/triangulate.h>
-#include <arrows/mvg/transform.h>
-#include <arrows/mvg/sfm_utils.h>
+#include <mvg/algo/triangulate_landmarks.h>
+#include <mvg/epipolar_geometry.h>
+#include <mvg/metrics.h>
+#include <core/match_matrix.h>
+#include <mvg/necker_reverse.h>
+#include <mvg/triangulate.h>
+#include <mvg/transform.h>
+#include <mvg/sfm_utils.h>
 
 using namespace kwiver::vital;
 

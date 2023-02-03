@@ -12,7 +12,7 @@
 
 #include "kpf_parse_utils.h"
 
-#include <arrows/kpf/yaml/kpf_exception.h>
+#include <kpf/yaml/kpf_exception.h>
 
 #include <utility>
 #include <cctype>

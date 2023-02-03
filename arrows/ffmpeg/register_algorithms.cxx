@@ -5,11 +5,11 @@
 /// \file
 /// \brief Register VXL algorithms implementation
 
-#include <arrows/ffmpeg/kwiver_algo_ffmpeg_plugin_export.h>
+#include <ffmpeg/kwiver_algo_ffmpeg_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <arrows/ffmpeg/ffmpeg_video_input.h>
-#include <arrows/ffmpeg/ffmpeg_video_output.h>
+#include <ffmpeg/ffmpeg_video_input.h>
+#include <ffmpeg/ffmpeg_video_output.h>
 
 namespace kwiver {
 
@@ -29,8 +29,8 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     return;
   }
 
-  reg.register_algorithm< ::kwiver::arrows::ffmpeg::ffmpeg_video_input >();
-  reg.register_algorithm< ::kwiver::arrows::ffmpeg::ffmpeg_video_output >();
+  reg.register_algorithm< ::arrows::ffmpeg::ffmpeg_video_input >();
+  reg.register_algorithm< ::arrows::ffmpeg::ffmpeg_video_output >();
 
   reg.mark_module_as_loaded();
 }

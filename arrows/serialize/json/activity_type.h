@@ -5,7 +5,7 @@
 #ifndef ARROWS_SERIALIZATION_JSON_ACTIVITY_TYPE
 #define ARROWS_SERIALIZATION_JSON_ACTIVITY_TYPE
 
-#include <arrows/serialize/json/kwiver_serialize_json_export.h>
+#include <serialize/json/kwiver_serialize_json_export.h>
 #include <vital/algo/data_serializer.h>
 #include "load_save.h"
 

@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_FFMPEG_FFMPEG_VIDEO_OUTPUT_H
 #define KWIVER_ARROWS_FFMPEG_FFMPEG_VIDEO_OUTPUT_H
 
-#include <arrows/ffmpeg/kwiver_algo_ffmpeg_export.h>
+#include <ffmpeg/kwiver_algo_ffmpeg_export.h>
 
 #include <vital/algo/video_output.h>
 

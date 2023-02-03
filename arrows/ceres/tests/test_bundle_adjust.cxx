@@ -8,19 +8,19 @@
 #include <test_eigen.h>
 #include <test_scene.h>
 
-#include <arrows/ceres/bundle_adjust.h>
+#include <ceres/bundle_adjust.h>
 
-#include <arrows/mvg/metrics.h>
-#include <arrows/mvg/projected_track_set.h>
+#include <mvg/metrics.h>
+#include <mvg/projected_track_set.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/math_constants.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
-using namespace kwiver::arrows::mvg;
+using namespace arrows;
+using namespace arrows::mvg;
 
-using kwiver::arrows::ceres::bundle_adjust;
+using arrows::ceres::bundle_adjust;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)
@@ -38,7 +38,7 @@ TEST(bundle_adjust, create)
 }
 
 // ----------------------------------------------------------------------------
-#include <arrows/tests/test_bundle_adjust.h>
+#include <tests/test_bundle_adjust.h>
 
 // ----------------------------------------------------------------------------
 // Add noise to landmarks and cameras and tracks before input to SBA; select

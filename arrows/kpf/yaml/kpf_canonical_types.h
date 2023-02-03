@@ -10,9 +10,9 @@
 #ifndef KWIVER_VITAL_KPF_CANONICAL_TYPES_H_
 #define KWIVER_VITAL_KPF_CANONICAL_TYPES_H_
 
-#include <arrows/kpf/yaml/kpf_yaml_export.h>
+#include <kpf/yaml/kpf_yaml_export.h>
 
-#include <arrows/kpf/yaml/kpf_packet_header.h>
+#include <kpf/yaml/kpf_packet_header.h>
 
 #include <string>
 #include <vector>

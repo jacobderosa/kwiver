@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_0601_H_
 #define KWIVER_ARROWS_KLV_KLV_0601_H_
 
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include "klv_0102.h"
 #include "klv_checksum.h"

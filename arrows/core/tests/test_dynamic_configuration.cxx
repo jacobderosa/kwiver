@@ -5,14 +5,14 @@
 /// \file
 /// \brief test dynamic configuration
 
-#include <arrows/core/dynamic_config_none.h>
+#include <core/dynamic_config_none.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 #include <gtest/gtest.h>
 
 namespace algo = kwiver::vital::algo;
-namespace kac = kwiver::arrows::core;
+namespace kac = arrows::core;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

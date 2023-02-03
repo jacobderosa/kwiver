@@ -11,7 +11,7 @@
 #include <vital/plugin_loader/plugin_manager.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 using namespace kwiver::testing;
 
 // ----------------------------------------------------------------------------

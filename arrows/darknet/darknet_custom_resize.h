@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_DARKENT_CUSTOM_RESIZE
 #define KWIVER_ARROWS_DARKENT_CUSTOM_RESIZE
 
-#include <arrows/darknet/kwiver_algo_darknet_export.h>
+#include <darknet/kwiver_algo_darknet_export.h>
 
 #include <opencv2/core/core.hpp>
 

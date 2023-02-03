@@ -7,8 +7,8 @@
 
 #include <test_gtest.h>
 
-#include <arrows/core/video_input_filter.h>
-#include <arrows/tests/test_video_input.h>
+#include <core/video_input_filter.h>
+#include <tests/test_video_input.h>
 #include <vital/algo/algorithm_factory.h>
 #include <vital/io/metadata_io.h>
 #include <vital/plugin_loader/plugin_manager.h>
@@ -21,7 +21,7 @@
 kwiver::vital::path_t g_data_dir;
 
 namespace algo = kwiver::vital::algo;
-namespace kac = kwiver::arrows::core;
+namespace kac = arrows::core;
 static std::string list_file_name = "video_as_images/frame_list.txt";
 static std::string pos_folder_location = "video_as_images/pos";
 
@@ -87,7 +87,7 @@ TEST_F(video_input_filter, read_list)
     return;
   }
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -143,7 +143,7 @@ TEST_F(video_input_filter, read_video_sublist)
   config->set_value( "start_at_frame", start_at_frame );
   config->set_value( "stop_after_frame", stop_after_frame );
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -171,7 +171,7 @@ TEST_F(video_input_filter, read_video_sublist_nth_frame)
   config->set_value( "stop_after_frame", stop_after_frame );
   config->set_value( "output_nth_frame", nth_frame_output );
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -195,7 +195,7 @@ TEST_F(video_input_filter, seek_frame)
     return;
   }
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -221,7 +221,7 @@ TEST_F(video_input_filter, seek_then_next_frame)
     return;
   }
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -247,7 +247,7 @@ TEST_F(video_input_filter, next_then_seek_frame)
     return;
   }
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -277,7 +277,7 @@ TEST_F(video_input_filter, seek_frame_sublist_nth_frame)
   config->set_value( "stop_after_frame", stop_after_frame );
   config->set_value( "output_nth_frame", nth_frame_output );
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -301,7 +301,7 @@ TEST_F(video_input_filter, metadata_map)
     return;
   }
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -362,7 +362,7 @@ TEST_F(video_input_filter, seek_frame_sublist)
   config->set_value( "start_at_frame", start_at_frame );
   config->set_value( "stop_after_frame", stop_after_frame );
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -391,7 +391,7 @@ TEST_F(video_input_filter, metadata_map_sublist)
   config->set_value( "start_at_frame", start_at_frame );
   config->set_value( "stop_after_frame", stop_after_frame );
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -454,7 +454,7 @@ TEST_F(video_input_filter, read_video_nth_frame_output)
 
   config->set_value( "output_nth_frame", nth_frame_output );
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -481,7 +481,7 @@ TEST_F(video_input_filter, seek_nth_frame_output)
 
   config->set_value( "output_nth_frame", nth_frame_output );
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );
@@ -507,7 +507,7 @@ TEST_F(video_input_filter, test_capabilities)
     return;
   }
 
-  kwiver::arrows::core::video_input_filter vif;
+  arrows::core::video_input_filter vif;
 
   EXPECT_TRUE( vif.check_configuration( config ) );
   vif.set_configuration( config );

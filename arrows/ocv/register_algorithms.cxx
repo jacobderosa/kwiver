@@ -5,7 +5,7 @@
 /// \file
 /// \brief OpenCV algorithm registration implementation
 
-#include <arrows/ocv/kwiver_algo_ocv_plugin_export.h>
+#include <ocv/kwiver_algo_ocv_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
 #include <opencv2/opencv_modules.hpp>
@@ -13,41 +13,41 @@
 #include <opencv2/nonfree/nonfree.hpp>
 #endif
 
-#include <arrows/ocv/analyze_tracks.h>
-#include <arrows/ocv/detect_features_AGAST.h>
-#include <arrows/ocv/detect_features_FAST.h>
-#include <arrows/ocv/detect_features_GFTT.h>
-#include <arrows/ocv/detect_features_MSD.h>
-#include <arrows/ocv/detect_features_MSER.h>
-#include <arrows/ocv/detect_features_simple_blob.h>
-#include <arrows/ocv/detect_features_STAR.h>
-#include <arrows/ocv/draw_detected_object_set.h>
-#include <arrows/ocv/draw_tracks.h>
-#include <arrows/ocv/estimate_fundamental_matrix.h>
-#include <arrows/ocv/estimate_homography.h>
-#include <arrows/ocv/estimate_pnp.h>
-#include <arrows/ocv/resection_camera.h>
-#include <arrows/ocv/extract_descriptors_BRIEF.h>
-#include <arrows/ocv/extract_descriptors_DAISY.h>
-#include <arrows/ocv/extract_descriptors_FREAK.h>
-#include <arrows/ocv/extract_descriptors_LATCH.h>
-#include <arrows/ocv/extract_descriptors_LUCID.h>
-#include <arrows/ocv/feature_detect_extract_BRISK.h>
-#include <arrows/ocv/feature_detect_extract_ORB.h>
-#include <arrows/ocv/feature_detect_extract_SIFT.h>
-#include <arrows/ocv/feature_detect_extract_SURF.h>
-#include <arrows/ocv/image_io.h>
-#include <arrows/ocv/inpaint.h>
-#include <arrows/ocv/match_features_bruteforce.h>
-#include <arrows/ocv/match_features_flannbased.h>
-#include <arrows/ocv/merge_images.h>
-#include <arrows/ocv/hough_circle_detector.h>
-#include <arrows/ocv/refine_detections_write_to_disk.h>
-#include <arrows/ocv/split_image.h>
-#include <arrows/ocv/track_features_klt.h>
-#include <arrows/ocv/detect_motion_3frame_differencing.h>
-#include <arrows/ocv/detect_motion_mog2.h>
-#include <arrows/ocv/detect_heat_map.h>
+#include <ocv/analyze_tracks.h>
+#include <ocv/detect_features_AGAST.h>
+#include <ocv/detect_features_FAST.h>
+#include <ocv/detect_features_GFTT.h>
+#include <ocv/detect_features_MSD.h>
+#include <ocv/detect_features_MSER.h>
+#include <ocv/detect_features_simple_blob.h>
+#include <ocv/detect_features_STAR.h>
+#include <ocv/draw_detected_object_set.h>
+#include <ocv/draw_tracks.h>
+#include <ocv/estimate_fundamental_matrix.h>
+#include <ocv/estimate_homography.h>
+#include <ocv/estimate_pnp.h>
+#include <ocv/resection_camera.h>
+#include <ocv/extract_descriptors_BRIEF.h>
+#include <ocv/extract_descriptors_DAISY.h>
+#include <ocv/extract_descriptors_FREAK.h>
+#include <ocv/extract_descriptors_LATCH.h>
+#include <ocv/extract_descriptors_LUCID.h>
+#include <ocv/feature_detect_extract_BRISK.h>
+#include <ocv/feature_detect_extract_ORB.h>
+#include <ocv/feature_detect_extract_SIFT.h>
+#include <ocv/feature_detect_extract_SURF.h>
+#include <ocv/image_io.h>
+#include <ocv/inpaint.h>
+#include <ocv/match_features_bruteforce.h>
+#include <ocv/match_features_flannbased.h>
+#include <ocv/merge_images.h>
+#include <ocv/hough_circle_detector.h>
+#include <ocv/refine_detections_write_to_disk.h>
+#include <ocv/split_image.h>
+#include <ocv/track_features_klt.h>
+#include <ocv/detect_motion_3frame_differencing.h>
+#include <ocv/detect_motion_mog2.h>
+#include <ocv/detect_heat_map.h>
 
 namespace kwiver {
 namespace arrows {

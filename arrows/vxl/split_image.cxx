@@ -7,7 +7,7 @@
 
 #include "split_image.h"
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
 #include <vil/vil_crop.h>
 #include <vil/vil_copy.h>

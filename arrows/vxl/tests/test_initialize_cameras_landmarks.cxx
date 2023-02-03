@@ -6,20 +6,20 @@
 #include <test_eigen.h>
 #include <test_scene.h>
 
-#include <arrows/vxl/estimate_essential_matrix.h>
-#include <arrows/vxl/estimate_similarity_transform.h>
+#include <vxl/estimate_essential_matrix.h>
+#include <vxl/estimate_similarity_transform.h>
 
-#include <arrows/mvg/projected_track_set.h>
-#include <arrows/mvg/metrics.h>
-#include <arrows/mvg/transform.h>
-#include <arrows/mvg/algo/initialize_cameras_landmarks_basic.h>
+#include <mvg/projected_track_set.h>
+#include <mvg/metrics.h>
+#include <mvg/transform.h>
+#include <mvg/algo/initialize_cameras_landmarks_basic.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 #include <vital/types/similarity.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::mvg;
+using namespace arrows::mvg;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)
@@ -41,7 +41,7 @@ static void
 configure_algo(initialize_cameras_landmarks_basic& algo,
                const kwiver::vital::camera_intrinsics_sptr K)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   kwiver::vital::config_block_sptr cfg = algo.get_configuration();
   cfg->set_value("verbose", "true");
   cfg->set_value("base_camera:focal_length", K->focal_length());

@@ -13,7 +13,7 @@
 #include <vital/util/wall_timer.h>
 #include <vital/config/config_difference.h>
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/imgproc.hpp>

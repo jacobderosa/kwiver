@@ -8,7 +8,7 @@
 #ifndef ARROWS_PLUGINS_OCV_TRACK_FEATURES_KLT_H_
 #define ARROWS_PLUGINS_OCV_TRACK_FEATURES_KLT_H_
 
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <vital/algo/track_features.h>
 #include <vital/types/image_container.h>

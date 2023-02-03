@@ -7,9 +7,9 @@
 
 #include "klv_0903_vtracker_set.h"
 
-#include <arrows/klv/klv_0903_location_pack.h>
-#include <arrows/klv/klv_series.hpp>
-#include <arrows/klv/klv_uuid.h>
+#include <klv/klv_0903_location_pack.h>
+#include <klv/klv_series.hpp>
+#include <klv/klv_uuid.h>
 
 namespace kwiver {
 

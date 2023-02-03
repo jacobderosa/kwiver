@@ -14,7 +14,7 @@
 #include <vital/config/config_difference.h>
 
 #include <kwiversys/RegularExpression.hxx>
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>

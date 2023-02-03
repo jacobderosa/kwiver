@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_VTK_VTKKWIVERCAMERA_H_
 #define KWIVER_ARROWS_VTK_VTKKWIVERCAMERA_H_
 
-#include <arrows/vtk/kwiver_algo_vtk_export.h>
+#include <vtk/kwiver_algo_vtk_export.h>
 #include <vital/types/camera_perspective.h>
 
 #include <vtkCamera.h>

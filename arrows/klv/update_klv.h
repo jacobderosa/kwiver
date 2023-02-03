@@ -5,7 +5,7 @@
 /// \file
 /// Declaration of update_klv metadata filter.
 
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include <vital/algo/metadata_filter.h>
 

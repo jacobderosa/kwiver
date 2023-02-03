@@ -10,8 +10,8 @@
 #include <vital/types/feature.h>
 #include <vital/vital_config.h>
 
-#include <arrows/vxl/camera.h>
-#include <arrows/mvg/epipolar_geometry.h>
+#include <vxl/camera.h>
+#include <mvg/epipolar_geometry.h>
 
 #include <vgl/vgl_point_2d.h>
 

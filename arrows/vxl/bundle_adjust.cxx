@@ -10,7 +10,7 @@
 #include <iostream>
 #include <set>
 
-#include <arrows/vxl/camera_map.h>
+#include <vxl/camera_map.h>
 #include <vital/io/eigen_io.h>
 #include <vital/util/cpu_timer.h>
 #include <vital/vital_config.h>

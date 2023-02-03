@@ -5,15 +5,15 @@
 /// \file
 /// Implementation of update_klv metadata filter.
 
-#include <arrows/klv/update_klv.h>
+#include <klv/update_klv.h>
 
-#include <arrows/klv/klv_demuxer.h>
-#include <arrows/klv/klv_metadata.h>
-#include <arrows/klv/klv_timeline.h>
-#include <arrows/klv/klv_convert_vital.h>
-#include <arrows/klv/klv_1108.h>
-#include <arrows/klv/klv_1108_metric_set.h>
-#include <arrows/klv/misp_time.h>
+#include <klv/klv_demuxer.h>
+#include <klv/klv_metadata.h>
+#include <klv/klv_timeline.h>
+#include <klv/klv_convert_vital.h>
+#include <klv/klv_1108.h>
+#include <klv/klv_1108_metric_set.h>
+#include <klv/misp_time.h>
 
 namespace kwiver {
 

@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_DARKENT_DETECTOR
 #define KWIVER_ARROWS_DARKENT_DETECTOR
 
-#include <arrows/darknet/kwiver_algo_darknet_export.h>
+#include <darknet/kwiver_algo_darknet_export.h>
 
 #include <vital/algo/image_object_detector.h>
 

@@ -21,8 +21,8 @@
 
 #include <vital/algo/optimize_cameras.h>
 #include <vital/algo/triangulate_landmarks.h>
-#include <arrows/mvg/metrics.h>
-#include <arrows/mvg/interpolate_camera.h>
+#include <mvg/metrics.h>
+#include <mvg/interpolate_camera.h>
 
 #include <vital/types/camera_perspective.h>
 #include <vital/exceptions.h>

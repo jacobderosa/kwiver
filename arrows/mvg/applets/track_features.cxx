@@ -20,7 +20,7 @@
 #include <kwiversys/SystemTools.hxx>
 #include <kwiversys/CommandLineArguments.hxx>
 
-#include <arrows/core/colorize.h>
+#include <core/colorize.h>
 
 #include <cstdlib>
 #include <iostream>
@@ -510,7 +510,7 @@ public:
       tracks = feature_tracker->track(tracks, frame, image, mask);
       if (tracks)
       {
-        tracks = kwiver::arrows::core::extract_feature_colors(tracks, *image, frame);
+        tracks = arrows::core::extract_feature_colors(tracks, *image, frame);
       }
 
       // Compute ref homography for current frame with current track set + write to file

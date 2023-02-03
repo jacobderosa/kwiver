@@ -2,7 +2,7 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/serialize/json/load_save.h>
+#include <serialize/json/load_save.h>
 
 #include <vital/types/metadata.h>
 #include <vital/types/metadata_map.h>

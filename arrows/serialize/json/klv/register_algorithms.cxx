@@ -2,7 +2,7 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/serialize/json/klv/kwiver_serialize_json_klv_plugin_export.h>
+#include <serialize/json/klv/kwiver_serialize_json_klv_plugin_export.h>
 
 #include "metadata_map_io.h"
 

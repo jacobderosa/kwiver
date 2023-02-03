@@ -4,9 +4,9 @@
 
 #include <test_scene.h>
 
-#include <arrows/mvg/algo/integrate_depth_maps.h>
-#include <arrows/core/render_mesh_depth_map.h>
-#include <arrows/core/mesh_operations.h>
+#include <mvg/algo/integrate_depth_maps.h>
+#include <core/render_mesh_depth_map.h>
+#include <core/mesh_operations.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/types/camera_perspective_map.h>
@@ -41,7 +41,7 @@ void make_test_data(std::vector< image_container_sptr >& depth_maps,
                     vector_3d& min_pt, vector_3d& max_pt,
                     simple_camera_intrinsics const& K)
 {
-  namespace core = kwiver::arrows::core;
+  namespace core = arrows::core;
 
   // create two stacked boxes on a ground plane
   auto cube = kwiver::testing::cube_mesh(1.0);
@@ -114,7 +114,7 @@ void evaluate_volume(image_container_sptr volume,
 // Test depth map integration
 TEST(integrate_depth_maps, integrate)
 {
-  namespace mvg = kwiver::arrows::mvg;
+  namespace mvg = arrows::mvg;
 
   std::vector< image_container_sptr > depth_maps;
   std::vector< camera_perspective_sptr > cams;
@@ -143,7 +143,7 @@ TEST(integrate_depth_maps, integrate)
 // Test depth map integration
 TEST(integrate_depth_maps, integrate_weighted)
 {
-  namespace mvg = kwiver::arrows::mvg;
+  namespace mvg = arrows::mvg;
 
   std::vector< image_container_sptr > depth_maps;
   std::vector< image_container_sptr > weights;
@@ -179,7 +179,7 @@ TEST(integrate_depth_maps, integrate_weighted)
 // Test depth map integration
 TEST(integrate_depth_maps, integrate_distorted)
 {
-  namespace mvg = kwiver::arrows::mvg;
+  namespace mvg = arrows::mvg;
 
   std::vector< image_container_sptr > depth_maps;
   std::vector< camera_perspective_sptr > cams;

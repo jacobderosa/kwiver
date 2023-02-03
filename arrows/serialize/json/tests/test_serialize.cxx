@@ -16,26 +16,26 @@
 #include <vital/types/track.h>
 #include <vital/types/object_track_set.h>
 
-#include <arrows/serialize/json/activity.h>
-#include <arrows/serialize/json/activity_type.h>
-#include <arrows/serialize/json/bounding_box.h>
-#include <arrows/serialize/json/detected_object.h>
-#include <arrows/serialize/json/detected_object_set.h>
-#include <arrows/serialize/json/detected_object_type.h>
-#include <arrows/serialize/json/timestamp.h>
-#include <arrows/serialize/json/image.h>
-#include <arrows/serialize/json/string.h>
-#include <arrows/serialize/json/track_state.h>
-#include <arrows/serialize/json/track.h>
-#include <arrows/serialize/json/object_track_state.h>
-#include <arrows/serialize/json/track_set.h>
-#include <arrows/serialize/json/object_track_set.h>
+#include <serialize/json/activity.h>
+#include <serialize/json/activity_type.h>
+#include <serialize/json/bounding_box.h>
+#include <serialize/json/detected_object.h>
+#include <serialize/json/detected_object_set.h>
+#include <serialize/json/detected_object_type.h>
+#include <serialize/json/timestamp.h>
+#include <serialize/json/image.h>
+#include <serialize/json/string.h>
+#include <serialize/json/track_state.h>
+#include <serialize/json/track.h>
+#include <serialize/json/object_track_state.h>
+#include <serialize/json/track_set.h>
+#include <serialize/json/object_track_set.h>
 
 #include <vital/util/string.h>
 
 #include <vital/internal/cereal/types/polymorphic.hpp>
 #include <iostream>
-namespace kasj = kwiver::arrows::serialize::json;
+namespace kasj = arrows::serialize::json;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

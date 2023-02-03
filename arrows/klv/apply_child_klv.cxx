@@ -5,11 +5,11 @@
 /// \file
 /// Implementation of apply_child_klv filter.
 
-#include <arrows/klv/apply_child_klv.h>
+#include <klv/apply_child_klv.h>
 
-#include <arrows/klv/klv_0601.h>
-#include <arrows/klv/klv_1607.h>
-#include <arrows/klv/klv_metadata.h>
+#include <klv/klv_0601.h>
+#include <klv/klv_1607.h>
+#include <klv/klv_metadata.h>
 
 #include <vital/logger/logger.h>
 #include <vital/range/iterator_range.h>

@@ -16,7 +16,7 @@
 #include <stdexcept>
 #include <algorithm>
 
-#include <arrows/kpf/yaml/kpf_canonical_io_adapter.h>
+#include <kpf/yaml/kpf_canonical_io_adapter.h>
 
 using std::istream;
 using std::istringstream;

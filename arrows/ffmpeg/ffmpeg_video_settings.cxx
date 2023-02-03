@@ -5,7 +5,7 @@
 /// \file
 /// \brief Implementation of FFmpeg video settings.
 
-#include <arrows/ffmpeg/ffmpeg_video_settings.h>
+#include <ffmpeg/ffmpeg_video_settings.h>
 
 #include <stdexcept>
 

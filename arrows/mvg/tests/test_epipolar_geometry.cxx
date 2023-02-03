@@ -4,8 +4,8 @@
 
 #include <test_scene.h>
 
-#include <arrows/mvg/projected_track_set.h>
-#include <arrows/mvg/epipolar_geometry.h>
+#include <mvg/projected_track_set.h>
+#include <mvg/epipolar_geometry.h>
 
 #include <gtest/gtest.h>
 
@@ -44,7 +44,7 @@ void print_epipolar_distances(
   std::vector<kwiver::vital::vector_2d> const& right_pts,
   std::vector<kwiver::vital::vector_2d> const& left_pts)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
 
   matrix_3x3d Ft = F.transpose();
   for ( unsigned i = 0; i < right_pts.size(); ++i )
@@ -73,7 +73,7 @@ void print_epipolar_distances(
 // Test essential matrix estimation with ideal points
 TEST(epipolar_geometry, ideal_points)
 {
-  using namespace kwiver::arrows::mvg;
+  using namespace arrows::mvg;
 
   // create landmarks at the random locations
   auto landmarks = kwiver::testing::init_landmarks( 100 );

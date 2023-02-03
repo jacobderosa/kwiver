@@ -6,7 +6,7 @@
 /// \brief Implementation of epipolar geometry functions.
 
 #include "epipolar_geometry.h"
-#include <arrows/mvg/triangulate.h>
+#include <mvg/triangulate.h>
 
 namespace kwiver {
 namespace arrows {

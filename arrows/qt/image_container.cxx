@@ -127,7 +127,7 @@ vital_to_qt( kwiver::vital::image const& img, QImage::Format format,
 kwiver::vital::image
 qt_to_vital( QImage const& img, QImage::Format format )
 {
-  return kwiver::arrows::qt::image_container::qt_to_vital(
+  return arrows::qt::image_container::qt_to_vital(
     img.convertToFormat( format ) );
 }
 

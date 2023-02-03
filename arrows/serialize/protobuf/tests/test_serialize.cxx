@@ -7,21 +7,21 @@
 
 #include <gtest/gtest.h>
 
-#include <arrows/serialize/protobuf/activity.h>
-#include <arrows/serialize/protobuf/activity_type.h>
-#include <arrows/serialize/protobuf/bounding_box.h>
-#include <arrows/serialize/protobuf/detected_object_type.h>
-#include <arrows/serialize/protobuf/detected_object.h>
-#include <arrows/serialize/protobuf/detected_object_set.h>
-#include <arrows/serialize/protobuf/timestamp.h>
-#include <arrows/serialize/protobuf/image.h>
-#include <arrows/serialize/protobuf/string.h>
-#include <arrows/serialize/protobuf/track_state.h>
-#include <arrows/serialize/protobuf/track.h>
-#include <arrows/serialize/protobuf/track_set.h>
-#include <arrows/serialize/protobuf/object_track_state.h>
-#include <arrows/serialize/protobuf/object_track_set.h>
-#include <arrows/serialize/protobuf/convert_protobuf.h>
+#include <serialize/protobuf/activity.h>
+#include <serialize/protobuf/activity_type.h>
+#include <serialize/protobuf/bounding_box.h>
+#include <serialize/protobuf/detected_object_type.h>
+#include <serialize/protobuf/detected_object.h>
+#include <serialize/protobuf/detected_object_set.h>
+#include <serialize/protobuf/timestamp.h>
+#include <serialize/protobuf/image.h>
+#include <serialize/protobuf/string.h>
+#include <serialize/protobuf/track_state.h>
+#include <serialize/protobuf/track.h>
+#include <serialize/protobuf/track_set.h>
+#include <serialize/protobuf/object_track_state.h>
+#include <serialize/protobuf/object_track_set.h>
+#include <serialize/protobuf/convert_protobuf.h>
 
 #include <vital/types/activity.h>
 #include <vital/types/activity_type.h>
@@ -36,7 +36,7 @@
 #include <vital/util/hex_dump.h>
 #include <vital/util/string.h>
 
-namespace kasp = kwiver::arrows::serialize::protobuf;
+namespace kasp = arrows::serialize::protobuf;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

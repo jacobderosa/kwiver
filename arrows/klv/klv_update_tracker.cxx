@@ -7,8 +7,8 @@
 
 #include "klv_update_tracker.h"
 
-#include <arrows/klv/klv_key_traits.h>
-#include <arrows/klv/klv_util.h>
+#include <klv/klv_key_traits.h>
+#include <klv/klv_util.h>
 
 namespace kv = kwiver::vital;
 

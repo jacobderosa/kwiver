@@ -5,7 +5,7 @@
 /// \file
 /// \brief test camera interpolation
 
-#include <arrows/mvg/interpolate_camera.h>
+#include <mvg/interpolate_camera.h>
 
 #include <gtest/gtest.h>
 
@@ -35,7 +35,7 @@ TEST(interpolate_camera, interpolation)
                 b(vector_3d(3, 3, 3),
                   rotation_d(-pi / 2, vector_3d(0, 0, 1))),  // rotated around z-axis 90 degrees
                 c;
-  c = kwiver::arrows::mvg::interpolate_camera(a, b, 0.5);
+  c = arrows::mvg::interpolate_camera(a, b, 0.5);
 
   cerr << "a.rotation: " << a.rotation().axis() << ' '  << a.rotation().angle() << endl;
   cerr << "b.rotation: " << b.rotation().axis() << ' '  << b.rotation().angle() << endl;
@@ -70,7 +70,7 @@ TEST(interpolate_camera, multiple_interpolations)
   vector<simple_camera_perspective> cams;
 
   cams.push_back(a);
-  kwiver::arrows::mvg::interpolated_cameras(a, b, 3, cams);
+  arrows::mvg::interpolated_cameras(a, b, 3, cams);
   cams.push_back(b);
 
   cerr << "Vector size: " << cams.size() << endl;

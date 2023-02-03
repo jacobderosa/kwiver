@@ -4,7 +4,7 @@
 
 #include <test_tracks.h>
 
-#include <arrows/core/track_set_impl.h>
+#include <core/track_set_impl.h>
 #include <vital/types/feature_track_set.h>
 #include <vital/tests/test_track_set.h>
 
@@ -23,7 +23,7 @@ namespace {
 track_set_sptr make_track_set_impl( std::vector< track_sptr > const& tracks )
 {
   auto tsi = std::unique_ptr<track_set_implementation>{
-    new kwiver::arrows::core::frame_index_track_set_impl{ tracks } };
+    new arrows::core::frame_index_track_set_impl{ tracks } };
   return std::make_shared<track_set>( std::move( tsi ) );
 }
 

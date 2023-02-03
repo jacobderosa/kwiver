@@ -17,7 +17,7 @@
 #include <vital/algo/detect_motion.h>
 #include <vital/config/config_block.h>
 
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 namespace kwiver {
 namespace arrows {

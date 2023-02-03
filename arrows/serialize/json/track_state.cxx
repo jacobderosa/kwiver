@@ -4,8 +4,8 @@
 
 #include "track_state.h"
 
-#include <arrows/serialize/json/load_save.h>
-#include <arrows/serialize/json/load_save_track_state.h>
+#include <serialize/json/load_save.h>
+#include <serialize/json/load_save_track_state.h>
 
 #include <vital/internal/cereal/cereal.hpp>
 #include <vital/internal/cereal/archives/json.hpp>

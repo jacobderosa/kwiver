@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_CERES_LENS_DISTORTION_H_
 #define KWIVER_ARROWS_CERES_LENS_DISTORTION_H_
 
-#include <arrows/ceres/kwiver_algo_ceres_export.h>
+#include <ceres/kwiver_algo_ceres_export.h>
 
 #include <vital/vital_config.h>
 

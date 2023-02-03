@@ -4,8 +4,8 @@
 
 #include "init_cameras_landmarks.h"
 
-#include <arrows/mvg/sfm_utils.h>
-#include <arrows/mvg/transform.h>
+#include <mvg/sfm_utils.h>
+#include <mvg/transform.h>
 
 #include <kwiversys/SystemTools.hxx>
 

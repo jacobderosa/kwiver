@@ -4,9 +4,9 @@
 
 #include "extract_descriptors.h"
 
-#include <arrows/viscl/image_container.h>
-#include <arrows/viscl/feature_set.h>
-#include <arrows/viscl/descriptor_set.h>
+#include <viscl/image_container.h>
+#include <viscl/feature_set.h>
+#include <viscl/descriptor_set.h>
 
 #include <viscl/tasks/BRIEF.h>
 

@@ -3,12 +3,12 @@
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
 /// \file
-/// \brief Header for kwiver::arrows::triangle_scan_iterator
+/// \brief Header for arrows::triangle_scan_iterator
 
 #ifndef KWIVER_ARROWS_CORE_TRIANGLE_SCAN_ITERATOR_H
 #define KWIVER_ARROWS_CORE_TRIANGLE_SCAN_ITERATOR_H
 
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 #include <vital/types/vector.h>
 
 namespace kwiver {

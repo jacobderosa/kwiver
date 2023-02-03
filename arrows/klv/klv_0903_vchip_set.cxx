@@ -7,7 +7,7 @@
 
 #include "klv_0903_vchip_set.h"
 
-#include <arrows/klv/klv_util.h>
+#include <klv/klv_util.h>
 
 namespace kwiver {
 

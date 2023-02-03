@@ -9,7 +9,7 @@
 #define ARROWS_PLUGINS_CORE_KEYFRAME_SELECTOR_BASIC_H_
 
 #include <vital/vital_config.h>
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 #include <vital/algo/algorithm.h>
 #include <vital/algo/keyframe_selection.h>

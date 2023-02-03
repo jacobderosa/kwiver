@@ -7,9 +7,9 @@
 
 #include "klv_1107.h"
 
-#include <arrows/klv/klv_1010.h>
-#include <arrows/klv/klv_1202.h>
-#include <arrows/klv/klv_checksum.h>
+#include <klv/klv_1010.h>
+#include <klv/klv_1202.h>
+#include <klv/klv_checksum.h>
 
 #include <vital/util/interval.h>
 

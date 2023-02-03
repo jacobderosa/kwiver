@@ -7,8 +7,8 @@
 
 #include "klv_1204.h"
 
-#include <arrows/klv/klv_data_format.h>
-#include <arrows/klv/klv_util.h>
+#include <klv/klv_data_format.h>
+#include <klv/klv_util.h>
 
 #include <iomanip>
 

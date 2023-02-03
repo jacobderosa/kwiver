@@ -19,9 +19,9 @@
 #include <utility>
 #include <vector>
 
-#include <arrows/kpf/yaml/kpf_yaml_export.h>
-#include <arrows/kpf/yaml/kpf_packet_header.h>
-#include <arrows/kpf/yaml/kpf_canonical_types.h>
+#include <kpf/yaml/kpf_yaml_export.h>
+#include <kpf/yaml/kpf_packet_header.h>
+#include <kpf/yaml/kpf_canonical_types.h>
 
 namespace kwiver {
 namespace vital {

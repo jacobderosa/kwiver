@@ -5,7 +5,7 @@
 /// \file
 /// \brief test VXL bundle adjustment functionality
 
-#include <arrows/vxl/bundle_adjust.h>
+#include <vxl/bundle_adjust.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
@@ -13,7 +13,7 @@
 
 using namespace kwiver::vital;
 
-using kwiver::arrows::vxl::bundle_adjust;
+using arrows::vxl::bundle_adjust;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)
@@ -31,14 +31,14 @@ TEST(bundle_adjust, create)
 }
 
 // ----------------------------------------------------------------------------
-#include <arrows/tests/test_bundle_adjust.h>
+#include <tests/test_bundle_adjust.h>
 
 // ----------------------------------------------------------------------------
 // Initialize all landmarks to the origin and all cameras to same location as
 // input to SBA
 TEST(bundle_adjust, zero_landmarks_same_cameras)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   bundle_adjust ba;
   kwiver::vital::config_block_sptr cfg = ba.get_configuration();
   cfg->set_value("verbose", "true");

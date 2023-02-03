@@ -5,7 +5,7 @@
 #ifndef KWIVER_TOOLS_PIPELINE_VIEWER_PIPELINEWORKER_H_
 #define KWIVER_TOOLS_PIPELINE_VIEWER_PIPELINEWORKER_H_
 
-#include <arrows/qt/EmbeddedPipelineWorker.h>
+#include <qt/EmbeddedPipelineWorker.h>
 
 #include <QImage>
 

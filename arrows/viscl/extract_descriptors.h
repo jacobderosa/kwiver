@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_VISCL_EXTRACT_DESCRIPTORS_H_
 #define KWIVER_ARROWS_VISCL_EXTRACT_DESCRIPTORS_H_
 
-#include <arrows/viscl/kwiver_algo_viscl_export.h>
+#include <viscl/kwiver_algo_viscl_export.h>
 
 #include <vital/algo/extract_descriptors.h>
 

@@ -9,7 +9,7 @@
 #include <vital/types/detected_object_set_util.h>
 #include <vital/vital_config.h>
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 #include <kwiversys/SystemTools.hxx>
 
 #include <opencv2/core/core.hpp>

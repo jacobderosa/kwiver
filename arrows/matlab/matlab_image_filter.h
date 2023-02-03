@@ -9,7 +9,7 @@
 #define VITAL_BINDINGS_MATLAB_IMAGE_FILTER_H
 
 #include <vital/algo/image_filter.h>
-#include <arrows/matlab/kwiver_algo_matlab_export.h>
+#include <matlab/kwiver_algo_matlab_export.h>
 
 namespace kwiver {
 namespace arrows {

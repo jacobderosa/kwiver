@@ -4,10 +4,10 @@
 
 #include <test_gtest.h>
 
-#include <arrows/vxl/aligned_edge_detection.h>
+#include <vxl/aligned_edge_detection.h>
 
-#include <arrows/vxl/image_container.h>
-#include <arrows/vxl/image_io.h>
+#include <vxl/image_container.h>
+#include <vxl/image_io.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
@@ -18,7 +18,7 @@
 #include <vector>
 
 namespace kv = kwiver::vital;
-namespace ka = kwiver::arrows;
+namespace ka = arrows;
 
 kv::path_t g_data_dir;
 static std::string test_image = "images/kitware_logos/small_grey_logo.png";

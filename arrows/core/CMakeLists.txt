@@ -1,6 +1,6 @@
 # Build / Install Plugin containing core algorithm implementations
 
-set(CMAKE_FOLDER "Arrows/Core")
+set(CMAKE_FOLDER "Core")
 
 set( plugin_core_headers
   associate_detections_to_tracks_threshold.h
@@ -66,13 +66,13 @@ set( plugin_core_headers
   )
 
 kwiver_install_headers(
-  SUBDIR     arrows/core
+  SUBDIR core
   ${plugin_core_headers}
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_core_export.h
-  NOPATH   SUBDIR     arrows/core
+  NOPATH SUBDIR core
   )
 
 set( plugin_core_sources
@@ -153,10 +153,11 @@ algorithms_create_plugin( kwiver_algo_core
   register_algorithms.cxx
   )
 
-if (KWIVER_ENABLE_TESTS)
+if (ARROWS_ENABLE_TESTS)
+  include_directories(${KWIVER_TEST_INCLUDE_DIR})
   add_subdirectory(tests)
 endif()
 
-if (KWIVER_ENABLE_TOOLS)
+if (ARROWS_ENABLE_TOOLS)
   add_subdirectory(applets)
 endif()

@@ -8,7 +8,7 @@
 #include <sstream>
 #include <exception>
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
 #include <vital/exceptions.h>
 

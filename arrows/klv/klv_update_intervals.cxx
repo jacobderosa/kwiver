@@ -7,7 +7,7 @@
 
 #include "klv_update_intervals.h"
 
-#include <arrows/klv/klv_all.h>
+#include <klv/klv_all.h>
 
 #include <vital/logger/logger.h>
 

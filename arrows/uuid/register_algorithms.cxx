@@ -5,10 +5,10 @@
 /// \file
 /// \brief Defaults plugin algorithm registration interface impl
 
-#include <arrows/uuid/kwiver_algo_uuid_plugin_export.h>
+#include <uuid/kwiver_algo_uuid_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <arrows/uuid/uuid_factory_uuid.h>
+#include <uuid/uuid_factory_uuid.h>
 
 namespace kwiver {
 namespace arrows {
@@ -26,7 +26,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
   }
 
   // add factory                  implementation-name       type-to-create
-  auto fact = vpm.ADD_ALGORITHM( "uuid", kwiver::arrows::uuid::uuid_factory_uuid );
+  auto fact = vpm.ADD_ALGORITHM( "uuid", arrows::uuid::uuid_factory_uuid );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                        "Global UUID generator using system library as source for UUID." )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )

@@ -14,7 +14,7 @@
 #include <set>
 #include <vector>
 
-#include <arrows/core/track_set_impl.h>
+#include <core/track_set_impl.h>
 #include <vital/vital_config.h>
 
 #include <opencv2/core/core.hpp>

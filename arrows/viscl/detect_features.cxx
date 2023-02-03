@@ -6,8 +6,8 @@
 
 #include <vector>
 
-#include <arrows/viscl/feature_set.h>
-#include <arrows/viscl/image_container.h>
+#include <viscl/feature_set.h>
+#include <viscl/image_container.h>
 
 #include <viscl/tasks/hessian.h>
 

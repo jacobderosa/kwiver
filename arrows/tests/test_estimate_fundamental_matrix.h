@@ -5,14 +5,14 @@
 #include <test_eigen.h>
 #include <test_scene.h>
 
-#include <arrows/mvg/projected_track_set.h>
-#include <arrows/mvg/metrics.h>
-#include <arrows/mvg/epipolar_geometry.h>
+#include <mvg/projected_track_set.h>
+#include <mvg/metrics.h>
+#include <mvg/epipolar_geometry.h>
 
 #include <Eigen/LU>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::mvg;
+using namespace arrows::mvg;
 
 // ----------------------------------------------------------------------------
 // Print epipolar distance of pairs of points given a fundamental matrix

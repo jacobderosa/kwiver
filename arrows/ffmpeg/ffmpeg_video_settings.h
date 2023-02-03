@@ -8,8 +8,8 @@
 #ifndef KWIVER_ARROWS_FFMPEG_FFMPEG_VIDEO_SETTINGS_H_
 #define KWIVER_ARROWS_FFMPEG_FFMPEG_VIDEO_SETTINGS_H_
 
-#include <arrows/ffmpeg/ffmpeg_util.h>
-#include <arrows/ffmpeg/kwiver_algo_ffmpeg_export.h>
+#include <ffmpeg/ffmpeg_util.h>
+#include <ffmpeg/kwiver_algo_ffmpeg_export.h>
 
 #include <vital/types/video_settings.h>
 

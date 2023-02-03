@@ -5,12 +5,12 @@
 /// \file
 /// \brief test OCV descriptor_set class
 
-#include <arrows/ocv/descriptor_set.h>
+#include <ocv/descriptor_set.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 struct byte {}; // This is just a tag type that will show in the test name
 

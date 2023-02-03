@@ -5,7 +5,7 @@
 /// \file
 /// \brief Defaults plugin algorithm registration interface impl
 
-#include <arrows/serialize/protobuf/kwiver_serialize_protobuf_plugin_export.h>
+#include <serialize/protobuf/kwiver_serialize_protobuf_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
 #include "bounding_box.h"
@@ -42,7 +42,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     return;
   }
 
-  using namespace kwiver::arrows::serialize::protobuf;
+  using namespace arrows::serialize::protobuf;
 
   reg.register_algorithm< bounding_box >();
   reg.register_algorithm< activity_type >();

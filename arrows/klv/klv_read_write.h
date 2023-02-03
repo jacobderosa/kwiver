@@ -42,8 +42,8 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_READ_WRITE_H_
 #define KWIVER_ARROWS_KLV_KLV_READ_WRITE_H_
 
-#include <arrows/klv/klv_types.h>
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/klv_types.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include <vital/util/interval.h>
 

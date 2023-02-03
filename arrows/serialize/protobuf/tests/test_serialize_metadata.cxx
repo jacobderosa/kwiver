@@ -7,8 +7,8 @@
 
 #include <gtest/gtest.h>
 
-#include <arrows/serialize/protobuf/metadata.h>
-#include <arrows/serialize/protobuf/convert_protobuf.h>
+#include <serialize/protobuf/metadata.h>
+#include <serialize/protobuf/convert_protobuf.h>
 
 #include <vital/types/metadata.h>
 #include <vital/types/metadata_tags.h>
@@ -17,7 +17,7 @@
 #include <vital/types/geo_polygon.h>
 #include <vital/types/geodesy.h>
 
-namespace kasp = kwiver::arrows::serialize::protobuf;
+namespace kasp = arrows::serialize::protobuf;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

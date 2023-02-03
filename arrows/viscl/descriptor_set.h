@@ -6,7 +6,7 @@
 #define KWIVER_ARROWS_VISCL_DESCRIPTOR_SET_H_
 
 #include <vital/vital_config.h>
-#include <arrows/viscl/kwiver_algo_viscl_export.h>
+#include <viscl/kwiver_algo_viscl_export.h>
 
 #include <vital/types/descriptor_set.h>
 

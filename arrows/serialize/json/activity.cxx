@@ -2,8 +2,8 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/serialize/json/activity.h>
-#include <arrows/serialize/json/load_save.h>
+#include <serialize/json/activity.h>
+#include <serialize/json/load_save.h>
 
 #include <vital/types/activity.h>
 #include <vital/internal/cereal/cereal.hpp>
@@ -11,7 +11,7 @@
 
 #include <sstream>
 
-namespace kasj = kwiver::arrows::serialize::json;
+namespace kasj = arrows::serialize::json;
 
 namespace kwiver {
 namespace arrows {

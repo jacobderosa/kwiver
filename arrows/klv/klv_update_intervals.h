@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_UPDATE_INTERVALS_H_
 #define KWIVER_ARROWS_KLV_KLV_UPDATE_INTERVALS_H_
 
-#include <arrows/klv/klv_timeline.h>
+#include <klv/klv_timeline.h>
 
 #include <vital/util/variant/variant.hpp>
 

@@ -6,7 +6,7 @@
 #define KWIVER_ARROWS_MVG_APPLETS_TRACK_FEATURES_H
 
 #include <vital/applets/kwiver_applet.h>
-#include <arrows/mvg/applets/kwiver_algo_mvg_applets_export.h>
+#include <mvg/applets/kwiver_algo_mvg_applets_export.h>
 
 namespace kwiver {
 namespace arrows {

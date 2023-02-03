@@ -5,7 +5,7 @@
 /// \file
 /// Interface to the KLV 0806 User Defined Set parser.
 
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include "klv_packet.h"
 #include "klv_set.h"

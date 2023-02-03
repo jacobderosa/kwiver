@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_CORE_MATCH_MATRIX_H_
 
 #include <vital/vital_config.h>
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 #include <vital/types/track_set.h>
 #include <Eigen/Sparse>

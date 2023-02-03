@@ -4,8 +4,8 @@
 
 /// \file
 /// \brief Implementation of core filter_tracks algorithm
-#include <arrows/core/filter_tracks.h>
-#include <arrows/core/match_matrix.h>
+#include <core/filter_tracks.h>
+#include <core/match_matrix.h>
 
 #include <algorithm>
 
@@ -121,11 +121,11 @@ filter_tracks
   {
     // compute the match matrix
     std::vector<vital::frame_id_t> frames;
-    Eigen::SparseMatrix<unsigned int> mm = kwiver::arrows::match_matrix(tracks, frames);
+    Eigen::SparseMatrix<unsigned int> mm = arrows::match_matrix(tracks, frames);
 
     // compute the importance scores on the tracks
     std::map<vital::track_id_t, double> importance =
-      kwiver::arrows::match_matrix_track_importance(tracks, frames, mm);
+      arrows::match_matrix_track_importance(tracks, frames, mm);
 
     std::vector<kwiver::vital::track_sptr> trks = tracks->tracks();
     std::vector<vital::track_sptr> good_trks;

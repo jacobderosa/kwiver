@@ -5,10 +5,10 @@
 /// \file
 /// \brief Source file for compute_depth, driver for depth from an image sequence
 
-#include <arrows/super3d/compute_depth.h>
+#include <super3d/compute_depth.h>
 
-#include <arrows/vxl/camera.h>
-#include <arrows/vxl/image_container.h>
+#include <vxl/camera.h>
+#include <vxl/image_container.h>
 #include <vil/algo/vil_threshold.h>
 #include <vil/vil_convert.h>
 #include <vil/vil_crop.h>

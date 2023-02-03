@@ -5,8 +5,8 @@
 /// \file
 /// Test KLV demuxer.
 
-#include <arrows/klv/klv_all.h>
-#include <arrows/klv/klv_demuxer.h>
+#include <klv/klv_all.h>
+#include <klv/klv_demuxer.h>
 
 #include <tests/test_gtest.h>
 
@@ -20,7 +20,7 @@ main( int argc, char** argv )
   return RUN_ALL_TESTS();
 }
 
-using namespace kwiver::arrows::klv;
+using namespace arrows::klv;
 
 // ----------------------------------------------------------------------------
 TEST ( klv, demuxer_invalid )

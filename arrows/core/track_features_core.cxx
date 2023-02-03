@@ -16,7 +16,7 @@
 #include <vector>
 #include <iterator>
 
-#include <arrows/core/track_set_impl.h>
+#include <core/track_set_impl.h>
 
 #include <vital/algo/detect_features.h>
 #include <vital/algo/extract_descriptors.h>

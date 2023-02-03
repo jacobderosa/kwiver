@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_1108_METRIC_SET_H_
 #define KWIVER_ARROWS_KLV_KLV_1108_METRIC_SET_H_
 
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include "klv_key.h"
 #include "klv_set.h"

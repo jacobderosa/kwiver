@@ -2,11 +2,11 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/serialize/json/load_save.h>
-#include <arrows/serialize/json/load_save_point.h>
-#include <arrows/serialize/json/load_save_track_state.h>
-#include <arrows/serialize/json/load_save_track_set.h>
-#include <arrows/serialize/json/track_item.h>
+#include <serialize/json/load_save.h>
+#include <serialize/json/load_save_point.h>
+#include <serialize/json/load_save_track_state.h>
+#include <serialize/json/load_save_track_set.h>
+#include <serialize/json/track_item.h>
 
 #include <vital/exceptions.h>
 #include <vital/types/detected_object.h>
@@ -584,10 +584,10 @@ void load( ::cereal::JSONInputArchive& archive,
 // ----------------------------------------------------------------------------
 void save( ::cereal::JSONOutputArchive& archive, const ::kwiver::vital::track_set& trk_set )
 {
-  std::vector<::kwiver::arrows::serialize::json::track_item> track_items;
+  std::vector<::arrows::serialize::json::track_item> track_items;
   for ( auto trk_sptr : trk_set.tracks())
   {
-    track_items.push_back( ::kwiver::arrows::serialize::json::track_item( trk_sptr ) );
+    track_items.push_back( ::arrows::serialize::json::track_item( trk_sptr ) );
   }
   archive( ::cereal::make_nvp( "trk_items", track_items ) );
 }
@@ -595,7 +595,7 @@ void save( ::cereal::JSONOutputArchive& archive, const ::kwiver::vital::track_se
 // ----------------------------------------------------------------------------
 void load( ::cereal::JSONInputArchive& archive, ::kwiver::vital::track_set& trk_set )
 {
-  std::vector< ::kwiver::arrows::serialize::json::track_item > trk_items;
+  std::vector< ::arrows::serialize::json::track_item > trk_items;
   archive ( CEREAL_NVP(trk_items) );
   std::vector< ::kwiver::vital::track_sptr > tracks;
   for (auto trk_item : trk_items)
@@ -613,10 +613,10 @@ void save( ::cereal::JSONOutputArchive& archive,
   // Causes the object associated with the track set to be a list
   //
   //archive( ::cereal::base_class< ::kwiver::vital::track_set >( std::addressof( obj_trk_set ) ) );
-  std::vector<::kwiver::arrows::serialize::json::track_item> track_items;
+  std::vector<::arrows::serialize::json::track_item> track_items;
   for ( auto trk_sptr : obj_trk_set.tracks())
   {
-    track_items.push_back( ::kwiver::arrows::serialize::json::track_item( trk_sptr ) );
+    track_items.push_back( ::arrows::serialize::json::track_item( trk_sptr ) );
   }
   archive( ::cereal::make_nvp( "object_trk_items", track_items ) );
 }
@@ -626,7 +626,7 @@ void load( ::cereal::JSONInputArchive& archive,
             ::kwiver::vital::object_track_set& obj_trk_set )
 {
   //archive( ::cereal::base_class< ::kwiver::vital::object_track_set >( std::addressof( obj_trk_set ) ) );
-  std::vector< ::kwiver::arrows::serialize::json::track_item > object_trk_items;
+  std::vector< ::arrows::serialize::json::track_item > object_trk_items;
   archive ( CEREAL_NVP(object_trk_items) );
   std::vector< ::kwiver::vital::track_sptr > object_tracks;
   for (auto object_trk_item : object_trk_items)

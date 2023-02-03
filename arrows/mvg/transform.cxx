@@ -218,7 +218,7 @@ void translate_inplace(vital::camera_map& cameras,
 {
   vital::simple_camera_perspective_map pcameras;
   pcameras.set_from_base_camera_map(cameras.cameras());
-  kwiver::arrows::mvg::translate_inplace(pcameras, offset);
+  arrows::mvg::translate_inplace(pcameras, offset);
 }
 
 /// \cond DoxygenSuppress

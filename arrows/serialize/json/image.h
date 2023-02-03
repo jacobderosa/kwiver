@@ -5,7 +5,7 @@
 #ifndef ARROWS_SERIALIZATION_JSON_IMAGE
 #define ARROWS_SERIALIZATION_JSON_IMAGE
 
-#include <arrows/serialize/json/kwiver_serialize_json_export.h>
+#include <serialize/json/kwiver_serialize_json_export.h>
 #include <vital/algo/data_serializer.h>
 
 namespace cereal {

@@ -4,7 +4,7 @@
 
 #include "average_frames.h"
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
 #include <vital/util/enum_converter.h>
 

@@ -7,7 +7,7 @@
 
 #include "image_io.h"
 
-#include <arrows/gdal/image_container.h>
+#include <gdal/image_container.h>
 
 #include <vital/exceptions/algorithm.h>
 #include <vital/vital_config.h>

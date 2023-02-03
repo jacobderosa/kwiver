@@ -8,10 +8,10 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_1108_H_
 #define KWIVER_ARROWS_KLV_KLV_1108_H_
 
-#include <arrows/klv/klv_checksum.h>
-#include <arrows/klv/klv_set.h>
-#include <arrows/klv/klv_util.h>
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/klv_checksum.h>
+#include <klv/klv_set.h>
+#include <klv/klv_util.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include <vital/types/bounding_box.h>
 

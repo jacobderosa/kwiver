@@ -8,11 +8,11 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_0903_LOCATION_PACK_H
 #define KWIVER_ARROWS_KLV_KLV_0903_LOCATION_PACK_H
 
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/kwiver_algo_klv_export.h>
 
-#include <arrows/klv/klv_packet.h>
-#include <arrows/klv/klv_series.h>
-#include <arrows/klv/klv_set.h>
+#include <klv/klv_packet.h>
+#include <klv/klv_series.h>
+#include <klv/klv_set.h>
 
 #include <vital/optional.h>
 

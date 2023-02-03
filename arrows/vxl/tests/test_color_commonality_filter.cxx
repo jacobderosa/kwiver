@@ -4,15 +4,15 @@
 
 #include <test_gtest.h>
 
-#include <arrows/vxl/color_commonality_filter.h>
-#include <arrows/vxl/image_io.h>
+#include <vxl/color_commonality_filter.h>
+#include <vxl/image_io.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 #include <gtest/gtest.h>
 
 namespace kv = kwiver::vital;
-namespace ka = kwiver::arrows;
+namespace ka = arrows;
 
 kv::path_t g_data_dir;
 static std::string test_image_name = "images/kitware_logos/small_grey_logo.png";

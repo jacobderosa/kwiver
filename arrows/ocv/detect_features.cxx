@@ -12,8 +12,8 @@
 #include <opencv2/imgproc/imgproc.hpp>
 
 #include <vital/exceptions/image.h>
-#include <arrows/ocv/feature_set.h>
-#include <arrows/ocv/image_container.h>
+#include <ocv/feature_set.h>
+#include <ocv/image_container.h>
 
 using namespace kwiver::vital;
 

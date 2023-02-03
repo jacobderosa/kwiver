@@ -5,7 +5,7 @@
 /// \file
 /// \brief test VXL bundle adjustment functionality
 
-#include <arrows/ocv/bounding_box.h>
+#include <ocv/bounding_box.h>
 
 #include <gtest/gtest.h>
 
@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 TEST(bounding_box, convert_bb2ocv)
 {
   kwiver::vital::bounding_box<double> bbox( 1, 3, 10, 34 );
-  auto const& vbox = kwiver::arrows::ocv::convert( bbox );
+  auto const& vbox = arrows::ocv::convert( bbox );
 
   EXPECT_EQ( bbox.min_x(), vbox.x );
   EXPECT_EQ( bbox.min_y(), vbox.y );
@@ -32,7 +32,7 @@ TEST(bounding_box, convert_bb2ocv)
 TEST(bounding_box, convert_ocv2bb)
 {
   auto vbox= cv::Rect( 1, 3, 10, 34 );
-  auto const& bbox = kwiver::arrows::ocv::convert<double>( vbox );
+  auto const& bbox = arrows::ocv::convert<double>( vbox );
 
   EXPECT_EQ( vbox.x, bbox.min_x() );
   EXPECT_EQ( vbox.y, bbox.min_y() );

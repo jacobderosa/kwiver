@@ -9,7 +9,7 @@
 
 #include "camera_intrinsics.h"
 
-#include <arrows/mvg/camera_options.h>
+#include <mvg/camera_options.h>
 
 #include <vital/range/iota.h>
 

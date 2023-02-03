@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_QT_WIDGETS_LOGGERVIEW_H_
 #define KWIVER_ARROWS_QT_WIDGETS_LOGGERVIEW_H_
 
-#include <arrows/qt/widgets/kwiver_algo_qt_widgets_export.h>
+#include <qt/widgets/kwiver_algo_qt_widgets_export.h>
 
 #include <vital/logger/logger.h>
 

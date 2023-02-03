@@ -8,8 +8,8 @@
 #ifndef KWIVER_ARROWS_QT_EMBEDDEDPIPELINEWORKER_H_
 #define KWIVER_ARROWS_QT_EMBEDDEDPIPELINEWORKER_H_
 
-#include <arrows/qt/kq_global.h>
-#include <arrows/qt/kwiver_algo_qt_export.h>
+#include <qt/kq_global.h>
+#include <qt/kwiver_algo_qt_export.h>
 
 #include <sprokit/processes/adapters/adapter_types.h>
 

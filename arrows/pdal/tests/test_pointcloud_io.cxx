@@ -8,8 +8,8 @@
 #include <test_gtest.h>
 #include <test_tmpfn.h>
 
-#include <arrows/pdal/algo/pointcloud_io.h>
-#include <arrows/proj/geo_conv.h>
+#include <pdal/algo/pointcloud_io.h>
+#include <proj/geo_conv.h>
 #include <vital/exceptions/io.h>
 #include <vital/io/landmark_map_io.h>
 #include <vital/plugin_loader/plugin_manager.h>
@@ -69,7 +69,7 @@ TEST_F ( pointcloud_io, load )
     kwiver::vital::rgb_color( 255, 255, 255 ),
     kwiver::vital::rgb_color( 0, 0, 0 ) };
 
-  auto pc_io = kwiver::arrows::pdal::pointcloud_io();
+  auto pc_io = arrows::pdal::pointcloud_io();
 
   for( std::string ext : { ".bpf", ".las", ".ply" } )
   {
@@ -127,13 +127,13 @@ TEST_F ( pointcloud_io, save )
     colors.push_back( lm.second->color() );
   }
 
-  static auto geo_conv = kwiver::arrows::proj::geo_conversion{};
+  static auto geo_conv = arrows::proj::geo_conversion{};
   kv::set_geo_conv( &geo_conv );
 
   auto lgcs = kv::local_geo_cs();
   read_local_geo_cs_from_file( lgcs, geo_origin_path );
 
-  auto pc_io = kwiver::arrows::pdal::pointcloud_io();
+  auto pc_io = arrows::pdal::pointcloud_io();
   pc_io.set_local_geo_cs( lgcs );
   pc_io.save( tmp_path, points, colors );
 }
@@ -160,13 +160,13 @@ TEST_F ( pointcloud_io, save_landmarks )
   kv::landmark_map_sptr landmark_map =
     kv::read_ply_file( landmarks_path );
 
-  static auto geo_conv = kwiver::arrows::proj::geo_conversion{};
+  static auto geo_conv = arrows::proj::geo_conversion{};
   kv::set_geo_conv( &geo_conv );
 
   auto lgcs = kv::local_geo_cs();
   read_local_geo_cs_from_file( lgcs, geo_origin_path );
 
-  auto pc_io = kwiver::arrows::pdal::pointcloud_io();
+  auto pc_io = arrows::pdal::pointcloud_io();
   pc_io.set_local_geo_cs( lgcs );
   pc_io.save( tmp_path, landmark_map );
 }

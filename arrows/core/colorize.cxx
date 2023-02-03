@@ -3,7 +3,7 @@
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
 /// \file
-/// \brief Implementation of kwiver::arrows::core::colorize functions to extract/compute colors
+/// \brief Implementation of arrows::core::colorize functions to extract/compute colors
 
 #include "colorize.h"
 

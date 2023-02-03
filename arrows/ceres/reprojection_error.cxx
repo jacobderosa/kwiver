@@ -9,7 +9,7 @@
 
 #include "lens_distortion.h"
 
-#include <arrows/ceres/types.h>
+#include <ceres/types.h>
 
 #include <ceres/ceres.h>
 #include <ceres/rotation.h>
@@ -20,7 +20,7 @@ namespace arrows {
 
 namespace ceres {
 
-using namespace kwiver::arrows::mvg;
+using namespace arrows::mvg;
 
 // Helper function to apply pose transformations and project a point
 // \param [in] pose: Camera pose (extrinsics) data block

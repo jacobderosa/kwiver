@@ -11,8 +11,8 @@
 
 #include <vital/vital_config.h>
 
-#include <arrows/ocv/descriptor_set.h>
-#include <arrows/ocv/match_set.h>
+#include <ocv/descriptor_set.h>
+#include <ocv/match_set.h>
 
 using namespace kwiver::vital;
 

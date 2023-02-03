@@ -7,11 +7,11 @@
 
 #include "vidl_ffmpeg_video_input.h"
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
-#include <arrows/klv/klv_convert_vital.h>
-#include <arrows/klv/klv_demuxer.h>
-#include <arrows/klv/misp_time.h>
+#include <klv/klv_convert_vital.h>
+#include <klv/klv_demuxer.h>
+#include <klv/misp_time.h>
 
 #include <vital/types/timestamp.h>
 #include <vital/exceptions/io.h>
@@ -301,11 +301,11 @@ public:
     do
     {
       auto const packet_data = d_video_stream.current_packet_data();
-      auto it = kwiver::arrows::klv::find_misp_timestamp( packet_data.cbegin(),
+      auto it = arrows::klv::find_misp_timestamp( packet_data.cbegin(),
                                                           packet_data.cend() );
       if ( it != packet_data.cend() )
       {
-        meta_ts = kwiver::arrows::klv::read_misp_timestamp( it ).timestamp;
+        meta_ts = arrows::klv::read_misp_timestamp( it ).timestamp;
         LOG_DEBUG( this->d_logger, "Found MISP frame time:" << meta_ts );
 
         d_have_abs_frame_time = true;

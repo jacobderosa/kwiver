@@ -5,8 +5,8 @@
 /// \file
 /// This file contains the interface for the \c klv_value class.
 
-#include <arrows/klv/klv_blob.h>
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/klv_blob.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include <vital/any.h>
 

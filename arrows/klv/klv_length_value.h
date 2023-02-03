@@ -8,9 +8,9 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_LENGTH_VALUE_H_
 #define KWIVER_ARROWS_KLV_KLV_LENGTH_VALUE_H_
 
-#include <arrows/klv/klv_data_format.h>
-#include <arrows/klv/klv_util.h>
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/klv_data_format.h>
+#include <klv/klv_util.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include <vital/optional.h>
 

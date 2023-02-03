@@ -9,7 +9,7 @@
  */
 
 #include "kpf_bounce_buffer.h"
-#include <arrows/kpf/yaml/kpf_parse_utils.h>
+#include <kpf/yaml/kpf_parse_utils.h>
 
 #include <vital/logger/logger.h>
 static kwiver::vital::logger_handle_t main_logger( kwiver::vital::get_logger( "arrows.kpf.bounce_buffer" ) );

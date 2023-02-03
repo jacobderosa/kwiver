@@ -9,7 +9,7 @@
 #define KWIVER_VITAL_BINDINGS_MATLAB_DETECTION_OUTPUT_H_
 
 #include <vital/algo/detected_object_set_output.h>
-#include <arrows/matlab/kwiver_algo_matlab_export.h>
+#include <matlab/kwiver_algo_matlab_export.h>
 
 namespace kwiver {
 namespace arrows {

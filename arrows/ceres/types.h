@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_CERES_TYPES_H_
 #define KWIVER_ARROWS_CERES_TYPES_H_
 
-#include <arrows/ceres/kwiver_algo_ceres_export.h>
+#include <ceres/kwiver_algo_ceres_export.h>
 #include <vital/config/config_block.h>
 #include <vital/vital_config.h>
 
@@ -108,8 +108,8 @@ CERES_ENUM_HELPERS( ::ceres, PreconditionerType )
 CERES_ENUM_HELPERS( ::ceres, TrustRegionStrategyType )
 CERES_ENUM_HELPERS( ::ceres, DoglegType )
 
-CERES_ENUM_HELPERS( kwiver::arrows::ceres, LossFunctionType )
-CERES_ENUM_HELPERS( kwiver::arrows::ceres, CameraIntrinsicShareType )
+CERES_ENUM_HELPERS( arrows::ceres, LossFunctionType )
+CERES_ENUM_HELPERS( arrows::ceres, CameraIntrinsicShareType )
 
 #undef CERES_ENUM_HELPERS
 

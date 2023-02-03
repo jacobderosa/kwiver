@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_VXL_IMAGE_CONTAINER_H_
 #define KWIVER_ARROWS_VXL_IMAGE_CONTAINER_H_
 
-#include <arrows/vxl/kwiver_algo_vxl_export.h>
+#include <vxl/kwiver_algo_vxl_export.h>
 
 #include <vital/types/image_container.h>
 

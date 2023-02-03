@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_QT_IMAGE_IO_H_
 #define KWIVER_ARROWS_QT_IMAGE_IO_H_
 
-#include <arrows/qt/kwiver_algo_qt_export.h>
+#include <qt/kwiver_algo_qt_export.h>
 
 #include <vital/algo/image_io.h>
 

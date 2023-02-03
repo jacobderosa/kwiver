@@ -5,7 +5,7 @@
 /// \file
 /// Test basic KLV read / write functions
 
-#include <arrows/klv/klv_read_write.txx>
+#include <klv/klv_read_write.txx>
 
 #include <tests/test_gtest.h>
 
@@ -17,7 +17,7 @@ main( int argc, char** argv )
   return RUN_ALL_TESTS();
 }
 
-using namespace kwiver::arrows::klv;
+using namespace arrows::klv;
 namespace kv = kwiver::vital;
 
 using vec_t = std::vector< uint8_t >;

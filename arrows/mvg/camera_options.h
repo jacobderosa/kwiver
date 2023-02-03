@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_MVG_CAMERA_OPTIONS_H_
 #define KWIVER_ARROWS_MVG_CAMERA_OPTIONS_H_
 
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/config/config_block.h>
 #include <vital/types/camera_map.h>
@@ -122,7 +122,7 @@ struct KWIVER_ALGO_MVG_EXPORT camera_options
   }                                                                       \
   }
 
-MVG_ENUM_HELPERS( kwiver::arrows::mvg, LensDistortionType )
+MVG_ENUM_HELPERS( arrows::mvg, LensDistortionType )
 
 #undef MVG_ENUM_HELPERS
 

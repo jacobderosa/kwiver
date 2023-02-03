@@ -7,7 +7,7 @@
 
 #include <test_eigen.h>
 
-#include <arrows/vxl/camera.h>
+#include <vxl/camera.h>
 
 #include <Eigen/QR>
 
@@ -27,7 +27,7 @@ template <typename T>
 static
 vpgl_perspective_camera<T> sample_vpgl_camera()
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   vpgl_calibration_matrix<T> vk(T(4000), vgl_point_2d<T>(300,400),
                                 T(1.0), T(0.75), T(0.0001));
   vgl_rotation_3d<T> vr(T(0.7), T(0.1), T(1.3));
@@ -70,7 +70,7 @@ Eigen::Matrix<T, 3, 1> as_eigen( vgl_point_3d<T> const& in )
 // ----------------------------------------------------------------------------
 TEST(camera, convert_camera_sptr)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   vpgl_perspective_camera<double> vcd = sample_vpgl_camera<double>();
   vpgl_perspective_camera<float> vcf = sample_vpgl_camera<float>();
 
@@ -85,7 +85,7 @@ TEST(camera, convert_camera_sptr)
 template <typename T>
 void test_convert_camera(T eps)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   vpgl_perspective_camera<T> vcam = sample_vpgl_camera<T>();
 
   simple_camera_perspective mcam;

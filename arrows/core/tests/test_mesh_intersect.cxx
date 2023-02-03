@@ -6,12 +6,12 @@
 
 #include <vital/plugin_loader/plugin_manager.h>
 
-#include <arrows/core/mesh_intersect.h>
+#include <core/mesh_intersect.h>
 
 #include <Eigen/Geometry>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::core;
+using namespace arrows::core;
 
 // ----------------------------------------------------------------------------
 int

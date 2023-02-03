@@ -11,8 +11,8 @@
 #include <memory>
 #include <vector>
 
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
-#include <arrows/ocv/match_features.h>
+#include <ocv/kwiver_algo_ocv_export.h>
+#include <ocv/match_features.h>
 
 namespace kwiver {
 namespace arrows {

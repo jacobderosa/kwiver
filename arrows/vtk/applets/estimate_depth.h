@@ -9,7 +9,7 @@
 #include <vital/types/landmark_map.h>
 
 #include <vital/applets/kwiver_applet.h>
-#include <arrows/vtk/applets/kwiver_algo_vtk_applets_export.h>
+#include <vtk/applets/kwiver_algo_vtk_applets_export.h>
 
 namespace kwiver {
 namespace arrows {

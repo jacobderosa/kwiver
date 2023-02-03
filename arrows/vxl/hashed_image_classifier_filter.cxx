@@ -5,7 +5,7 @@
 #include "hashed_image_classifier.h"
 #include "hashed_image_classifier_filter.h"
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
 #include <vital/config/config_block_io.h>
 

@@ -58,7 +58,7 @@
   }                                                                       \
   }
 
-MVG_ENUM_HELPERS( kwiver::arrows::mvg, LensDistortionType )
+MVG_ENUM_HELPERS( arrows::mvg, LensDistortionType )
 
 #undef MVG_ENUM_HELPERS
 

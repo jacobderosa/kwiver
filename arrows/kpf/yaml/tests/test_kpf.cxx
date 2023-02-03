@@ -12,10 +12,10 @@
 
 #include <test_common.h>
 
-#include <arrows/kpf/yaml/kpf_reader.h>
-#include <arrows/kpf/yaml/kpf_yaml_parser.h>
-#include <arrows/kpf/yaml/kpf_yaml_writer.h>
-#include <arrows/kpf/yaml/kpf_canonical_io_adapter.h>
+#include <kpf/yaml/kpf_reader.h>
+#include <kpf/yaml/kpf_yaml_parser.h>
+#include <kpf/yaml/kpf_yaml_writer.h>
+#include <kpf/yaml/kpf_canonical_io_adapter.h>
 
 #include <string>
 #include <sstream>

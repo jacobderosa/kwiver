@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_VXL_COMPUTE_HOMOGRAPHY_OVERLAP_H_
 #define KWIVER_ARROWS_VXL_COMPUTE_HOMOGRAPHY_OVERLAP_H_
 
-#include <arrows/vxl/kwiver_algo_vxl_export.h>
+#include <vxl/kwiver_algo_vxl_export.h>
 
 #include <vnl/vnl_double_3x3.h>
 

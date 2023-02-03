@@ -8,9 +8,9 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_1607_H_
 #define KWIVER_ARROWS_KLV_KLV_1607_H_
 
-#include <arrows/klv/klv_set.h>
-#include <arrows/klv/klv_util.h>
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/klv_set.h>
+#include <klv/klv_util.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 namespace kwiver {
 

@@ -11,8 +11,8 @@
 #include <vital/vital_config.h>
 #include <vital/noncopyable.h>
 #include <vital/logger/logger.h>
-#include <arrows/matlab/mxarray.h>
-#include <arrows/matlab/kwiver_algo_matlab_export.h>
+#include <matlab/mxarray.h>
+#include <matlab/kwiver_algo_matlab_export.h>
 
 // Matlab includes
 #include <engine.h>

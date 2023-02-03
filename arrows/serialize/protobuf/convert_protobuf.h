@@ -5,7 +5,7 @@
 #ifndef ARROWS_SERIALILIZATION_PROTOBUF_CONVERT_PROTOBUF_H
 #define ARROWS_SERIALILIZATION_PROTOBUF_CONVERT_PROTOBUF_H
 
-#include <arrows/serialize/protobuf/kwiver_serialize_protobuf_export.h>
+#include <serialize/protobuf/kwiver_serialize_protobuf_export.h>
 
 #include <vital/types/activity.h>
 #include <vital/types/metadata.h>

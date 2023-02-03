@@ -2,14 +2,14 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/ocv/estimate_pnp.h>
+#include <ocv/estimate_pnp.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 using ocv::estimate_pnp;
 
@@ -36,4 +36,4 @@ TEST(estimate_pnp, create)
 }
 
 // ----------------------------------------------------------------------------
-#include <arrows/tests/test_estimate_pnp.h>
+#include <tests/test_estimate_pnp.h>

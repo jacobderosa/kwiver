@@ -5,10 +5,10 @@
 /// \file
 /// \brief Source file for compute_depth, driver for depth from an image sequence
 
-#include <arrows/cuda/integrate_depth_maps.h>
-#include <arrows/cuda/cuda_error_check.h>
-#include <arrows/cuda/cuda_memory.h>
-#include <arrows/core/depth_utils.h>
+#include <cuda/integrate_depth_maps.h>
+#include <cuda/cuda_error_check.h>
+#include <cuda/cuda_memory.h>
+#include <core/depth_utils.h>
 #include <sstream>
 #include <cuda_runtime.h>
 #include <cuda.h>
@@ -245,7 +245,7 @@ integrate_depth_maps::integrate(
 {
   double pixel_to_world_scale;
   pixel_to_world_scale =
-    kwiver::arrows::core::
+    arrows::core::
       compute_pixel_to_world_scale(minpt_bound, maxpt_bound, cameras);
 
   vector_3d diff = maxpt_bound - minpt_bound;

@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <vital/algo/merge_images.h>
 

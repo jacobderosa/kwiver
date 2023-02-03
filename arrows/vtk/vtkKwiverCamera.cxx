@@ -15,7 +15,7 @@ namespace // anonymous
 {
 
 // ----------------------------------------------------------------------------
-  void BuildCamera(kwiver::arrows::vtk::vtkKwiverCamera* out,
+  void BuildCamera(arrows::vtk::vtkKwiverCamera* out,
                    kwiver::vital::camera_perspective_sptr const& in,
                    kwiver::vital::camera_intrinsics_sptr const& ci)
 {

@@ -7,12 +7,12 @@
  * \brief register mvg applets into a plugin
  */
 
-#include <arrows/mvg/applets/kwiver_algo_mvg_applets_export.h>
+#include <mvg/applets/kwiver_algo_mvg_applets_export.h>
 #include <vital/plugin_loader/plugin_loader.h>
 #include <vital/applets/applet_registrar.h>
 
-#include <arrows/mvg/applets/init_cameras_landmarks.h>
-#include <arrows/mvg/applets/track_features.h>
+#include <mvg/applets/init_cameras_landmarks.h>
+#include <mvg/applets/track_features.h>
 
 namespace kwiver {
 namespace arrows {

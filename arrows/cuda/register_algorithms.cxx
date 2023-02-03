@@ -5,10 +5,10 @@
 /// \file
 /// \brief Register depth algorithms implementation
 
-#include <arrows/cuda/kwiver_algo_cuda_plugin_export.h>
+#include <cuda/kwiver_algo_cuda_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <arrows/cuda/integrate_depth_maps.h>
+#include <cuda/integrate_depth_maps.h>
 
 namespace kwiver {
 namespace arrows {

@@ -2,8 +2,8 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/serialize/json/load_save.h>
-#include <arrows/serialize/json/load_save_track_state.h>
+#include <serialize/json/load_save.h>
+#include <serialize/json/load_save_track_state.h>
 
 #include <vital/internal/cereal/cereal.hpp>
 #include <vital/internal/cereal/types/vector.hpp>

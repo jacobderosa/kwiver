@@ -7,9 +7,9 @@
 
 #include "extract_descriptors.h"
 
-#include <arrows/ocv/image_container.h>
-#include <arrows/ocv/feature_set.h>
-#include <arrows/ocv/descriptor_set.h>
+#include <ocv/image_container.h>
+#include <ocv/feature_set.h>
+#include <ocv/descriptor_set.h>
 
 using namespace kwiver::vital;
 

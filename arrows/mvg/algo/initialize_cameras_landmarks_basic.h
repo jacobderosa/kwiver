@@ -10,7 +10,7 @@
 #ifndef KWIVER_ARROWS_MVG_INITIALIZE_CAMERAS_LANDMARKS_BASIC_H_
 #define KWIVER_ARROWS_MVG_INITIALIZE_CAMERAS_LANDMARKS_BASIC_H_
 
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/algo/initialize_cameras_landmarks.h>
 

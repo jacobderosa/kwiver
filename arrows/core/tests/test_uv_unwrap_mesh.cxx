@@ -2,7 +2,7 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/core/uv_unwrap_mesh.h>
+#include <core/uv_unwrap_mesh.h>
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/types/mesh.h>
 
@@ -11,7 +11,7 @@
 #include <algorithm>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::core;
+using namespace arrows::core;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

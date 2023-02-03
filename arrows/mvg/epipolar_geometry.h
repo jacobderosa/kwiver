@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_MVG_EPIPOLAR_GEOMETRY_H_
 
 #include <vital/vital_config.h>
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/types/camera_perspective.h>
 #include <vital/types/essential_matrix.h>

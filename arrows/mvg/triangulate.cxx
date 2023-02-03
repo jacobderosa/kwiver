@@ -44,7 +44,7 @@
 
 #include "triangulate.h"
 #include <Eigen/SVD>
-#include <arrows/mvg/epipolar_geometry.h>
+#include <mvg/epipolar_geometry.h>
 
 namespace kwiver {
 namespace arrows {

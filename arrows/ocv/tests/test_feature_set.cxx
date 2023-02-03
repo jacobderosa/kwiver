@@ -7,12 +7,12 @@
 
 #include <test_common.h>
 
-#include <arrows/ocv/feature_set.h>
+#include <ocv/feature_set.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

@@ -7,9 +7,9 @@
 
 #include "klv_set.h"
 
-#include <arrows/klv/klv_1010.h>
-#include <arrows/klv/klv_key_traits.h>
-#include <arrows/klv/klv_util.h>
+#include <klv/klv_1010.h>
+#include <klv/klv_key_traits.h>
+#include <klv/klv_util.h>
 
 namespace kv = kwiver::vital;
 

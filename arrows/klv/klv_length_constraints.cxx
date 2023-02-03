@@ -5,7 +5,7 @@
 /// \file
 /// Implementation of KLV length constraints class.
 
-#include <arrows/klv/klv_length_constraints.h>
+#include <klv/klv_length_constraints.h>
 
 #include <sstream>
 #include <stdexcept>

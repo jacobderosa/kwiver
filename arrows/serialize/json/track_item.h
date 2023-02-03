@@ -5,8 +5,8 @@
 #ifndef ARROWS_SERIALIZATION_JSON_TRACK_ITEM_H
 #define ARROWS_SERIALIZATION_JSON_TRACK_ITEM_H
 
-#include <arrows/serialize/json/load_save.h>
-#include <arrows/serialize/json/load_save_track_state.h>
+#include <serialize/json/load_save.h>
+#include <serialize/json/load_save_track_state.h>
 
 #include <vital/internal/cereal/cereal.hpp>
 #include <vital/internal/cereal/types/vector.hpp>

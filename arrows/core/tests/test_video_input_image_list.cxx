@@ -7,8 +7,8 @@
 
 #include <test_gtest.h>
 
-#include <arrows/core/video_input_image_list.h>
-#include <arrows/tests/test_video_input.h>
+#include <core/video_input_image_list.h>
+#include <tests/test_video_input.h>
 #include <vital/algo/algorithm_factory.h>
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/vital_config.h>
@@ -21,7 +21,7 @@
 kwiver::vital::path_t g_data_dir;
 
 namespace algo = kwiver::vital::algo;
-namespace kac = kwiver::arrows::core;
+namespace kac = arrows::core;
 static std::string list_file_name = "video_as_images/frame_list.txt";
 static std::string images_folder_name = "video_as_images/images";
 
@@ -83,7 +83,7 @@ TEST_F(video_input_image_list, read_list)
     return;
   }
 
-  kwiver::arrows::core::video_input_image_list viil;
+  arrows::core::video_input_image_list viil;
 
   EXPECT_TRUE( viil.check_configuration( config ) );
   viil.set_configuration( config );
@@ -128,7 +128,7 @@ TEST_F(video_input_image_list, read_directory)
     return;
   }
 
-  kwiver::arrows::core::video_input_image_list viil;
+  arrows::core::video_input_image_list viil;
 
   EXPECT_TRUE( viil.check_configuration( config ) );
   viil.set_configuration( config );
@@ -173,7 +173,7 @@ TEST_F(video_input_image_list, is_good)
     return;
   }
 
-  kwiver::arrows::core::video_input_image_list viil;
+  arrows::core::video_input_image_list viil;
 
   EXPECT_TRUE( viil.check_configuration( config ) );
   viil.set_configuration( config );
@@ -223,7 +223,7 @@ TEST_F(video_input_image_list, seek_frame)
     return;
   }
 
-  kwiver::arrows::core::video_input_image_list viil;
+  arrows::core::video_input_image_list viil;
 
   EXPECT_TRUE( viil.check_configuration( config ) );
   viil.set_configuration( config );
@@ -249,7 +249,7 @@ TEST_F(video_input_image_list, seek_then_next_frame)
     return;
   }
 
-  kwiver::arrows::core::video_input_image_list viil;
+  arrows::core::video_input_image_list viil;
 
   EXPECT_TRUE( viil.check_configuration( config ) );
   viil.set_configuration( config );
@@ -275,7 +275,7 @@ TEST_F(video_input_image_list, next_then_seek_frame)
     return;
   }
 
-  kwiver::arrows::core::video_input_image_list viil;
+  arrows::core::video_input_image_list viil;
 
   EXPECT_TRUE( viil.check_configuration( config ) );
   viil.set_configuration( config );
@@ -301,7 +301,7 @@ TEST_F(video_input_image_list, next_then_seek_then_next)
     return;
   }
 
-  kwiver::arrows::core::video_input_image_list viil;
+  arrows::core::video_input_image_list viil;
 
   EXPECT_TRUE( viil.check_configuration( config ) );
   viil.set_configuration( config );
@@ -327,7 +327,7 @@ TEST_F(video_input_image_list, metadata_map)
     return;
   }
 
-  kwiver::arrows::core::video_input_image_list viil;
+  arrows::core::video_input_image_list viil;
 
   EXPECT_TRUE( viil.check_configuration( config ) );
   viil.set_configuration( config );

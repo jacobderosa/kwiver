@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_CUDA_INTEGRATE_DEPTH_MAPS_H_
 #define KWIVER_ARROWS_CUDA_INTEGRATE_DEPTH_MAPS_H_
 
-#include <arrows/cuda/kwiver_algo_cuda_export.h>
+#include <cuda/kwiver_algo_cuda_export.h>
 
 #include <vital/algo/integrate_depth_maps.h>
 #include <vital/vital_config.h>

@@ -8,10 +8,10 @@
 #ifndef KWIVER_ARROWS_CERES_REPROJECTION_ERROR_H_
 #define KWIVER_ARROWS_CERES_REPROJECTION_ERROR_H_
 
-#include <arrows/ceres/kwiver_algo_ceres_export.h>
-#include <arrows/ceres/types.h>
+#include <ceres/kwiver_algo_ceres_export.h>
+#include <ceres/types.h>
 
-#include <arrows/mvg/camera_options.h>
+#include <mvg/camera_options.h>
 
 #include <vital/vital_config.h>
 

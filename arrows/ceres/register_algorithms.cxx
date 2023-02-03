@@ -5,11 +5,11 @@
 /// \file
 /// \brief Ceres algorithm registration implementation
 
-#include <arrows/ceres/kwiver_algo_ceres_plugin_export.h>
+#include <ceres/kwiver_algo_ceres_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <arrows/ceres/bundle_adjust.h>
-#include <arrows/ceres/optimize_cameras.h>
+#include <ceres/bundle_adjust.h>
+#include <ceres/optimize_cameras.h>
 
 namespace kwiver {
 namespace arrows {
@@ -27,7 +27,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
   }
 
   // add factory               implementation-name       type-to-create
-  auto fact = vpm.ADD_ALGORITHM( "ceres", kwiver::arrows::ceres::bundle_adjust );
+  auto fact = vpm.ADD_ALGORITHM( "ceres", arrows::ceres::bundle_adjust );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                        "Uses Ceres Solver to bundle adjust camera and landmark parameters.")
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )
@@ -35,7 +35,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_ORGANIZATION, "Kitware Inc." )
     ;
 
-  fact = vpm.ADD_ALGORITHM( "ceres", kwiver::arrows::ceres::optimize_cameras );
+  fact = vpm.ADD_ALGORITHM( "ceres", arrows::ceres::optimize_cameras );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                        "Uses Ceres Solver to optimize camera parameters" )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )

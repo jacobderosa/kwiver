@@ -9,10 +9,10 @@
 
 #include <vital/plugin_loader/plugin_manager.h>
 
-#include <arrows/klv/apply_child_klv.h>
-#include <arrows/klv/klv_metadata.h>
-#include <arrows/klv/klv_0601.h>
-#include <arrows/klv/klv_1607.h>
+#include <klv/apply_child_klv.h>
+#include <klv/klv_metadata.h>
+#include <klv/klv_0601.h>
+#include <klv/klv_1607.h>
 
 // ----------------------------------------------------------------------------
 int
@@ -24,7 +24,7 @@ main( int argc, char** argv )
 }
 
 namespace kv = kwiver::vital;
-using namespace kwiver::arrows::klv;
+using namespace arrows::klv;
 
 // ----------------------------------------------------------------------------
 // Ensure we can create the filter with the factory method.

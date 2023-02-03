@@ -9,7 +9,7 @@
 
 #include <vital/vital_config.h>
 
-#include <arrows/ocv/mat_image_memory.h>
+#include <ocv/mat_image_memory.h>
 #include <opencv2/imgproc/imgproc.hpp>
 
 using namespace kwiver::vital;
@@ -128,7 +128,7 @@ image_container
       return pixel_traits_t(vital::image_pixel_traits::FLOAT, 8);
     default:
       VITAL_THROW( image_type_mismatch_exception,
-                   "kwiver::arrows::ocv::image_container::ocv_to_vital(int)");
+                   "arrows::ocv::image_container::ocv_to_vital(int)");
   }
 }
 
@@ -288,7 +288,7 @@ image_container
       break;
   }
   VITAL_THROW( image_type_mismatch_exception,
-               "kwiver::arrows::ocv::image_container::vital_to_ocv(pixel_traits_t)");
+               "arrows::ocv::image_container::vital_to_ocv(pixel_traits_t)");
 }
 
 // ----------------------------------------------------------------------------

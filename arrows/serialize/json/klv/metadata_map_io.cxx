@@ -2,13 +2,13 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/serialize/json/klv/metadata_map_io.h>
+#include <serialize/json/klv/metadata_map_io.h>
 
-#include <arrows/serialize/json/klv/load_save_klv.h>
+#include <serialize/json/klv/load_save_klv.h>
 
-#include <arrows/klv/klv_demuxer.h>
-#include <arrows/klv/klv_metadata.h>
-#include <arrows/klv/klv_packet.h>
+#include <klv/klv_demuxer.h>
+#include <klv/klv_metadata.h>
+#include <klv/klv_packet.h>
 
 #include <vital/internal/cereal/archives/json.hpp>
 #include <vital/internal/cereal/types/vector.hpp>

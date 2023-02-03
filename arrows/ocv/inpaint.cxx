@@ -4,7 +4,7 @@
 
 #include "inpaint.h"
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 
 #include <vital/util/enum_converter.h>
 #include <vital/vital_config.h>

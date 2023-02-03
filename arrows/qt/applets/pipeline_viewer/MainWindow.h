@@ -5,7 +5,7 @@
 #ifndef KWIVER_TOOLS_PIPELINE_VIEWER_MAINWINDOW_H_
 #define KWIVER_TOOLS_PIPELINE_VIEWER_MAINWINDOW_H_
 
-#include <arrows/qt/kq_global.h>
+#include <qt/kq_global.h>
 
 #include <QMainWindow>
 

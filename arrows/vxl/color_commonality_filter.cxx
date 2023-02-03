@@ -4,7 +4,7 @@
 
 #include "color_commonality_filter.h"
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
 #include <vgl/vgl_box_2d.h>
 #include <vgl/vgl_intersection.h>

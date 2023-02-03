@@ -11,7 +11,7 @@
 #ifndef KWIVER_VITAL_KPF_PACKET_HEADER_H_
 #define KWIVER_VITAL_KPF_PACKET_HEADER_H_
 
-#include <arrows/kpf/yaml/kpf_yaml_export.h>
+#include <kpf/yaml/kpf_yaml_export.h>
 
 #include <string>
 

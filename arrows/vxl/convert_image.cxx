@@ -5,7 +5,7 @@
 #include "convert_image.h"
 #include "image_statistics.h"
 
-#include <arrows/vxl/image_container.h>
+#include <vxl/image_container.h>
 
 #include <vil/vil_convert.h>
 #include <vil/vil_image_view.h>

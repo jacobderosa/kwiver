@@ -2,11 +2,11 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/kpf/kwiver_algo_kpf_plugin_export.h>
+#include <kpf/kwiver_algo_kpf_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <arrows/kpf/detected_object_set_input_kpf.h>
-#include <arrows/kpf/detected_object_set_output_kpf.h>
+#include <kpf/detected_object_set_input_kpf.h>
+#include <kpf/detected_object_set_output_kpf.h>
 
 namespace kwiver {
 namespace arrows {
@@ -24,7 +24,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
   }
 
   // add factory               implementation-name       type-to-create
-  auto fact = vpm.ADD_ALGORITHM( "kpf_input", kwiver::arrows::kpf::detected_object_set_input_kpf);
+  auto fact = vpm.ADD_ALGORITHM( "kpf_input", arrows::kpf::detected_object_set_input_kpf);
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                     "Detected object set reader using kpf format." )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )
@@ -32,7 +32,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_ORGANIZATION, "Kitware Inc." )
     ;
 
-  fact = vpm.ADD_ALGORITHM( "kpf_output", kwiver::arrows::kpf::detected_object_set_output_kpf);
+  fact = vpm.ADD_ALGORITHM( "kpf_output", arrows::kpf::detected_object_set_output_kpf);
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                     "Detected object set writer using kpf format.t" )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )

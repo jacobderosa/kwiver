@@ -20,13 +20,13 @@
 #include <vital/algo/bundle_adjust.h>
 #include <vital/algo/optimize_cameras.h>
 
-#include <arrows/mvg/algo/triangulate_landmarks.h>
-#include <arrows/mvg/epipolar_geometry.h>
-#include <arrows/mvg/metrics.h>
-#include <arrows/core/match_matrix.h>
-#include <arrows/mvg/necker_reverse.h>
-#include <arrows/mvg/triangulate.h>
-#include <arrows/mvg/transform.h>
+#include <mvg/algo/triangulate_landmarks.h>
+#include <mvg/epipolar_geometry.h>
+#include <mvg/metrics.h>
+#include <core/match_matrix.h>
+#include <mvg/necker_reverse.h>
+#include <mvg/triangulate.h>
+#include <mvg/transform.h>
 
 using namespace kwiver::vital;
 
@@ -44,7 +44,7 @@ detect_bad_tracks(const camera_map::map_camera_t& cams,
   {
     landmark_map::map_landmark_t lm_single;
     lm_single.insert(p);
-    double rmse = kwiver::arrows::mvg::reprojection_rmse(cams, lm_single, trks);
+    double rmse = arrows::mvg::reprojection_rmse(cams, lm_single, trks);
     if( rmse > error_tol )
     {
       to_remove.insert(p.first);

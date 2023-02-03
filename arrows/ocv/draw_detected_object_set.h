@@ -8,7 +8,7 @@
 #ifndef ARROWS_OCV_DRAW_DETECTED_OBJECT_SET_H
 #define ARROWS_OCV_DRAW_DETECTED_OBJECT_SET_H
 
-#include <arrows/ocv/kwiver_algo_ocv_export.h>
+#include <ocv/kwiver_algo_ocv_export.h>
 
 #include <vital/algo/draw_detected_object_set.h>
 

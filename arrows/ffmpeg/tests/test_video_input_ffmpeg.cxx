@@ -7,9 +7,9 @@
 
 #include <test_gtest.h>
 
-#include <arrows/core/video_input_filter.h>
-#include <arrows/ffmpeg/ffmpeg_video_input.h>
-#include <arrows/tests/test_video_input.h>
+#include <core/video_input_filter.h>
+#include <ffmpeg/ffmpeg_video_input.h>
+#include <tests/test_video_input.h>
 
 #include <vital/exceptions/io.h>
 #include <vital/exceptions/video.h>
@@ -22,8 +22,8 @@
 #include <string>
 
 
-namespace ffmpeg = kwiver::arrows::ffmpeg;
-namespace core = kwiver::arrows::core;
+namespace ffmpeg = arrows::ffmpeg;
+namespace core = arrows::core;
 namespace kv = kwiver::vital;
 namespace algo = kv::algo;
 

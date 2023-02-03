@@ -13,8 +13,8 @@
 #include <random>
 #include <ctime>
 
-#include <arrows/mvg/metrics.h>
-#include <arrows/mvg/triangulate.h>
+#include <mvg/metrics.h>
+#include <mvg/triangulate.h>
 
 #include <vital/math_constants.h>
 #include <vital/vital_config.h>

@@ -5,7 +5,7 @@
 #ifndef KWIVER_ARROWS_SERIALIZE_JSON_KLV_METADATA_MAP_IO_H_
 #define KWIVER_ARROWS_SERIALIZE_JSON_KLV_METADATA_MAP_IO_H_
 
-#include <arrows/serialize/json/klv/kwiver_serialize_json_klv_export.h>
+#include <serialize/json/klv/kwiver_serialize_json_klv_export.h>
 
 #include <vital/algo/metadata_map_io.h>
 

@@ -6,7 +6,7 @@
 #define _KWIVER_ARROWS_CREATE_DETECTION_GRID_H_
 
 #include <vital/vital_config.h>
-#include <arrows/core/kwiver_algo_core_export.h>
+#include <core/kwiver_algo_core_export.h>
 
 #include <vital/algo/algorithm.h>
 #include <vital/algo/image_object_detector.h>

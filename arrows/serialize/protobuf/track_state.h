@@ -5,7 +5,7 @@
 #ifndef ARROWS_SERIALIZATION_PROTO_TRACK_STATE_H
 #define ARROWS_SERIALIZATION_PROTO_TRACK_STATE_H
 
-#include <arrows/serialize/protobuf/kwiver_serialize_protobuf_export.h>
+#include <serialize/protobuf/kwiver_serialize_protobuf_export.h>
 #include <vital/algo/data_serializer.h>
 
 namespace kwiver {

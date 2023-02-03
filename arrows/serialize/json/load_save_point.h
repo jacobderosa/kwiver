@@ -5,7 +5,7 @@
 #ifndef ARROWS_SERIALIZE_JOAD_SAVE_POINT_H
 #define ARROWS_SERIALIZE_JOAD_SAVE_POINT_H
 
-#include <arrows/serialize/json/kwiver_serialize_json_export.h>
+#include <serialize/json/kwiver_serialize_json_export.h>
 
 #include <vital/types/point.h>
 

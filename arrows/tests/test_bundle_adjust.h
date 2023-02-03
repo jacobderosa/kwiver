@@ -4,13 +4,13 @@
 
 #include <test_scene.h>
 
-#include <arrows/mvg/metrics.h>
-#include <arrows/mvg/projected_track_set.h>
+#include <mvg/metrics.h>
+#include <mvg/projected_track_set.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::mvg;
+using namespace arrows::mvg;
 
 // ----------------------------------------------------------------------------
 // Input to SBA is the ideal solution, make sure it doesn't diverge

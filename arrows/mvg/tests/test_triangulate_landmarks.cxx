@@ -4,8 +4,8 @@
 
 #include <test_scene.h>
 
-#include <arrows/tests/test_triangulate_landmarks.h>
-#include <arrows/mvg/algo/triangulate_landmarks.h>
+#include <tests/test_triangulate_landmarks.h>
+#include <mvg/algo/triangulate_landmarks.h>
 #include <vital/plugin_loader/plugin_manager.h>
 
 // ----------------------------------------------------------------------------
@@ -29,7 +29,7 @@ TEST(triangulate_landmarks, create)
 // Input to triangulation is the ideal solution, make sure it doesn't diverge
 TEST(triangulate_landmarks, from_solution)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "false");
@@ -41,7 +41,7 @@ TEST(triangulate_landmarks, from_solution)
 // Input to triangulation is the ideal solution, make sure it doesn't diverge
 TEST(triangulate_landmarks, from_solution_homog)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "false");
@@ -53,7 +53,7 @@ TEST(triangulate_landmarks, from_solution_homog)
 // Input to triangulation is the ideal solution, make sure it doesn't diverge
 TEST(triangulate_landmarks, from_solution_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "true");
@@ -65,7 +65,7 @@ TEST(triangulate_landmarks, from_solution_ransac)
 // Input to triangulation is the ideal solution, make sure it doesn't diverge
 TEST(triangulate_landmarks, from_solution_homog_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "true");
@@ -77,7 +77,7 @@ TEST(triangulate_landmarks, from_solution_homog_ransac)
 // Add noise to landmarks before input to triangulation
 TEST(triangulate_landmarks, noisy_landmarks)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "false");
@@ -89,7 +89,7 @@ TEST(triangulate_landmarks, noisy_landmarks)
 // Add noise to landmarks before input to triangulation
 TEST(triangulate_landmarks, noisy_landmarks_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "true");
@@ -101,7 +101,7 @@ TEST(triangulate_landmarks, noisy_landmarks_ransac)
 // Add noise to landmarks before input to triangulation
 TEST(triangulate_landmarks, noisy_landmarks_homog)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "false");
@@ -113,7 +113,7 @@ TEST(triangulate_landmarks, noisy_landmarks_homog)
 // Add noise to landmarks before input to triangulation
 TEST(triangulate_landmarks, noisy_landmarks_homog_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "true");
@@ -125,7 +125,7 @@ TEST(triangulate_landmarks, noisy_landmarks_homog_ransac)
 // Initialize all landmarks to the origin as input to triangulation
 TEST(triangulate_landmarks, zero_landmarks)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "false");
@@ -137,7 +137,7 @@ TEST(triangulate_landmarks, zero_landmarks)
 // Initialize all landmarks to the origin as input to triangulation
 TEST(triangulate_landmarks, zero_landmarks_homog)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "false");
@@ -149,7 +149,7 @@ TEST(triangulate_landmarks, zero_landmarks_homog)
 // Initialize all landmarks to the origin as input to triangulation
 TEST(triangulate_landmarks, zero_landmarks_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "true");
@@ -161,7 +161,7 @@ TEST(triangulate_landmarks, zero_landmarks_ransac)
 // Initialize all landmarks to the origin as input to triangulation
 TEST(triangulate_landmarks, zero_landmarks_homog_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "true");
@@ -173,7 +173,7 @@ TEST(triangulate_landmarks, zero_landmarks_homog_ransac)
 // Select a subset of cameras to triangulation from
 TEST(triangulate_landmarks, subset_cameras)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "false");
@@ -185,7 +185,7 @@ TEST(triangulate_landmarks, subset_cameras)
 // Select a subset of cameras to triangulation from
 TEST(triangulate_landmarks, subset_cameras_homog)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "false");
@@ -197,7 +197,7 @@ TEST(triangulate_landmarks, subset_cameras_homog)
 // Select a subset of cameras to triangulation from
 TEST(triangulate_landmarks, subset_cameras_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "true");
@@ -209,7 +209,7 @@ TEST(triangulate_landmarks, subset_cameras_ransac)
 // Select a subset of cameras to triangulation from
 TEST(triangulate_landmarks, subset_cameras_homog_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "true");
@@ -221,7 +221,7 @@ TEST(triangulate_landmarks, subset_cameras_homog_ransac)
 // Select a subset of landmarks to triangulate
 TEST(triangulate_landmarks, subset_landmarks)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "false");
@@ -233,7 +233,7 @@ TEST(triangulate_landmarks, subset_landmarks)
 // Select a subset of landmarks to triangulate
 TEST(triangulate_landmarks, subset_landmarks_homog)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "false");
@@ -245,7 +245,7 @@ TEST(triangulate_landmarks, subset_landmarks_homog)
 // Select a subset of landmarks to triangulate
 TEST(triangulate_landmarks, subset_landmarks_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "true");
@@ -257,7 +257,7 @@ TEST(triangulate_landmarks, subset_landmarks_ransac)
 // Select a subset of landmarks to triangulate
 TEST(triangulate_landmarks, subset_landmarks_homog_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "true");
@@ -269,7 +269,7 @@ TEST(triangulate_landmarks, subset_landmarks_homog_ransac)
 // Select a subset of tracks/track_states to constrain the problem
 TEST(triangulate_landmarks, subset_tracks)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "false");
@@ -281,7 +281,7 @@ TEST(triangulate_landmarks, subset_tracks)
 // Select a subset of tracks/track_states to constrain the problem
 TEST(triangulate_landmarks, subset_tracks_homog)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "false");
@@ -293,7 +293,7 @@ TEST(triangulate_landmarks, subset_tracks_homog)
 // Select a subset of tracks/track_states to constrain the problem
 TEST(triangulate_landmarks, subset_tracks_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "ransac");
@@ -305,7 +305,7 @@ TEST(triangulate_landmarks, subset_tracks_ransac)
 // Select a subset of tracks/track_states to constrain the problem
 TEST(triangulate_landmarks, subset_tracks_homog_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "true");
@@ -317,7 +317,7 @@ TEST(triangulate_landmarks, subset_tracks_homog_ransac)
 // Select a subset of tracks/track_states and add noise
 TEST(triangulate_landmarks, noisy_tracks)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "false");
@@ -329,7 +329,7 @@ TEST(triangulate_landmarks, noisy_tracks)
 // Select a subset of tracks/track_states and add noise
 TEST(triangulate_landmarks, noisy_tracks_homog)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "false");
@@ -341,7 +341,7 @@ TEST(triangulate_landmarks, noisy_tracks_homog)
 // Select a subset of tracks/track_states and add noise
 TEST(triangulate_landmarks, noisy_tracks_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "false");
   cfg->set_value("ransac", "true");
@@ -353,7 +353,7 @@ TEST(triangulate_landmarks, noisy_tracks_ransac)
 // Select a subset of tracks/track_states and add noise
 TEST(triangulate_landmarks, noisy_tracks_homog_ransac)
 {
-  kwiver::arrows::mvg::triangulate_landmarks tri_lm;
+  arrows::mvg::triangulate_landmarks tri_lm;
   kwiver::vital::config_block_sptr cfg = tri_lm.get_configuration();
   cfg->set_value("homogeneous", "true");
   cfg->set_value("ransac", "true");

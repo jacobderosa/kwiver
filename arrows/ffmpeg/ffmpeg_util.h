@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_FFMPEG_FFMPEG_UTIL_H_
 #define KWIVER_ARROWS_FFMPEG_FFMPEG_UTIL_H_
 
-#include <arrows/ffmpeg/kwiver_algo_ffmpeg_export.h>
+#include <ffmpeg/kwiver_algo_ffmpeg_export.h>
 
 #include <vital/logger/logger.h>
 

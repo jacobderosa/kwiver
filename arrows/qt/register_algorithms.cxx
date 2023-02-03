@@ -5,10 +5,10 @@
 /// \file
 /// \brief Register Qt algorithms implementation
 
-#include <arrows/qt/kwiver_algo_qt_plugin_export.h>
+#include <qt/kwiver_algo_qt_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <arrows/qt/image_io.h>
+#include <qt/image_io.h>
 
 namespace kwiver {
 namespace arrows {

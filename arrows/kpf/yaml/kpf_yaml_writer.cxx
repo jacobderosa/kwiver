@@ -12,7 +12,7 @@
  */
 
 #include "kpf_yaml_writer.h"
-#include <arrows/kpf/yaml/kpf_yaml_schemas.h>
+#include <kpf/yaml/kpf_yaml_schemas.h>
 
 #include <vital/logger/logger.h>
 static kwiver::vital::logger_handle_t main_logger( kwiver::vital::get_logger( "arrows.kpf.kpf_yaml_writer" ) );

@@ -9,7 +9,7 @@
 
 #include <vital/config/config_difference.h>
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -135,7 +135,7 @@ detect( vital::image_container_sptr image_data) const
 {
   auto detected_set = std::make_shared< kwiver::vital::detected_object_set>();
 
-  using namespace kwiver::arrows::ocv;
+  using namespace arrows::ocv;
   cv::Mat src = image_container::vital_to_ocv( image_data->get_image(),
                                                image_container::BGR_COLOR );
   cv::Mat src_gray;

@@ -10,7 +10,7 @@
 #include <vital/config/config_block_formatter.h>
 #include <vital/types/detected_object_set_util.h>
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 #include <kwiversys/SystemTools.hxx>
 
 #include <opencv2/core/core.hpp>
@@ -255,7 +255,7 @@ detect( vital::image_container_sptr image_data ) const
 {
   kwiver::vital::scoped_cpu_timer t( "Time to Detect Objects" );
 
-  cv::Mat cv_image = kwiver::arrows::ocv::image_container::vital_to_ocv( image_data->get_image(), kwiver::arrows::ocv::image_container::BGR_COLOR );
+  cv::Mat cv_image = arrows::ocv::image_container::vital_to_ocv( image_data->get_image(), arrows::ocv::image_container::BGR_COLOR );
 
   cv::Mat cv_resized_image;
 

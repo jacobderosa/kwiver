@@ -5,8 +5,8 @@
 /// \file
 /// \brief test detected object io
 
-#include <arrows/core/detected_object_set_input_csv.h>
-#include <arrows/core/detected_object_set_output_csv.h>
+#include <core/detected_object_set_input_csv.h>
+#include <core/detected_object_set_output_csv.h>
 
 #include <gtest/gtest.h>
 
@@ -16,7 +16,7 @@
 #include <string>
 
 namespace algo = kwiver::vital::algo;
-namespace kac = kwiver::arrows::core;
+namespace kac = arrows::core;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

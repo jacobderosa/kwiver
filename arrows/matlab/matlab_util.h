@@ -10,8 +10,8 @@
 
 #include <vital/types/image_container.h>
 
-#include <arrows/matlab/mxarray.h>
-#include <arrows/matlab/kwiver_algo_matlab_export.h>
+#include <matlab/mxarray.h>
+#include <matlab/kwiver_algo_matlab_export.h>
 
 namespace kwiver {
 namespace arrows {

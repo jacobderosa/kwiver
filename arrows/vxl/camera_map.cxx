@@ -7,7 +7,7 @@
 
 #include "camera_map.h"
 
-#include <arrows/vxl/camera.h>
+#include <vxl/camera.h>
 
 using namespace kwiver::vital;
 

@@ -7,7 +7,7 @@
 
 #include "lens_distortion.h"
 
-#include <arrows/ceres/types.h>
+#include <ceres/types.h>
 
 #include <ceres/loss_function.h>
 
@@ -69,8 +69,8 @@ CERES_ENUM_HELPERS( ::ceres, PreconditionerType )
 CERES_ENUM_HELPERS( ::ceres, TrustRegionStrategyType )
 CERES_ENUM_HELPERS( ::ceres, DoglegType )
 
-CERES_ENUM_HELPERS( kwiver::arrows::ceres, LossFunctionType )
-CERES_ENUM_HELPERS( kwiver::arrows::ceres, CameraIntrinsicShareType )
+CERES_ENUM_HELPERS( arrows::ceres, LossFunctionType )
+CERES_ENUM_HELPERS( arrows::ceres, CameraIntrinsicShareType )
 
 #undef CERES_ENUM_HELPERS
 

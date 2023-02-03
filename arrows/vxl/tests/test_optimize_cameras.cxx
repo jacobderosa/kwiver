@@ -2,7 +2,7 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/vxl/optimize_cameras.h>
+#include <vxl/optimize_cameras.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
@@ -10,7 +10,7 @@
 
 using namespace kwiver::vital;
 
-using kwiver::arrows::vxl::optimize_cameras;
+using arrows::vxl::optimize_cameras;
 
 static constexpr double noisy_center_tolerance = 2e-10;
 static constexpr double noisy_rotation_tolerance = 2e-10;
@@ -32,4 +32,4 @@ TEST(optimize_cameras, create)
 }
 
 // ----------------------------------------------------------------------------
-#include <arrows/tests/test_optimize_cameras.h>
+#include <tests/test_optimize_cameras.h>

@@ -2,14 +2,14 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <arrows/vxl/estimate_fundamental_matrix.h>
+#include <vxl/estimate_fundamental_matrix.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 using vxl::estimate_fundamental_matrix;
 
@@ -32,4 +32,4 @@ TEST(estimate_fundamental_matrix, create)
 }
 
 // ----------------------------------------------------------------------------
-#include <arrows/tests/test_estimate_fundamental_matrix.h>
+#include <tests/test_estimate_fundamental_matrix.h>

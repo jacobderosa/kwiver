@@ -7,17 +7,17 @@
 
 #include <test_tmpfn.h>
 
-#include <arrows/tests/test_image.h>
+#include <tests/test_image.h>
 
-#include <arrows/ocv/image_container.h>
-#include <arrows/ocv/image_io.h>
+#include <ocv/image_container.h>
+#include <ocv/image_io.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
 #include <gtest/gtest.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows;
+using namespace arrows;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

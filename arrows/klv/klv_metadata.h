@@ -9,7 +9,7 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_METADATA_H_
 #define KWIVER_ARROWS_KLV_KLV_METADATA_H_
 
-#include <arrows/klv/klv_packet.h>
+#include <klv/klv_packet.h>
 
 #include <vital/types/metadata.h>
 

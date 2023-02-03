@@ -5,13 +5,13 @@
 #include <test_eigen.h>
 #include <test_scene.h>
 
-#include <arrows/mvg/camera_options.h>
-#include <arrows/mvg/projected_track_set.h>
+#include <mvg/camera_options.h>
+#include <mvg/projected_track_set.h>
 
 #include <vital/math_constants.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::mvg;
+using namespace arrows::mvg;
 
 // ----------------------------------------------------------------------------
 // Helper to test camera resection

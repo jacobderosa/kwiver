@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_MVG_TRANSFORM_H_
 
 #include <vital/vital_config.h>
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vital/types/camera_perspective_map.h>
 #include <vital/types/similarity.h>

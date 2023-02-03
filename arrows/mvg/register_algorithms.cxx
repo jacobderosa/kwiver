@@ -5,33 +5,33 @@
 /// \file
 /// \brief Plugin algorithm registration for MVG Arrow
 
-#include <arrows/mvg/kwiver_algo_mvg_plugin_export.h>
+#include <mvg/kwiver_algo_mvg_plugin_export.h>
 
 #include <vital/algo/algorithm_factory.h>
 
-#include <arrows/mvg/algo/hierarchical_bundle_adjust.h>
-#include <arrows/mvg/algo/integrate_depth_maps.h>
-#include <arrows/mvg/algo/initialize_cameras_landmarks.h>
-#include <arrows/mvg/algo/initialize_cameras_landmarks_basic.h>
-#include <arrows/mvg/algo/triangulate_landmarks.h>
+#include <mvg/algo/hierarchical_bundle_adjust.h>
+#include <mvg/algo/integrate_depth_maps.h>
+#include <mvg/algo/initialize_cameras_landmarks.h>
+#include <mvg/algo/initialize_cameras_landmarks_basic.h>
+#include <mvg/algo/triangulate_landmarks.h>
 
 // TODO: These are files that should move to MVG from Core
-//#include <arrows/mvg/close_loops_bad_frames_only.h>
-//#include <arrows/mvg/close_loops_appearance_indexed.h>
-//#include <arrows/mvg/close_loops_exhaustive.h>
-//#include <arrows/mvg/close_loops_keyframe.h>
-//#include <arrows/mvg/close_loops_multi_method.h>
-//#include <arrows/mvg/compute_ref_homography_core.h>
-//#include <arrows/mvg/estimate_canonical_transform.h>
-//#include <arrows/mvg/feature_descriptor_io.h>
-//#include <arrows/mvg/filter_features_magnitude.h>
-//#include <arrows/mvg/filter_features_scale.h>
-//#include <arrows/mvg/filter_tracks.h>
-//#include <arrows/mvg/keyframe_selector_basic.h>
-//#include <arrows/mvg/match_features_fundamental_matrix.h>
-//#include <arrows/mvg/match_features_homography.h>
-//#include <arrows/mvg/track_features_augment_keyframes.h>
-//#include <arrows/mvg/track_features_core.h>
+//#include <mvg/close_loops_bad_frames_only.h>
+//#include <mvg/close_loops_appearance_indexed.h>
+//#include <mvg/close_loops_exhaustive.h>
+//#include <mvg/close_loops_keyframe.h>
+//#include <mvg/close_loops_multi_method.h>
+//#include <mvg/compute_ref_homography_core.h>
+//#include <mvg/estimate_canonical_transform.h>
+//#include <mvg/feature_descriptor_io.h>
+//#include <mvg/filter_features_magnitude.h>
+//#include <mvg/filter_features_scale.h>
+//#include <mvg/filter_tracks.h>
+//#include <mvg/keyframe_selector_basic.h>
+//#include <mvg/match_features_fundamental_matrix.h>
+//#include <mvg/match_features_homography.h>
+//#include <mvg/track_features_augment_keyframes.h>
+//#include <mvg/track_features_core.h>
 
 namespace kwiver {
 namespace arrows {

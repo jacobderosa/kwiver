@@ -5,17 +5,17 @@
 #include <test_gtest.h>
 #include <test_tmpfn.h>
 
-#include <arrows/ffmpeg/ffmpeg_video_input.h>
-#include <arrows/ffmpeg/ffmpeg_video_output.h>
-#include <arrows/klv/klv_metadata.h>
+#include <ffmpeg/ffmpeg_video_input.h>
+#include <ffmpeg/ffmpeg_video_output.h>
+#include <klv/klv_metadata.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 #include <vital/range/iota.h>
 
 #include <random>
 
-namespace ffmpeg = kwiver::arrows::ffmpeg;
-namespace klv = kwiver::arrows::klv;
+namespace ffmpeg = arrows::ffmpeg;
+namespace klv = arrows::klv;
 namespace kv = kwiver::vital;
 namespace kvr = kwiver::vital::range;
 

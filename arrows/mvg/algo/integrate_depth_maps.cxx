@@ -7,8 +7,8 @@
 * \brief Source file for integration of depth maps using a voxel grid
 */
 
-#include <arrows/mvg/algo/integrate_depth_maps.h>
-#include <arrows/core/depth_utils.h>
+#include <mvg/algo/integrate_depth_maps.h>
+#include <core/depth_utils.h>
 
 #include <vital/util/transform_image.h>
 
@@ -380,7 +380,7 @@ integrate_depth_maps::integrate(
 {
   double pixel_to_world_scale;
   pixel_to_world_scale =
-    kwiver::arrows::core::
+    arrows::core::
       compute_pixel_to_world_scale(minpt_bound, maxpt_bound, cameras);
 
   vector_3d diff = maxpt_bound - minpt_bound;

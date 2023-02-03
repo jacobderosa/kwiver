@@ -5,7 +5,7 @@
 /// \file
 /// \brief depth estimation utility functions.
 
-#include <arrows/core/depth_utils.h>
+#include <core/depth_utils.h>
 #include <vital/math_constants.h>
 #include <iostream>
 #include <cmath>

@@ -5,7 +5,7 @@
 #include <test_eigen.h>
 #include <test_random_point.h>
 
-#include <arrows/vxl/estimate_similarity_transform.h>
+#include <vxl/estimate_similarity_transform.h>
 
 #include <vital/plugin_loader/plugin_manager.h>
 
@@ -40,7 +40,7 @@ TEST(estimate_similarity, create)
 // ----------------------------------------------------------------------------
 TEST(estimate_similarity, not_enough_points)
 {
-  kwiver::arrows::vxl::estimate_similarity_transform est_ST;
+  arrows::vxl::estimate_similarity_transform est_ST;
   std::vector<vector_3d> from, to;
   EXPECT_THROW(
     est_ST.estimate_transform(from, to),
@@ -51,7 +51,7 @@ TEST(estimate_similarity, not_enough_points)
 // ----------------------------------------------------------------------------
 TEST(estimate_similarity, uneven_sets)
 {
-  kwiver::arrows::vxl::estimate_similarity_transform est_ST;
+  arrows::vxl::estimate_similarity_transform est_ST;
   std::vector<vector_3d> from, to;
   vector_3d dummy_vec(0,0,0);
 
@@ -95,7 +95,7 @@ TEST(estimate_similarity, reprojection_100pts)
   }
 
   cerr << "Estimating similarity transformation between point sets" << endl;
-  kwiver::arrows::vxl::estimate_similarity_transform est_ST;
+  arrows::vxl::estimate_similarity_transform est_ST;
   similarity_d e_sim = est_ST.estimate_transform(original_points,
                                                  transformed_points);
 
@@ -161,7 +161,7 @@ TEST(estimate_similarity, reprojection_4pts)
   }
 
   cerr << "Estimating similarity transformation between point sets" << endl;
-  kwiver::arrows::vxl::estimate_similarity_transform est_ST;
+  arrows::vxl::estimate_similarity_transform est_ST;
   similarity_d e_sim = est_ST.estimate_transform(original_points,
                                                  transformed_points);
 
@@ -205,7 +205,7 @@ TEST(estimate_similarity, reprojection_3pts)
   }
 
   cerr << "Estimating similarity transformation between point sets" << endl;
-  kwiver::arrows::vxl::estimate_similarity_transform est_ST;
+  arrows::vxl::estimate_similarity_transform est_ST;
   similarity_d e_sim = est_ST.estimate_transform(original_points,
                                                  transformed_points);
 
@@ -248,7 +248,7 @@ TEST(estimate_similarity, reprojection_100pts_noisy)
   }
 
   cerr << "Estimating similarity transformation between point sets" << endl;
-  kwiver::arrows::vxl::estimate_similarity_transform est_ST;
+  arrows::vxl::estimate_similarity_transform est_ST;
   similarity_d e_sim = est_ST.estimate_transform(original_points,
                                                  transformed_points);
 

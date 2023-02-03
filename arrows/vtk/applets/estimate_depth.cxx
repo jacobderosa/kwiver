@@ -4,8 +4,8 @@
 
 #include "estimate_depth.h"
 
-#include <arrows/core/depth_utils.h>
-#include <arrows/vtk/depth_utils.h>
+#include <core/depth_utils.h>
+#include <vtk/depth_utils.h>
 #include <vital/algo/compute_depth.h>
 #include <vital/algo/video_input.h>
 #include <vital/applets/applet_config.h>
@@ -38,9 +38,9 @@ namespace kva = ::kwiver::vital::algo;
 using kwiver::vital::algo::compute_depth;
 using kwiver::vital::algo::video_input;
 using kwiver::vital::camera_perspective;
-using kwiver::arrows::core::find_similar_cameras_angles;
-using kwiver::arrows::core::gather_depth_frames;
-using kwiver::arrows::core::compute_robust_ROI;
+using arrows::core::find_similar_cameras_angles;
+using arrows::core::gather_depth_frames;
+using arrows::core::compute_robust_ROI;
 
 
 namespace {
@@ -444,7 +444,7 @@ public:
     LOG_DEBUG(main_logger, "ref frame at index " << ref_frame
                            << " out of " << frames_out.size());
 
-    auto crop = kwiver::arrows::core::project_3d_bounds(minpt, maxpt, *cameras_out.at(ref_frame),
+    auto crop = arrows::core::project_3d_bounds(minpt, maxpt, *cameras_out.at(ref_frame),
                                                         static_cast<int>( ref_img.width() ),
                                                         static_cast<int>( ref_img.height() ) );
 
@@ -499,7 +499,7 @@ public:
     kv::vector_3d minpt({bounds[0], bounds[2], bounds[4]});
     kv::vector_3d maxpt({bounds[1], bounds[3], bounds[5]});
 
-    kwiver::arrows::core::height_range_from_3d_bounds(minpt, maxpt, height_min, height_max);
+    arrows::core::height_range_from_3d_bounds(minpt, maxpt, height_min, height_max);
 
     std::vector<kv::frame_id_t> frames_in_range;
     // Compute for one frame if specified, otherwise compute a linear sampling

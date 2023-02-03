@@ -5,15 +5,15 @@
 /// \file
 /// \brief register vtk applets into a plugin
 
-#include <arrows/vtk/applets/kwiver_algo_vtk_applets_export.h>
+#include <vtk/applets/kwiver_algo_vtk_applets_export.h>
 #include <vital/plugin_loader/plugin_loader.h>
 #include <vital/applets/applet_registrar.h>
 
 #ifdef VTK_ENABLE_COLOR_MESH
-#include <arrows/vtk/applets/color_mesh.h>
+#include <vtk/applets/color_mesh.h>
 #endif
-#include <arrows/vtk/applets/estimate_depth.h>
-#include <arrows/vtk/applets/fuse_depth.h>
+#include <vtk/applets/estimate_depth.h>
+#include <vtk/applets/fuse_depth.h>
 
 namespace kwiver {
 namespace arrows {

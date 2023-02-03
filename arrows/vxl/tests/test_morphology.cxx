@@ -4,9 +4,9 @@
 
 #include <test_gtest.h>
 
-#include <arrows/vxl/image_container.h>
-#include <arrows/vxl/image_io.h>
-#include <arrows/vxl/morphology.h>
+#include <vxl/image_container.h>
+#include <vxl/image_io.h>
+#include <vxl/morphology.h>
 
 #include <vil/algo/vil_threshold.h>
 #include <vil/vil_convert.h>
@@ -16,8 +16,8 @@
 #include <gtest/gtest.h>
 
 namespace kv = kwiver::vital;
-namespace ka = kwiver::arrows;
-namespace kav = kwiver::arrows::vxl;
+namespace ka = arrows;
+namespace kav = arrows::vxl;
 
 kv::path_t g_data_dir;
 static std::string test_color_image_name = "images/kitware_logos/small_color_logo.png";

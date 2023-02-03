@@ -4,16 +4,16 @@
 
 #include <test_scene.h>
 
-#include <arrows/mvg/metrics.h>
-#include <arrows/mvg/projected_track_set.h>
-#include <arrows/mvg/algo/triangulate_landmarks.h>
+#include <mvg/metrics.h>
+#include <mvg/projected_track_set.h>
+#include <mvg/algo/triangulate_landmarks.h>
 #include <vital/tests/rpc_reader.h>
 #include <tests/test_gtest.h>
 
 kwiver::vital::path_t g_data_dir;
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::mvg;
+using namespace arrows::mvg;
 
 // ----------------------------------------------------------------------------
 int main(int argc, char** argv)

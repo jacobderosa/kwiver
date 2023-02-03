@@ -5,7 +5,7 @@
 /// \file
 /// \brief VTK depth estimation utility functions.
 
-#include <arrows/vtk/depth_utils.h>
+#include <vtk/depth_utils.h>
 
 #include <vital/types/bounding_box.h>
 

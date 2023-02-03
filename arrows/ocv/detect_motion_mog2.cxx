@@ -11,7 +11,7 @@
 #include <vital/types/matrix.h>
 #include <vital/vital_config.h>
 
-#include <arrows/ocv/image_container.h>
+#include <ocv/image_container.h>
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/imgproc.hpp>

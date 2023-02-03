@@ -8,11 +8,11 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_PARSER_H_
 #define KWIVER_ARROWS_KLV_KLV_PARSER_H_
 
-#include <arrows/klv/klv_data_format.h>
-#include <arrows/klv/klv_key.h>
-#include <arrows/klv/klv_tag_traits.h>
-#include <arrows/klv/klv_value.h>
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/klv_data_format.h>
+#include <klv/klv_key.h>
+#include <klv/klv_tag_traits.h>
+#include <klv/klv_value.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include <vital/types/timestamp.h>
 

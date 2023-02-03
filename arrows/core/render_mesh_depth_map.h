@@ -3,13 +3,13 @@
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
 /// \file
-/// \brief Implementation of kwiver::arrows::render_mesh_depth_map function
+/// \brief Implementation of arrows::render_mesh_depth_map function
 
 #ifndef KWIVER_ARROWS_CORE_RENDER_MESH_DEPTH_MAP_H
 #define KWIVER_ARROWS_CORE_RENDER_MESH_DEPTH_MAP_H
 
-#include <arrows/core/kwiver_algo_core_export.h>
-#include <arrows/core/triangle_scan_iterator.h>
+#include <core/kwiver_algo_core_export.h>
+#include <core/triangle_scan_iterator.h>
 
 #include <vital/types/camera_perspective.h>
 #include <vital/types/image_container.h>

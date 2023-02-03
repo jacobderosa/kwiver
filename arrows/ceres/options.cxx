@@ -8,14 +8,14 @@
 #include "lens_distortion.h"
 #include "options.h"
 
-#include <arrows/ceres/camera_intrinsic_prior.h>
-#include <arrows/ceres/camera_position.h>
-#include <arrows/ceres/camera_smoothness.h>
+#include <ceres/camera_intrinsic_prior.h>
+#include <ceres/camera_position.h>
+#include <ceres/camera_smoothness.h>
 
 #include <vital/math_constants.h>
 
 using namespace kwiver::vital;
-using namespace kwiver::arrows::mvg;
+using namespace arrows::mvg;
 
 namespace kwiver {
 

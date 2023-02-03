@@ -15,8 +15,8 @@
 #include "klv_uuid.h"
 #include "klv_value.h"
 
-#include <arrows/klv/klv_length_constraints.h>
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/klv_length_constraints.h>
+#include <klv/kwiver_algo_klv_export.h>
 #include <vital/exceptions/metadata.h>
 #include <vital/logger/logger.h>
 

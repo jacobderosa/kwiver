@@ -4,7 +4,7 @@
 
 #include <test_tmpfn.h>
 
-#include <arrows/core/feature_descriptor_io.h>
+#include <core/feature_descriptor_io.h>
 #include <vital/plugin_loader/plugin_manager.h>
 
 #include <gtest/gtest.h>
@@ -32,7 +32,7 @@ TEST(feature_descriptor_io, create)
 // Test writing Null data, which should throw an exception
 TEST(feature_descriptor_io, write_null_features_descriptors)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
 
   feature_set_sptr empty_features;
   descriptor_set_sptr empty_descriptors;
@@ -48,7 +48,7 @@ TEST(feature_descriptor_io, write_null_features_descriptors)
 // Test writing Null data, which should throw an exception
 TEST(feature_descriptor_io, load_bad_file_path)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
 
   feature_set_sptr loaded_features;
   descriptor_set_sptr loaded_descriptors;
@@ -198,7 +198,7 @@ equal_descriptor_set(descriptor_set_sptr ds1, descriptor_set_sptr ds2)
 // Test writing just features
 TEST(feature_descriptor_io, read_write_features)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   auto const filename = kwiver::testing::temp_file_name( "test-", ".kwfd" );
 
   feature_set_sptr features = make_n_features<float>(100);
@@ -220,7 +220,7 @@ TEST(feature_descriptor_io, read_write_features)
 // Test writing just descriptors
 TEST(feature_descriptor_io, read_write_descriptors)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   auto const filename = kwiver::testing::temp_file_name( "test-", ".kwfd" );
 
   descriptor_set_sptr descriptors = make_n_descriptors<float>(100, 128);
@@ -241,7 +241,7 @@ TEST(feature_descriptor_io, read_write_descriptors)
 // Test writing both features and descriptors
 TEST(feature_descriptor_io, read_write_features_descriptors)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   auto const filename = kwiver::testing::temp_file_name( "test-", ".kwfd" );
 
   feature_set_sptr features = make_n_features<double>(50);
@@ -263,7 +263,7 @@ TEST(feature_descriptor_io, read_write_features_descriptors)
 // Test writing a mix of features types
 TEST(feature_descriptor_io, read_write_mixed_features)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   auto const filename = kwiver::testing::temp_file_name( "test-", ".kwfd" );
 
   feature_set_sptr features1 = make_n_features<double>(50);
@@ -291,7 +291,7 @@ TEST(feature_descriptor_io, read_write_mixed_features)
 // Test writing a mix of descriptor dimensions
 TEST(feature_descriptor_io, write_mixed_descriptor_dim)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   auto const filename = kwiver::testing::temp_file_name( "test-", ".kwfd" );
 
   feature_set_sptr empty_features;
@@ -311,7 +311,7 @@ TEST(feature_descriptor_io, write_mixed_descriptor_dim)
 // Test writing a mix of descriptor types
 TEST(feature_descriptor_io, write_mixed_descriptor_type)
 {
-  using namespace kwiver::arrows;
+  using namespace arrows;
   auto const filename = kwiver::testing::temp_file_name( "test-", ".kwfd" );
 
   feature_set_sptr empty_features;

@@ -7,8 +7,8 @@
 
 #include "klv_0903_vobject_set.h"
 
-#include <arrows/klv/klv_series.hpp>
-#include <arrows/klv/klv_util.h>
+#include <klv/klv_series.hpp>
+#include <klv/klv_util.h>
 
 namespace kwiver {
 

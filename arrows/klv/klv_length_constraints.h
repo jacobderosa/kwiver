@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_KLV_KLV_LENGTH_CONSTRAINTS_H_
 #define KWIVER_ARROWS_KLV_KLV_LENGTH_CONSTRAINTS_H_
 
-#include <arrows/klv/kwiver_algo_klv_export.h>
+#include <klv/kwiver_algo_klv_export.h>
 
 #include <vital/optional.h>
 #include <vital/util/interval.h>

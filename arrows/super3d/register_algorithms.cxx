@@ -5,10 +5,10 @@
 /// \file
 /// \brief Register depth algorithms implementation
 
-#include <arrows/super3d/kwiver_algo_super3d_plugin_export.h>
+#include <super3d/kwiver_algo_super3d_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <arrows/super3d/compute_depth.h>
+#include <super3d/compute_depth.h>
 
 namespace kwiver {
 namespace arrows {
@@ -26,7 +26,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
   }
 
   // add factory               implementation-name       type-to-create
-  auto fact = vpm.ADD_ALGORITHM("super3d", kwiver::arrows::super3d::compute_depth);
+  auto fact = vpm.ADD_ALGORITHM("super3d", arrows::super3d::compute_depth);
   fact->add_attribute(kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
     "compute depth maps from image sequences.")
     .add_attribute(kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name)

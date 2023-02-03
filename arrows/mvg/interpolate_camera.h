@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_MVG_INTERPOLATE_CAMERA_H_
 
 #include <vital/vital_config.h>
-#include <arrows/mvg/kwiver_algo_mvg_export.h>
+#include <mvg/kwiver_algo_mvg_export.h>
 
 #include <vector>
 #include <vital/types/camera_perspective.h>

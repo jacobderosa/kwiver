@@ -12,7 +12,7 @@
 
 #include <string>
 
-#include <arrows/kpf/yaml/kpf_yaml_export.h>
+#include <kpf/yaml/kpf_yaml_export.h>
 
 #include <vital/exceptions/base.h>
 

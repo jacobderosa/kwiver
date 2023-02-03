@@ -11,7 +11,7 @@
 #ifndef KWIVER_VITAL_KPR_PARSE_UTILS_H_
 #define KWIVER_VITAL_KPR_PARSE_UTILS_H_
 
-#include <arrows/kpf/yaml/kpf_packet.h>
+#include <kpf/yaml/kpf_packet.h>
 
 #include <string>
 #include <vector>
