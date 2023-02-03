@@ -1,0 +1,46 @@
+# Export definitions for kwiver to be used from find_package
+#include("${CMAKE_CURRENT_LIST_DIR}/arrows-config-targets.cmake")
+
+# KWIVER version
+set(ARROWS_VERSION_MAJOR @ARROWS_VERSION_MAJOR@)
+set(ARROWS_VERSION_MINOR @AROWS_VERSION_MINOR@)
+set(ARROWS_VERSION_PATCH @ARROWS_VERSION_PATCH@)
+set(ARROWS_VERSION "@ARROWS_VERSION@")
+
+# Extend module path for KWIVER utils
+set(CMAKE_MODULE_PATH "@KWIVER_CMAKE_DIR@" "${CMAKE_MODULE_PATH}")
+
+# ARROWS include directory
+set(ARROWS_INCLUDE_DIRS
+  "@ARROWS_SOURCE_DIR@"
+  "@ARROWS_BINARY_DIR@"
+  "@ARROWS_INCLUDE_DIRS@" )
+
+set(ARROWS_TEST_INCLUDE_DIRS
+  "@ARROWS_SOURCE_DIR@/tests"
+  )
+
+if (WIN32)
+  set(SETUP_BATCH_FILES "@SETUP_BATCH_FILES@")
+  add_definitions(-DBOOST_ALL_NO_LIB)
+  add_definitions(-DBOOST_PROGRAM_OPTIONS_DYN_LINK)
+  if(${MSVC_VERSION} GREATER_EQUAL 1915)
+    # You must acknowledge that you understand MSVC
+    # resolved a byte alignment issue in this compiler.
+    # We get this due to using Eigen objects and
+    # allocating those objects with make_shared
+    add_definitions(-D_ENABLE_EXTENDED_ALIGNED_STORAGE)
+  endif()
+endif ()
+
+set(ARROWS_DEFAULT_LIBRARY_DIR "@ARROWS_DEFAULT_LIBRARY_DIR@")
+set(ARROWS_LIBRARY_DIR         "@ARROWS_BINARY_DIR@/@ARROWS_DEFAULT_LIBRARY_DIR@")
+set(ARROWS_LIBRARIES           @arrows_libs@)
+set(ARROWS_LIBRARY_DIRS        "${ARROWS_LIBRARY_DIR}"  "@ARROWS_LIBRARY_DIRS@")
+#set(KWIVER_MODULE_DIR          "${KWIVER_LIBRARY_DIR}/modules")
+#set(KWIVER_DOCUMENTATION_DIR   "@KWIVER_BINARY_DIR@/doc")
+#link from arrow build dir to kwiver docs?
+
+set(ARROWS_CMAKE_DIR           "@ARROWS_CMAKE_DIR@")
+
+set(ARROWS_DIR "@ARROWS_BINARY_DIR@")
