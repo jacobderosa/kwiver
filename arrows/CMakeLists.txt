@@ -33,6 +33,7 @@ if ( IS_DIRECTORY ${kwiver_DIR} )
   find_package( kwiver NO_MODULE )
   if ( kwiver_FOUND )
     # Search for libraries in the kwiver install root
+    list(APPEND CMAKE_PREFIX_PATH "${kwiver_DIR}")
     list(APPEND CMAKE_PREFIX_PATH "${fletch_DIR}")
   endif()
 endif()
@@ -40,7 +41,14 @@ endif()
 set(ARROWS_CMAKE_DIR "${ARROWS_SOURCE_DIR}/CMake")
 list(INSERT CMAKE_MODULE_PATH 0 ${KWIVER_CMAKE_DIR})
 
-set(BUILD_SHARED_LIBS ${KWIVER_BUILD_SHARED})
+set(BUILD_SHARED_LIBS ${KWIVER_BUILT_SHARED})
+
+#get_cmake_property(_variableNames VARIABLES)
+#list (SORT _variableNames)
+#foreach (_variableName ${_variableNames})
+#    message(STATUS "${_variableName}=${${_variableName}}")
+#endforeach()
+
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
@@ -61,7 +69,9 @@ add_subdirectory( core )
 
 add_subdirectory( serialize )
 
-set( ARROWS_LIBRARY_DIRS "")
+# Prepare space-separated list of library names for config
+get_property(arrows_libs GLOBAL PROPERTY kwiver_libraries)
+string(REPLACE ";" " " arrows_libs "${arrows_libs}")
 
 set(ARROWS_CONFIG_FILE          "${ARROWS_BINARY_DIR}/arrows-config.cmake")
 configure_file(

@@ -1,7 +1,7 @@
 #ifndef KWIVER_ARROWS_COLMAP_COLMAP_H
 #define KWIVER_ARROWS_COLMAP_COLMAP_H
 
-#include <colmap/kwiver_algo_colmap_export.h>
+#include <kwiver_algo_colmap_export.h>
 #include <colmap/mvs/image.h>
 #include <iostream>
 #include <vital/types/image_container.h>

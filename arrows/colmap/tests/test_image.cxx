@@ -1,4 +1,4 @@
-#include <colmap/image_container.h>
+#include <image_container.h>
 #include <colmap/mvs/image.h>
 #include <fstream>
 #include <gtest/gtest.h>
@@ -33,7 +33,7 @@ TEST ( colmap, vital_to_bitmap )
 
   // convert vital to colmap
   colmap::Bitmap actual_img =
-    arrows::colmap_arrow::image_container::vital_to_bitmap(
+    colmap_arrow::image_container::vital_to_bitmap(
        vital_img->get_image() );
 
   // compare vital and colmap images

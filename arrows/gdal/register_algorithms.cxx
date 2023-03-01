@@ -5,10 +5,10 @@
 /// \file
 /// \brief GDAL algorithm registration implementation
 
-#include <gdal/kwiver_algo_gdal_plugin_export.h>
+#include <kwiver_algo_gdal_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <gdal/image_io.h>
+#include <image_io.h>
 
 namespace kwiver {
 namespace arrows {
@@ -26,7 +26,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
   }
 
   // add factory               implementation-name       type-to-create
-  auto fact = vpm.ADD_ALGORITHM( "gdal", arrows::gdal::image_io );
+  auto fact = vpm.ADD_ALGORITHM( "gdal", gdal::image_io );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                     "Read and write image using GDAL." )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )

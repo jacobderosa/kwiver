@@ -1,5 +1,5 @@
-#include <colmap/image_container.h>
-#include <colmap/util/version.h>
+#include <image_container.h>
+#include <util/version.h>
 
 // TODO: Remove this once everything works
 struct Color
@@ -29,7 +29,7 @@ read_from_img( kwiver::vital::image img, int u, int v )
 }
 
 colmap::Bitmap
-arrows::colmap_arrow::image_container
+colmap_arrow::image_container
 ::vital_to_bitmap( kwiver::vital::image image )
 {
   colmap::Bitmap new_img;
@@ -50,7 +50,7 @@ arrows::colmap_arrow::image_container
 }
 
 colmap::mvs::Image
-arrows::colmap_arrow::image_container
+colmap_arrow::image_container
 ::vital_to_colmap( kwiver::vital::image& image )
 {
   return colmap::mvs::Image();
