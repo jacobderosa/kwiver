@@ -106,7 +106,7 @@ target_link_libraries(
     ${COLMAP_LIBRARIES}
 )
 
-if (KWIVER_ENABLE_TESTS)
+if (COLMAP_ENABLE_TESTS)
     include_directories(${KWIVER_TEST_INCLUDE_DIR})
     add_subdirectory(tests)
 endif()
