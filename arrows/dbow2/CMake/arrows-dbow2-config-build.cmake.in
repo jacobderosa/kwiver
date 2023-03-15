@@ -1,0 +1,41 @@
+# Export definitions for kwiver to be used from find_package
+#include("${CMAKE_CURRENT_LIST_DIR}/arrows-dbow2-config-targets.cmake")
+
+# KWIVER version
+set(ARROWS_DBOW2_VERSION_MAJOR @ARROWS_DBOW2_VERSION_MAJOR@)
+set(ARROWS_DBOW2_VERSION_MINOR @ARROWS_DBOW2_VERSION_MINOR@)
+set(ARROWS_DBOW2_VERSION_PATCH @ARROWS_DBOW2_VERSION_PATCH@)
+set(ARROWS_DBOW2_VERSION "@ARROWS_DBOW2_VERSION@")
+
+# DBOW2 include directory
+set(ARROWS_DBOW2_INCLUDE_DIRS
+  "@ARROWS_DBOW2_SOURCE_DIR@"
+  "@ARROWS_DBOW2_BINARY_DIR@"
+  )
+
+set(ARROWS_DBOW2_TEST_INCLUDE_DIRS
+  "@ARROWS_DBOW2_SOURCE_DIR@/tests"
+  )
+
+if (WIN32)
+  set(SETUP_BATCH_FILES "@SETUP_BATCH_FILES@")
+  add_definitions(-DBOOST_ALL_NO_LIB)
+  add_definitions(-DBOOST_PROGRAM_OPTIONS_DYN_LINK)
+  if(${MSVC_VERSION} GREATER_EQUAL 1915)
+    # You must acknowledge that you understand MSVC
+    # resolved a byte alignment issue in this compiler.
+    # We get this due to using Eigen objects and
+    # allocating those objects with make_shared
+    add_definitions(-D_ENABLE_EXTENDED_ALIGNED_STORAGE)
+  endif()
+endif ()
+
+set(ARROWS_DBOW2_DEFAULT_LIBRARY_DIR "@ARROWS_DBOW2_DEFAULT_LIBRARY_DIR@")
+set(ARROWS_DBOW2_LIBRARY_DIR         "@ARROWS_DBOW2_BINARY_DIR@/@ARROWS_DBOW2_DEFAULT_LIBRARY_DIR@")
+set(ARROWS_DBOW2_LIBRARIES           @arrows_dbow2_libs@)
+set(ARROWS_DBOW2_DOCUMENTATION_DIR   "@KWIVER_DOCUMENTATION_DIR@")
+set(ARROWS_DBOW2_PLUGIN_DIR          "${ARROWS_DBOW2_LIBRARY_DIR}/@kwiver_plugin_algorithm_subdir@")
+
+set(ARROWS_DBOW2_CMAKE_DIR           "@ARROWS_DBOW2_CMAKE_DIR@")
+
+set(ARROWS_DBOW2_DIR "@ARROWS_DBOW2_BINARY_DIR@")
