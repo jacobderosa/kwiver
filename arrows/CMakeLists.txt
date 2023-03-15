@@ -16,14 +16,8 @@ set(ARROWS_VERSION "${ARROWS_VERSION_MAJOR}.${ARROWS_VERSION_MINOR}.${ARROWS_VER
 # Organize target into folders for IDEs that support it
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-set(CMAKE_FOLDER "Arrows")
 set(ARROWS_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
 set(ARROWS_BINARY_DIR           "${CMAKE_BINARY_DIR}")
-
-# Default library dir
-set(ARROWS_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
-    "Default library directory for arrows")
-mark_as_advanced(ARROWS_DEFAULT_LIBRARY_DIR)
 
 ###
 # Look for and use KWIVER
@@ -38,17 +32,18 @@ if ( IS_DIRECTORY ${kwiver_DIR} )
   endif()
 endif()
 
+# Default library dir
+set(ARROWS_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
+    "Default library directory for arrows")
+mark_as_advanced(ARROWS_DEFAULT_LIBRARY_DIR)
+
 set(ARROWS_CMAKE_DIR "${ARROWS_SOURCE_DIR}/CMake")
 list(INSERT CMAKE_MODULE_PATH 0 ${KWIVER_CMAKE_DIR})
+set( kwiver_plugin_algorithm_subdir               ${KWIVER_PLUGIN_ALGORITHM_DIR} )
 
-set(BUILD_SHARED_LIBS ${KWIVER_BUILT_SHARED})
-
-#get_cmake_property(_variableNames VARIABLES)
-#list (SORT _variableNames)
-#foreach (_variableName ${_variableNames})
-#    message(STATUS "${_variableName}=${${_variableName}}")
-#endforeach()
-
+OPTION(ARROWS_BUILD_SHARED     "Build ARROWS components shared or not" TRUE )
+MARK_AS_ADVANCED( ARROWS_BUILD_SHARED )
+set(BUILD_SHARED_LIBS ${ARROWS_BUILT_SHARED})
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )

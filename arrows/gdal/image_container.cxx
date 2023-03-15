@@ -167,7 +167,7 @@ image_container
     default:
     {
       std::stringstream ss;
-      ss << "gdal::image_io::load(): "
+      ss << "arrows_gdal::image_io::load(): "
          << "Unknown or unsupported pixal type: "
          << GDALGetDataTypeName(bandType);
       VITAL_THROW( vital::image_type_mismatch_exception, ss.str() );

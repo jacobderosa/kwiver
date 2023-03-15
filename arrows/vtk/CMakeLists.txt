@@ -1,5 +1,6 @@
 # Build / Install VTK arrow
 
+cmake_minimum_required(VERSION 3.15)
 project(ARROWS_VTK)
 
 ###
@@ -34,22 +35,13 @@ if ( IS_DIRECTORY ${kwiver_DIR} )
   endif()
 endif()
 
-###
-# Look for and use ARROWS CORE
-#
-set( arrows_DIR "" CACHE PATH "Path to build directory of ARROWS" )
-if ( IS_DIRECTORY ${arrows_DIR} )
-  find_package( arrows NO_MODULE )
-  if ( arrows_FOUND )
-    # Search for libraries in the arrows install root
-    list(APPEND CMAKE_PREFIX_PATH "${ARROWS_DIR}")
-  endif()
-endif()
-
 set(ARROWS_VTK_CMAKE_DIR "${ARROWS_VTK_SOURCE_DIR}/CMake")
 list(INSERT CMAKE_MODULE_PATH 0 ${KWIVER_CMAKE_DIR})
 
-set(BUILD_SHARED_LIBS ${KWIVER_BUILT_SHARED})
+OPTION(ARROWS_VTK_ENABLE_TESTS                "Enable testing" OFF )
+OPTION(ARROWS_VTK_BUILD_SHARED     "Build ARROWS-VTK components shared or not" TRUE )
+MARK_AS_ADVANCED( ARROWS_VTK_BUILD_SHARED )
+set(BUILD_SHARED_LIBS ${ARROWS_VTK_BUILT_SHARED})
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
@@ -59,12 +51,8 @@ include( kwiver-depends )
 # project includes
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 include_directories(${KWIVER_INCLUDE_DIRS})
-include_directories(${ARROWS_INCLUDE_DIRS})
-include_directories("/kwiver/vital/internal")
 
 include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
-
-set(CMAKE_FOLDER "Arrows/VTK")
 
 set( plugin_vtk_headers
   depth_utils.h
@@ -131,9 +119,13 @@ target_link_libraries( kwiver_algo_vtk
 #  register_algorithms.cxx
 #  )
 
-if (VTK_ENABLE_TESTS)
+if (ARROWS_VTK_ENABLE_TESTS)
+  enable_testing()
+  include(CTest)
+  set(BUILD_TESTING    ON)  # needed for compatibility with kwiversys
+  mark_as_advanced(BUILD_TESTING)
   include_directories(${KWIVER_TEST_INCLUDE_DIR})
-#  add_subdirectory(tests)
+  add_subdirectory( tests )
 endif()
 
 if (KWIVER_ENABLE_TOOLS)

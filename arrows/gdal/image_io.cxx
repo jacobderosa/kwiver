@@ -24,7 +24,7 @@ vital::image_container_sptr
 image_io
 ::load_(const std::string& filename) const
 {
-  return vital::image_container_sptr( new gdal::image_container( filename ) );
+  return vital::image_container_sptr( new arrows_gdal::image_container( filename ) );
 }
 
 /// Save image image to a file

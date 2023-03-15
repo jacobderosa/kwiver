@@ -327,6 +327,8 @@ string(REPLACE ";" " " kwiver_libs "${kwiver_libs}")
 list(APPEND KWIVER_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 set( KWIVER_LIBRARY_DIRS "")
 
+list(APPEND KWIVER_INCLUDE_DIRS "${KWIVER_SOURCE_DIR}/vital/internal")
+
 if ( NOT fletch_ENABLED_Boost)
   list( APPEND KWIVER_INCLUDE_DIRS "${BOOST_ROOT_ARG}/include")
   list( APPEND KWIVER_LIBRARY_DIRS "${BOOST_ROOT_ARG}/lib")

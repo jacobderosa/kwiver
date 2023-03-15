@@ -154,8 +154,12 @@ algorithms_create_plugin( kwiver_algo_core
   )
 
 if (ARROWS_ENABLE_TESTS)
+  enable_testing()
+  include(CTest)
+  set(BUILD_TESTING    ON)  # needed for compatibility with kwiversys
+  mark_as_advanced(BUILD_TESTING)
   include_directories(${KWIVER_TEST_INCLUDE_DIR})
-  add_subdirectory(tests)
+  add_subdirectory( tests )
 endif()
 
 if (ARROWS_ENABLE_TOOLS)

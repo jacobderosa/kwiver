@@ -19,14 +19,14 @@ KWIVER_ALGO_GDAL_PLUGIN_EXPORT
 void
 register_factories( kwiver::vital::plugin_loader& vpm )
 {
-  static auto const module_name = std::string( "arrows.gdal" );
+  static auto const module_name = std::string( "arrows_gdal" );
   if (vpm.is_module_loaded( module_name ) )
   {
     return;
   }
 
   // add factory               implementation-name       type-to-create
-  auto fact = vpm.ADD_ALGORITHM( "gdal", gdal::image_io );
+  auto fact = vpm.ADD_ALGORITHM( "arrows_gdal", arrows_gdal::image_io );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                     "Read and write image using GDAL." )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )
