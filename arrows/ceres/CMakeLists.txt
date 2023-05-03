@@ -16,8 +16,6 @@ set(ARROWS_CERES_VERSION "${ARROWS_CERES_VERSION_MAJOR}.${ARROWS_CERES_VERSION_M
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "Ceres")
-set(ARROWS_CERES_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_CERES_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_CERES_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -57,19 +55,22 @@ OPTION(ARROWS_CERES_BUILD_SHARED     "Build ARROWS-CERES components shared or no
 MARK_AS_ADVANCED( ARROWS_CERES_BUILD_SHARED )
 set(BUILD_SHARED_LIBS ${ARROWS_CERES_BUILT_SHARED})
 
-set( kwiver_plugin_algorithm_subdir               ${KWIVER_PLUGIN_ALGORITHM_DIR} )
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
-
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-include_directories(${ARROWS_MVG_INCLUDE_DIRS})
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( ceres_headers_public
   bundle_adjust.h
@@ -86,13 +87,13 @@ set( ceres_headers_private
   )
 
 kwiver_install_headers(
-  SUBDIR     ceres
+  SUBDIR     arrows/ceres
   ${ceres_headers_public}
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_ceres_export.h
-  NOPATH   SUBDIR     ceres
+  NOPATH   SUBDIR     arrows/ceres
   )
 
 set( ceres_sources
@@ -109,15 +110,19 @@ kwiver_add_library( kwiver_algo_ceres
   ${ceres_sources}
   )
 target_link_libraries( kwiver_algo_ceres
-  PUBLIC               vital_algo
+  PUBLIC               kwiver::vital_algo
   PRIVATE              ceres
-                       kwiver_algo_mvg
+                       kwiver::kwiver_algo_mvg
   )
 if(NOT CERES_USES_MINIGLOG)
   target_link_libraries( kwiver_algo_ceres
     PRIVATE              glog
     )
 endif()
+
+target_include_directories( kwiver_algo_ceres SYSTEM
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
+  )
 
 algorithms_create_plugin( kwiver_algo_ceres
   register_algorithms.cxx
@@ -143,6 +148,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_CERES_BINARY_DIR}/arrows-ceres-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_CERES_DEPS "")

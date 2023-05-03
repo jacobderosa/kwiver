@@ -5,13 +5,13 @@
 /// \file
 /// \brief VisCL algorithm registration function implementation
 
-#include <viscl/kwiver_algo_viscl_plugin_export.h>
+#include <kwiver_algo_viscl_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <viscl/convert_image.h>
-#include <viscl/detect_features.h>
-#include <viscl/extract_descriptors.h>
-#include <viscl/match_features.h>
+#include <arrows/viscl/convert_image.h>
+#include <arrows/viscl/detect_features.h>
+#include <arrows/viscl/extract_descriptors.h>
+#include <arrows/viscl/match_features.h>
 
 namespace kwiver {
 namespace arrows {
@@ -29,7 +29,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
   }
 
   // add factory                  implementation-name       type-to-create
-  auto fact = vpm.ADD_ALGORITHM( "viscl", arrows::vcl::convert_image );
+  auto fact = vpm.ADD_ALGORITHM( "viscl", kwiver::arrows::vcl::convert_image );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                        "Upload an image to the GPU for use in VisCL algorithms." )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )
@@ -37,7 +37,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_ORGANIZATION, "Kitware Inc." )
     ;
 
-  fact = vpm.ADD_ALGORITHM( "viscl", arrows::vcl::detect_features );
+  fact = vpm.ADD_ALGORITHM( "viscl", kwiver::arrows::vcl::detect_features );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                        "" )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )
@@ -45,7 +45,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_ORGANIZATION, "Kitware Inc." )
     ;
 
-  fact = vpm.ADD_ALGORITHM( "viscl", arrows::vcl::extract_descriptors );
+  fact = vpm.ADD_ALGORITHM( "viscl", kwiver::arrows::vcl::extract_descriptors );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                        "" )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )
@@ -53,7 +53,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_ORGANIZATION, "Kitware Inc." )
     ;
 
-  fact = vpm.ADD_ALGORITHM( "viscl", arrows::vcl::match_features );
+  fact = vpm.ADD_ALGORITHM( "viscl", kwiver::arrows::vcl::match_features );
   fact->add_attribute( kwiver::vital::plugin_factory::PLUGIN_DESCRIPTION,
                        "" )
     .add_attribute( kwiver::vital::plugin_factory::PLUGIN_MODULE_NAME, module_name )

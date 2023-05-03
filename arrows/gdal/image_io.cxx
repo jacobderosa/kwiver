@@ -7,7 +7,7 @@
 
 #include "image_io.h"
 
-#include <image_container.h>
+#include <arrows/gdal/image_container.h>
 
 #include <vital/exceptions/algorithm.h>
 #include <vital/vital_config.h>
@@ -24,7 +24,7 @@ vital::image_container_sptr
 image_io
 ::load_(const std::string& filename) const
 {
-  return vital::image_container_sptr( new arrows_gdal::image_container( filename ) );
+  return vital::image_container_sptr( new gdal::image_container( filename ) );
 }
 
 /// Save image image to a file

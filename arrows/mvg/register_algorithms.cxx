@@ -9,11 +9,11 @@
 
 #include <vital/algo/algorithm_factory.h>
 
-#include <algo/hierarchical_bundle_adjust.h>
-#include <algo/integrate_depth_maps.h>
-#include <algo/initialize_cameras_landmarks.h>
-#include <algo/initialize_cameras_landmarks_basic.h>
-#include <algo/triangulate_landmarks.h>
+#include <arrows/mvg/algo/hierarchical_bundle_adjust.h>
+#include <arrows/mvg/algo/integrate_depth_maps.h>
+#include <arrows/mvg/algo/initialize_cameras_landmarks.h>
+#include <arrows/mvg/algo/initialize_cameras_landmarks_basic.h>
+#include <arrows/mvg/algo/triangulate_landmarks.h>
 
 namespace kwiver {
 namespace arrows {
@@ -25,7 +25,7 @@ KWIVER_ALGO_MVG_PLUGIN_EXPORT
 void
 register_factories( kwiver::vital::plugin_loader& vpm )
 {
-  kwiver::vital::algorithm_registrar reg( vpm, "arrows_mvg" );
+  kwiver::vital::algorithm_registrar reg( vpm, "arrows.mvg" );
 
   if (reg.is_module_loaded())
   {

@@ -4,7 +4,7 @@ set(CMAKE_FOLDER "Arrows/PDAL/Tests")
 
 include(kwiver-test-setup)
 
-set(test_libraries      kwiver_algo_pdal kwiver_algo_proj )
+set(test_libraries      kwiver_algo_pdal kwiver::kwiver_algo_proj )
 
 ##############################
 # Algorithms PDAL tests

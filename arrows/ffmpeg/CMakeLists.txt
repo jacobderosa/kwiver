@@ -16,8 +16,6 @@ set(ARROWS_FFMPEG_VERSION "${ARROWS_FFMPEG_VERSION_MAJOR}.${ARROWS_FFMPEG_VERSIO
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "FFmpeg")
-set(ARROWS_FFMPEG_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_FFMPEG_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_FFMPEG_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -57,21 +55,24 @@ OPTION(ARROWS_FFMPEG_BUILD_SHARED     "Build ARROWS-FFMPEG components shared or 
 MARK_AS_ADVANCED( ARROWS_FFMPEG_BUILD_SHARED )
 set(BUILD_SHARED_LIBS ${ARROWS_FFMPEG_BUILT_SHARED})
 
-set( kwiver_plugin_algorithm_subdir               ${KWIVER_PLUGIN_ALGORITHM_DIR} )
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
 
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-include_directories(${ARROWS_KLV_INCLUDE_DIRS})
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
-
-include_directories(${FFMPEG_INCLUDE_DIR})
+#include_directories(${FFMPEG_INCLUDE_DIR})
 
 if (NOT FFMPEG_FOUND_SEVERAL)
   message( FATAL_ERROR "FFmpeg headers all in the same directories, "
@@ -90,13 +91,13 @@ set(ffmpeg_headers_public
   )
 
 kwiver_install_headers(
-  SUBDIR     ffmpeg
+  SUBDIR     arrows/ffmpeg
   ${ffmpeg_headers_public}
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_ffmpeg_export.h
-  NOPATH   SUBDIR     ffmpeg
+  NOPATH   SUBDIR     arrows/ffmpeg
   )
 
 set(ffmpeg_sources
@@ -141,12 +142,17 @@ if(fletch_ENABLED_ZLib)
 endif()
 
 target_link_libraries( kwiver_algo_ffmpeg
-  PUBLIC               vital_algo
-  PRIVATE              kwiver_algo_klv kwiversys
+  PUBLIC               kwiver::vital_algo
+  PRIVATE              kwiver::kwiver_algo_klv kwiver::kwiversys
                        ${FFMPEG_CUDA_LIBRARIES}
                        ${FFMPEG_LIBRARIES}
                        ${ZLIB_LIBRARIES}
                        ${CUDA_LIBRARY}
+  )
+
+target_include_directories( kwiver_algo_ffmpeg SYSTEM
+    PRIVATE                   ${FFMPEG_INCLUDE_DIR}
+    PUBLIC                    ${KWIVER_INCLUDE_DIRS}
   )
 
 algorithms_create_plugin( kwiver_algo_ffmpeg
@@ -173,6 +179,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_FFMPEG_BINARY_DIR}/arrows-ffmpeg-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_FFMPEG_DEPS "")

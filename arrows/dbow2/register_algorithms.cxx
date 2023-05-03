@@ -33,7 +33,7 @@
  * \brief OpenCV algorithm registration implementation
  */
 
-#include <dbow2/kwiver_algo_dbow2_plugin_export.h>
+#include <kwiver_algo_dbow2_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
 #include <opencv2/opencv_modules.hpp>
@@ -41,7 +41,7 @@
 #include <opencv2/nonfree/nonfree.hpp>
 #endif
 
-#include <dbow2/match_descriptor_sets.h>
+#include <arrows/dbow2/match_descriptor_sets.h>
 
 namespace kwiver {
 namespace arrows {
@@ -63,7 +63,7 @@ register_factories( ::kwiver::vital::plugin_loader& vpm )
   cv::initModule_nonfree();
 #endif
 
-  reg.register_algorithm< ::arrows::dbow2::match_descriptor_sets >();
+  reg.register_algorithm< ::kwiver::arrows::dbow2::match_descriptor_sets >();
 
     reg.mark_module_as_loaded();
 }

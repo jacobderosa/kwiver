@@ -5,12 +5,12 @@
 /// \file
 /// \brief Matlab algorithm registration implementation
 
-#include <matlab/kwiver_algo_matlab_plugin_export.h>
+#include <kwiver_algo_matlab_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <matlab/matlab_image_object_detector.h>
-#include <matlab/matlab_image_filter.h>
-#include <matlab/matlab_detection_output.h>
+#include <arrows/matlab/matlab_image_object_detector.h>
+#include <arrows/matlab/matlab_image_filter.h>
+#include <arrows/matlab/matlab_detection_output.h>
 
 namespace kwiver {
 namespace arrows {
@@ -28,9 +28,9 @@ register_factories( ::kwiver::vital::plugin_loader& vpm )
     return;
   }
 
-  reg.register_algorithm< ::arrows::matlab::matlab_image_object_detector >();
-  reg.register_algorithm< ::arrows::matlab::matlab_image_filter >();
-  reg.register_algorithm< ::arrows::matlab::matlab_detection_output >();
+  reg.register_algorithm< ::kwiver::arrows::matlab::matlab_image_object_detector >();
+  reg.register_algorithm< ::kwiver::arrows::matlab::matlab_image_filter >();
+  reg.register_algorithm< ::kwiver::arrows::matlab::matlab_detection_output >();
 
   reg.mark_module_as_loaded();
 }

@@ -63,9 +63,9 @@ kwiver_add_library( kwiver_serialize_protobuf
   )
 
 target_link_libraries( kwiver_serialize_protobuf
-  PUBLIC               vital_algo
-  PRIVATE              vital_exceptions
-                       vital_types_protobuf
+  PUBLIC               kwiver::vital_algo
+  PRIVATE              kwiver::vital_exceptions
+                       kwiver::vital_types_protobuf
                        ${ZLIB_LIBRARIES}
   )
 

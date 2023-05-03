@@ -4,7 +4,7 @@ set(CMAKE_FOLDER "Arrows/KLV/Tests")
 
 include(kwiver-test-setup)
 
-set( test_libraries kwiver_algo_core kwiver_algo_klv vital )
+set( test_libraries kwiver::kwiver_algo_core kwiver_algo_klv kwiver::vital )
 
 ##############################
 # KLV tests

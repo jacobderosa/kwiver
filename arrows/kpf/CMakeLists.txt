@@ -12,8 +12,6 @@ set(ARROWS_KPF_VERSION "${ARROWS_KPF_VERSION_MAJOR}.${ARROWS_KPF_VERSION_MINOR}.
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "KPF")
-set(ARROWS_KPF_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_KPF_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_KPF_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -41,16 +39,23 @@ OPTION(ARROWS_KPF_BUILD_SHARED     "Build ARROWS-KPF components shared or not" T
 MARK_AS_ADVANCED( ARROWS_KPF_BUILD_SHARED )
 set(BUILD_SHARED_LIBS ${ARROWS_KPF_BUILT_SHARED})
 
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
+
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
 
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 find_package( yaml-cpp REQUIRED )
 
@@ -75,12 +80,12 @@ set( kpf_linked_libs
 
 
 kwiver_install_headers(
-  SUBDIR     kpf
+  SUBDIR     arrows/kpf
   ${headers}
   )
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_kpf_export.h
-  NOPATH   SUBDIR     kpf
+  NOPATH   SUBDIR     arrows/kpf
   )
 
 
@@ -90,8 +95,12 @@ kwiver_add_library( kwiver_algo_kpf
   )
 
 target_link_libraries( kwiver_algo_kpf
-  PUBLIC               vital_algo kpf_yaml
+  PUBLIC               kwiver::vital_algo kpf_yaml
   PRIVATE              ${YAML_CPP_LIBRARIES}
+  )
+
+target_include_directories( kwiver_algo_kpf SYSTEM
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
   )
 
 algorithms_create_plugin( kwiver_algo_kpf
@@ -117,6 +126,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_KPF_BINARY_DIR}/arrows-kpf-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_KPF_DEPS "")

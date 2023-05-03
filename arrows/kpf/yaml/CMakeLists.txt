@@ -53,9 +53,9 @@ if(WIN32)
 endif()
 
 target_link_libraries( kpf_yaml
-  PRIVATE        vital
-                 vital_logger
-                 vital_util
+  PRIVATE        kwiver::vital
+                 kwiver::vital_logger
+                 kwiver::vital_util
                  ${YAML_CPP_LIBRARIES}
   )
 

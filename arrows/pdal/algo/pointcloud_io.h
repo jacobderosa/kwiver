@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_PDAL_POINTCLOUD_IO_H_
 #define KWIVER_ARROWS_PDAL_POINTCLOUD_IO_H_
 
-#include <pdal/kwiver_algo_pdal_export.h>
+#include <arrows/pdal/kwiver_algo_pdal_export.h>
 
 #include <vital/algo/pointcloud_io.h>
 #include <vital/types/landmark_map.h>

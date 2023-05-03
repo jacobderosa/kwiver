@@ -16,8 +16,6 @@ set(ARROWS_PDAL_VERSION "${ARROWS_PDAL_VERSION_MAJOR}.${ARROWS_PDAL_VERSION_MINO
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "PDAL")
-set(ARROWS_PDAL_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_PDAL_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_PDAL_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -45,29 +43,35 @@ OPTION(ARROWS_PDAL_BUILD_SHARED     "Build ARROWS-PDAL components shared or not"
 MARK_AS_ADVANCED( ARROWS_PDAL_BUILD_SHARED )
 set(BUILD_SHARED_LIBS ${ARROWS_PDAL_BUILT_SHARED})
 
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
+
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
-
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( pdal_headers_public
   algo/pointcloud_io.h
   )
 
 kwiver_install_headers(
-  SUBDIR     pdal
+  SUBDIR     arrows/pdal
   ${pdal_headers_public}
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_pdal_export.h
-  NOPATH   SUBDIR     pdal
+  NOPATH   SUBDIR     arrows/pdal
   )
 
 set( pdal_sources
@@ -80,13 +84,14 @@ kwiver_add_library( kwiver_algo_pdal SHARED
   )
 
 target_link_libraries( kwiver_algo_pdal
-  PUBLIC               vital_algo
+  PUBLIC               kwiver::vital_algo
   PRIVATE              ${PDAL_LIBRARIES}
   )
 
 target_include_directories( kwiver_algo_pdal SYSTEM
   PRIVATE                   ${PDAL_INCLUDE_DIRS}
                             ${PDAL_INCLUDE_DIRS}/pdal
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
   )
 
 algorithms_create_plugin( kwiver_algo_pdal
@@ -112,6 +117,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_PDAL_BINARY_DIR}/arrows-pdal-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_PDAL_DEPS "")

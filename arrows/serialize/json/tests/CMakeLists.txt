@@ -4,7 +4,7 @@ set(CMAKE_FOLDER "Arrows/Serialize/Tests")
 
 include(kwiver-test-setup)
 
-set( test_libraries vital vital_vpm vital_algo kwiver_serialize_json )
+set( test_libraries kwiver::vital kwiver::vital_vpm kwiver::vital_algo kwiver_serialize_json )
 
 ##############################
 # JSON tests

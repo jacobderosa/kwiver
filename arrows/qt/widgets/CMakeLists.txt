@@ -14,7 +14,7 @@ set( qt_libraries_public
   Qt5::Widgets
   Qt5::Xml
   qtExtensions
-  vital
+  kwiver::vital
   )
 
 kwiver_add_library( kwiver_algo_qt_widgets

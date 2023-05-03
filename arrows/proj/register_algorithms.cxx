@@ -5,9 +5,9 @@
 /// \file
 /// \brief PROJ algorithm registration implementation
 
-#include <proj/geo_conv.h>
+#include <arrows/proj/geo_conv.h>
 
-#include <proj/kwiver_algo_proj_plugin_export.h>
+#include <kwiver_algo_proj_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 #include <vital/types/geodesy.h>
 
@@ -27,7 +27,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
   }
 
   // register geo-conversion functor
-  static auto geo_conv = arrows::proj::geo_conversion{};
+  static auto geo_conv = kwiver::arrows::proj::geo_conversion{};
   vital::set_geo_conv( &geo_conv );
 
   vpm.mark_module_as_loaded( module_name );

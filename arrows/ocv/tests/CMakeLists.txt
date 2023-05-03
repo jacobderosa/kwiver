@@ -4,7 +4,7 @@ set(CMAKE_FOLDER "Arrows/OCV/Tests")
 
 include(kwiver-test-setup)
 
-set(test_libraries      vital vital_vpm kwiver_algo_ocv)
+set(test_libraries      kwiver::vital kwiver::vital_vpm kwiver_algo_ocv)
 
 ##############################
 # Algorithms OpenCV tests
@@ -20,8 +20,8 @@ kwiver_discover_gtests(ocv match_set                   LIBRARIES ${test_librarie
 
 
 # Additional tests that depend on the MVG arrow
-if (KWIVER_ENABLE_MVG)
-  list(APPEND test_libraries kwiver_algo_mvg)
+if (arrows_MVG_FOUND)
+  list(APPEND test_libraries kwiver::kwiver_algo_mvg)
 
   kwiver_discover_gtests(ocv estimate_fundamental_matrix LIBRARIES ${test_libraries})
   kwiver_discover_gtests(ocv estimate_homography         LIBRARIES ${test_libraries})

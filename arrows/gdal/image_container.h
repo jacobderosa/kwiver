@@ -9,7 +9,7 @@
 #define KWIVER_ARROWS_GDAL_IMAGE_CONTAINER_H_
 
 #include <vital/vital_config.h>
-#include <kwiver_algo_gdal_export.h>
+#include <arrows/gdal/kwiver_algo_gdal_export.h>
 
 #include <vital/types/image_container.h>
 

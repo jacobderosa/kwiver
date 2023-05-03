@@ -16,9 +16,6 @@ set(ARROWS_VERSION "${ARROWS_VERSION_MAJOR}.${ARROWS_VERSION_MINOR}.${ARROWS_VER
 # Organize target into folders for IDEs that support it
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-set(ARROWS_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_BINARY_DIR           "${CMAKE_BINARY_DIR}")
-
 ###
 # Look for and use KWIVER
 #
@@ -43,7 +40,19 @@ set( kwiver_plugin_algorithm_subdir               ${KWIVER_PLUGIN_ALGORITHM_DIR}
 
 OPTION(ARROWS_BUILD_SHARED     "Build ARROWS components shared or not" TRUE )
 MARK_AS_ADVANCED( ARROWS_BUILD_SHARED )
-set(BUILD_SHARED_LIBS ${ARROWS_BUILT_SHARED})
+set(BUILD_SHARED_LIBS ${ARROWS_BUILD_SHARED})
+
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
@@ -99,6 +108,8 @@ configure_file(
 #    FILE        arrows-config-targets.cmake
 #    )
 #endif()
+
+kwiver_export_targets("${ARROWS_BINARY_DIR}/arrows-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_DEPS "")

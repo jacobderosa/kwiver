@@ -4,7 +4,7 @@ set(CMAKE_FOLDER "Arrows/colmap/Tests")
 
 include(kwiver-test-setup)
 
-set(test_libraries      colmap vital vital_vpm kwiver_algo_colmap kwiver_algo_ocv)
+set(test_libraries      colmap kwiver::vital kwiver::vital_vpm kwiver_algo_colmap kwiver::kwiver_algo_ocv)
 
 ##############################
 # Algorithms Colmap tests

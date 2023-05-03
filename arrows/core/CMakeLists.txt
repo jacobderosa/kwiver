@@ -66,13 +66,13 @@ set( plugin_core_headers
   )
 
 kwiver_install_headers(
-  SUBDIR core
+  SUBDIR arrows/core
   ${plugin_core_headers}
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_core_export.h
-  NOPATH SUBDIR core
+  NOPATH SUBDIR arrows/core
   )
 
 set( plugin_core_sources
@@ -144,9 +144,9 @@ kwiver_add_library( kwiver_algo_core
   )
 
 target_link_libraries( kwiver_algo_core
-  PUBLIC               vital_algo
-  PRIVATE              kwiversys
-                       vital_config
+  PUBLIC               kwiver::vital_algo
+  PRIVATE              kwiver::kwiversys
+                       kwiver::vital_config
   )
 
 algorithms_create_plugin( kwiver_algo_core
@@ -158,7 +158,6 @@ if (ARROWS_ENABLE_TESTS)
   include(CTest)
   set(BUILD_TESTING    ON)  # needed for compatibility with kwiversys
   mark_as_advanced(BUILD_TESTING)
-  include_directories(${KWIVER_TEST_INCLUDE_DIR})
   add_subdirectory( tests )
 endif()
 

@@ -29,8 +29,8 @@ kwiver_add_library( kwiver_serialize_json_klv
   )
 
 target_link_libraries( kwiver_serialize_json_klv
-  PUBLIC vital_algo
-  PRIVATE kwiver_algo_klv kwiver_serialize_json
+  PUBLIC kwiver::vital_algo
+  PRIVATE kwiver::kwiver_algo_klv kwiver_serialize_json
   )
 
 algorithms_create_plugin( kwiver_serialize_json_klv

@@ -7,9 +7,9 @@
 
 #include <vital/algo/algorithm_factory.h>
 
-#include <klv/kwiver_algo_klv_plugin_export.h>
-#include <klv/apply_child_klv.h>
-#include <klv/update_klv.h>
+#include <kwiver_algo_klv_plugin_export.h>
+#include <arrows/klv/apply_child_klv.h>
+#include <arrows/klv/update_klv.h>
 
 namespace kwiver {
 

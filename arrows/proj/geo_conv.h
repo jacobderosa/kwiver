@@ -8,7 +8,7 @@
 #ifndef KWIVER_ARROWS_PROJ_GEO_CONV_H_
 #define KWIVER_ARROWS_PROJ_GEO_CONV_H_
 
-#include <proj/kwiver_algo_proj_export.h>
+#include <arrows/proj/kwiver_algo_proj_export.h>
 
 #include <vital/types/geodesy.h>
 

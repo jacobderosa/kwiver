@@ -43,16 +43,16 @@ endif()
 kwiver_add_plugin( kwiver_algo_vtk_applets
   SUBDIR       ${kwiver_plugin_applets_subdir}
   SOURCES      ${sources} ${headers}
-  PRIVATE      kwiver_algo_core
-               kwiver_algo_mvg
-               kwiver_algo_vtk
-               kwiver_tools_applet
-               kwiversys
+  PRIVATE      kwiver::kwiver_algo_core
+               kwiver::kwiver_algo_mvg
+               kwiver::kwiver_algo_vtk
+               kwiver::kwiver_tools_applet
+               kwiver::kwiversys
                ${VTK_targets}
   )
 
 if ( KWIVER_ENABLE_PDAL )
   target_link_libraries( kwiver_algo_vtk_applets
-    PRIVATE              kwiver_algo_pdal
+    PRIVATE              kwiver::kwiver_algo_pdal
     )
 endif ( KWIVER_ENABLE_PDAL )

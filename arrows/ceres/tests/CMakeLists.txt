@@ -4,7 +4,7 @@ set(CMAKE_FOLDER "Arrows/Ceres/Tests")
 
 include(kwiver-test-setup)
 
-set(test_libraries    kwiver_algo_ceres kwiver_algo_core)
+set(test_libraries    kwiver_algo_ceres kwiver::kwiver_algo_core)
 
 # we need to link tests to GLog becuase they instantiate Ceres templates which
 # use GLog.  If Ceres was built with MiniGlog, link to ceres instead to get
@@ -21,7 +21,7 @@ endif()
 
 # tests that also require the MVG arrow
 if(KWIVER_ENABLE_MVG)
-  list(APPEND test_libraries kwiver_algo_mvg)
+  list(APPEND test_libraries kwiver::kwiver_algo_mvg)
 
   kwiver_discover_gtests(ceres bundle_adjust      LIBRARIES ${test_libraries})
   kwiver_discover_gtests(ceres optimize_cameras   LIBRARIES ${test_libraries})

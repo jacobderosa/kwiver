@@ -4,7 +4,7 @@ set(CMAKE_FOLDER "Arrows/GDAL/Tests")
 
 include(kwiver-test-setup)
 
-set(test_libraries      vital vital_vpm kwiver_algo_gdal )
+set(test_libraries      kwiver::vital kwiver::vital_vpm kwiver_algo_gdal )
 
 ##############################
 # Algorithms GDAL tests

@@ -15,8 +15,6 @@ set(ARROWS_UUID_VERSION "${ARROWS_UUID_VERSION_MAJOR}.${ARROWS_UUID_VERSION_MINO
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "UUID")
-set(ARROWS_UUID_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_UUID_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_UUID_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -44,18 +42,22 @@ OPTION(ARROWS_UUID_BUILD_SHARED     "Build ARROWS-UUID components shared or not"
 MARK_AS_ADVANCED( ARROWS_UUID_BUILD_SHARED )
 set(BUILD_SHARED_LIBS ${ARROWS_UUID_BUILT_SHARED})
 
-set( kwiver_plugin_algorithm_subdir               ${KWIVER_PLUGIN_ALGORITHM_DIR} )
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
-
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( plugin_headers
   uuid_factory_uuid.h
@@ -81,9 +83,13 @@ kwiver_add_library( kwiver_algo_uuid
   )
 
 target_link_libraries( kwiver_algo_uuid
-  PUBLIC               vital_algo
-  PRIVATE              vital_config
+  PUBLIC               kwiver::vital_algo
+  PRIVATE              kwiver::vital_config
                        ${KWIVER_UUID_LIBRARY}
+  )
+
+target_include_directories( kwiver_algo_uuid SYSTEM
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
   )
 
 algorithms_create_plugin( kwiver_algo_uuid
@@ -110,6 +116,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_UUID_BINARY_DIR}/arrows-uuid-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_UUID_DEPS "")

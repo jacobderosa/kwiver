@@ -15,8 +15,6 @@ set(ARROWS_MATLAB_VERSION "${ARROWS_MATLAB_VERSION_MAJOR}.${ARROWS_MATLAB_VERSIO
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "Matlab")
-set(ARROWS_MATLAB_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_MATLAB_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_MATLAB_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -60,13 +58,6 @@ set(BUILD_SHARED_LIBS ${ARROWS_MATLAB_BUILT_SHARED})
 include( kwiver-utils )
 include( kwiver-depends )
 
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-include_directories(${ARROWS_OCV_INCLUDE_DIRS})
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
-
 set( sources
   matlab_util.cxx
   matlab_exception.cxx
@@ -94,12 +85,12 @@ include_directories( "${Matlab_INCLUDE_DIRS}" )
 
 kwiver_install_headers(
   ${public_headers}
-  SUBDIR     matlab
+  SUBDIR     arrows/matlab
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_matlab_export.h
-  SUBDIR     matlab
+  SUBDIR     arrows/matlab
   NOPATH
   )
 
@@ -110,10 +101,14 @@ kwiver_add_library( kwiver_algo_matlab
   )
 
 target_link_libraries( kwiver_algo_matlab
-  PUBLIC               vital_algo
+  PUBLIC               kwiver::vital_algo
                        ${Matlab_LIBRARIES}
-                       kwiver_algo_ocv
-                       kwiversys
+                       kwiver::kwiver_algo_ocv
+                       kwiver::kwiversys
+  )
+
+target_include_directories( kwiver_algo_matlab SYSTEM
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
   )
 
 algorithms_create_plugin( kwiver_algo_matlab
@@ -140,6 +135,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_MATLAB_BINARY_DIR}/arrows-matlab-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_MATLAB_DEPS "")

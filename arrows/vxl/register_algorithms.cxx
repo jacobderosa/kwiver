@@ -5,30 +5,30 @@
 /// \file
 /// \brief Register VXL algorithms implementation
 
-#include <vxl/kwiver_algo_vxl_plugin_export.h>
+#include <kwiver_algo_vxl_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <vxl/average_frames.h>
-#include <vxl/bundle_adjust.h>
-#include <vxl/close_loops_homography_guided.h>
-#include <vxl/color_commonality_filter.h>
-#include <vxl/convert_image.h>
-#include <vxl/estimate_canonical_transform.h>
-#include <vxl/estimate_essential_matrix.h>
-#include <vxl/estimate_fundamental_matrix.h>
-#include <vxl/estimate_homography.h>
-#include <vxl/estimate_similarity_transform.h>
-#include <vxl/hashed_image_classifier_filter.h>
-#include <vxl/high_pass_filter.h>
-#include <vxl/image_io.h>
-#include <vxl/kd_tree.h>
-#include <vxl/optimize_cameras.h>
-#include <vxl/pixel_feature_extractor.h>
-#include <vxl/split_image.h>
-#include <vxl/threshold.h>
-#include <vxl/triangulate_landmarks.h>
-#include <vxl/match_features_constrained.h>
-#include <vxl/morphology.h>
+#include <arrows/vxl/average_frames.h>
+#include <arrows/vxl/bundle_adjust.h>
+#include <arrows/vxl/close_loops_homography_guided.h>
+#include <arrows/vxl/color_commonality_filter.h>
+#include <arrows/vxl/convert_image.h>
+#include <arrows/vxl/estimate_canonical_transform.h>
+#include <arrows/vxl/estimate_essential_matrix.h>
+#include <arrows/vxl/estimate_fundamental_matrix.h>
+#include <arrows/vxl/estimate_homography.h>
+#include <arrows/vxl/estimate_similarity_transform.h>
+#include <arrows/vxl/hashed_image_classifier_filter.h>
+#include <arrows/vxl/high_pass_filter.h>
+#include <arrows/vxl/image_io.h>
+#include <arrows/vxl/kd_tree.h>
+#include <arrows/vxl/optimize_cameras.h>
+#include <arrows/vxl/pixel_feature_extractor.h>
+#include <arrows/vxl/split_image.h>
+#include <arrows/vxl/threshold.h>
+#include <arrows/vxl/triangulate_landmarks.h>
+#include <arrows/vxl/match_features_constrained.h>
+#include <arrows/vxl/morphology.h>
 
 #ifdef VXL_ENABLE_FFMPEG
 #include <vxl/vidl_ffmpeg_video_input.h>
@@ -50,7 +50,7 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     return;
   }
 
-  using namespace arrows::vxl;
+  using namespace kwiver::arrows::vxl;
 
   reg.register_algorithm< average_frames >();
   reg.register_algorithm< bundle_adjust >();

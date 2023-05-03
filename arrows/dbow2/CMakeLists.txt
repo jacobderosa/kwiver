@@ -16,8 +16,6 @@ set(ARROWS_DBOW2_VERSION "${ARROWS_DBOW2_VERSION_MAJOR}.${ARROWS_DBOW2_VERSION_M
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "DBoW2")
-set(ARROWS_DBOW2_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_DBOW2_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_DBOW2_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -44,18 +42,22 @@ OPTION(ARROWS_DBOW2_BUILD_SHARED     "Build ARROWS-DBOW2 components shared or no
 MARK_AS_ADVANCED( ARROWS_DBOW2_BUILD_SHARED )
 set(BUILD_SHARED_LIBS ${ARROWS_DBOW2_BUILT_SHARED})
 
-set( kwiver_plugin_algorithm_subdir               ${KWIVER_PLUGIN_ALGORITHM_DIR} )
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
-
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( dbow2_headers_public
   match_descriptor_sets.h
@@ -75,13 +77,13 @@ set( dbow2_headers_private
   )
 
 kwiver_install_headers(
-  SUBDIR     dbow2
+  SUBDIR     arrows/dbow2
   ${DBoW2_headers_public}
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_dbow2_export.h
-  NOPATH   SUBDIR     dbow2
+  NOPATH   SUBDIR     arrows/dbow2
   )
 
 set( dbow2_sources
@@ -101,9 +103,13 @@ kwiver_add_library( kwiver_algo_dbow2
   ${dbow2_sources}
   )
 target_link_libraries( kwiver_algo_dbow2
-  PUBLIC               vital_algo
+  PUBLIC               kwiver::vital_algo
                        ${OpenCV_LIBS}
-  PRIVATE              kwiversys
+  PRIVATE              kwiver::kwiversys
+  )
+
+target_include_directories( kwiver_algo_dbow2 SYSTEM
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
   )
 
 
@@ -121,6 +127,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_DBOW2_BINARY_DIR}/arrows-dbow2-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_DBOW2_DEPS "")

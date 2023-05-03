@@ -2,11 +2,11 @@
 // OSI-approved BSD 3-Clause License. See top-level LICENSE file or
 // https://github.com/Kitware/kwiver/blob/master/LICENSE for details.
 
-#include <darknet/kwiver_algo_darknet_plugin_export.h>
+#include <kwiver_algo_darknet_plugin_export.h>
 #include <vital/algo/algorithm_factory.h>
 
-#include <darknet/darknet_detector.h>
-#include <darknet/darknet_trainer.h>
+#include <arrows/darknet/darknet_detector.h>
+#include <arrows/darknet/darknet_trainer.h>
 
 namespace kwiver {
 namespace arrows {
@@ -24,8 +24,8 @@ register_factories( kwiver::vital::plugin_loader& vpm )
     return;
   }
 
-  reg.register_algorithm< ::arrows::darknet::darknet_detector >();
-  reg.register_algorithm< ::arrows::darknet::darknet_trainer >();
+  reg.register_algorithm< ::kwiver::arrows::darknet::darknet_detector >();
+  reg.register_algorithm< ::kwiver::arrows::darknet::darknet_trainer >();
 
   reg.mark_module_as_loaded();
 }

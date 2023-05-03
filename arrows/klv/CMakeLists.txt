@@ -14,8 +14,6 @@ set(ARROWS_KLV_VERSION "${ARROWS_KLV_VERSION_MAJOR}.${ARROWS_KLV_VERSION_MINOR}.
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "KLV")
-set(ARROWS_KLV_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_KLV_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_KLV_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -43,16 +41,23 @@ OPTION(ARROWS_KLV_BUILD_SHARED     "Build ARROWS-KLV components shared or not" T
 MARK_AS_ADVANCED( ARROWS_KLV_BUILD_SHARED )
 set(BUILD_SHARED_LIBS ${ARROWS_KLV_BUILT_SHARED})
 
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
+
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
 
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( sources
   apply_child_klv.cxx
@@ -178,13 +183,13 @@ set( private_headers
 
 kwiver_install_headers(
   ${public_headers}
-  SUBDIR   klv
+  SUBDIR   arrows/klv
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_klv_export.h
   NOPATH
-  SUBDIR      klv
+  SUBDIR      arrows/klv
   )
 
 kwiver_add_library( kwiver_algo_klv
@@ -194,9 +199,13 @@ kwiver_add_library( kwiver_algo_klv
   )
 
 target_link_libraries( kwiver_algo_klv
-  PUBLIC        vital_algo
-  PRIVATE       vital
-                vital_logger
+  PUBLIC        kwiver::vital_algo
+  PRIVATE       kwiver::vital
+                kwiver::vital_logger
+  )
+
+target_include_directories( kwiver_algo_klv SYSTEM
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
   )
 
 
@@ -210,7 +219,6 @@ if (ARROWS_KLV_ENABLE_TESTS)
   include(CTest)
   set(BUILD_TESTING    ON)  # needed for compatibility with kwiversys
   mark_as_advanced(BUILD_TESTING)
-  include_directories(${KWIVER_TEST_INCLUDE_DIR})
   add_subdirectory( tests )
 endif()
 
@@ -224,6 +232,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_KLV_BINARY_DIR}/arrows-klv-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_KLV_DEPS "")

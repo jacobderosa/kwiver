@@ -14,8 +14,6 @@ set(ARROWS_QT_VERSION "${ARROWS_QT_VERSION_MAJOR}.${ARROWS_QT_VERSION_MINOR}.${A
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "Qt")
-set(ARROWS_QT_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_QT_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_QT_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -53,20 +51,24 @@ list(INSERT CMAKE_MODULE_PATH 0 ${KWIVER_CMAKE_DIR})
 OPTION(ARROWS_QT_ENABLE_TESTS                "Enable testing" OFF )
 OPTION(ARROWS_QT_BUILD_SHARED     "Build ARROWS-QT components shared or not" TRUE )
 MARK_AS_ADVANCED( ARROWS_QT_BUILD_SHARED )
-set(BUILD_SHARED_LIBS ${ARROWS_QT_BUILT_SHARED})
+set(BUILD_SHARED_LIBS ${ARROWS_QT_BUILD_SHARED})
+
+# Set directories where loadable modules are stored.
+# These subdirs are under .../lib/
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
-
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-include_directories(${ARROWS_INCLUDE_DIRS})
-include_directories("/kwiver/vital/internal")
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( CMAKE_AUTOMOC ON )
 set( CMAKE_AUTOUIC ON )
@@ -84,7 +86,7 @@ set( qt_headers_public
   )
 
 set( qt_libraries_public
-  kwiver_algo_core
+  kwiver::kwiver_algo_core
   Qt5::Gui
   Qt5::Core
   )
@@ -110,18 +112,22 @@ target_link_libraries( kwiver_algo_qt
   PUBLIC ${qt_libraries_public}
   )
 
+target_include_directories( kwiver_algo_qt SYSTEM
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
+  )
+
 algorithms_create_plugin( kwiver_algo_qt
   register_algorithms.cxx
   )
 
 kwiver_install_headers(
-  SUBDIR     qt
+  SUBDIR     arrows/qt
   ${qt_headers_public}
   )
 
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_qt_export.h
-  NOPATH   SUBDIR     qt
+  NOPATH   SUBDIR     arrows/qt
   )
 
 if( KWIVER_ENABLE_QT_EXT )
@@ -151,6 +157,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_QT_BINARY_DIR}/arrows-qt-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_QT_DEPS "")

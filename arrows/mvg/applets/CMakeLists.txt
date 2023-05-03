@@ -26,8 +26,8 @@ endif()
 kwiver_add_plugin( kwiver_algo_mvg_applets
   SUBDIR       ${kwiver_plugin_applets_subdir}
   SOURCES      ${sources} ${headers}
-  PRIVATE      kwiver_algo_core
-               kwiver_algo_mvg
-               kwiver_tools_applet
-               kwiversys
+  PRIVATE      kwiver::kwiver_algo_core
+               kwiver::kwiver_algo_mvg
+               kwiver::kwiver_tools_applet
+               kwiver::kwiversys
 )

@@ -196,6 +196,7 @@ set( kwiver_export_name      kwiver_exports )
 # External Dependencies and Modules - Most Will be supplied by Fletch
 include( kwiver-depends )
 
+#set(SETUP_INSTALL_DIR ${KWIVER_BINARY_DIR})
 ###
 # Configure setup scripts
 include( kwiver-setup-scripts )

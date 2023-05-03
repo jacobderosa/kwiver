@@ -16,8 +16,6 @@ set(ARROWS_BURNOUT_VERSION "${ARROWS_BURNOUT_VERSION_MAJOR}.${ARROWS_BURNOUT_VER
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_FOLDER "BurnOut")
-set(ARROWS_BURNOUT_SOURCE_DIR           "${CMAKE_SOURCE_DIR}")
-set(ARROWS_BURNOUT_BINARY_DIR           "${CMAKE_BINARY_DIR}")
 
 # Default library dir
 set(ARROWS_BURNOUT_DEFAULT_LIBRARY_DIR "lib" CACHE STRING
@@ -68,20 +66,20 @@ OPTION(ARROWS_BURNOUT_BUILD_SHARED     "Build ARROWS-BURNOUT components shared o
 MARK_AS_ADVANCED( ARROWS_BURNOUT_BUILD_SHARED )
 set(BUILD_SHARED_LIBS ${ARROWS_BURNOUT_BUILT_SHARED})
 
-set( kwiver_plugin_algorithm_subdir               ${KWIVER_PLUGIN_ALGORITHM_DIR} )
+set( kwiver_plugin_subdir                         kwiver/plugins )
+set( kwiver_plugin_process_subdir                 ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_algorithm_subdir               ${kwiver_plugin_subdir}/algorithms )
+set( kwiver_plugin_process_instrumentation_subdir ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_scheduler_subdir               ${kwiver_plugin_subdir}/processes )
+set( kwiver_plugin_module_subdir                  ${kwiver_plugin_subdir}/modules )
+set( kwiver_plugin_plugin_explorer_subdir         ${kwiver_plugin_subdir}/plugin_explorer )
+set( kwiver_plugin_logger_subdir                  ${kwiver_plugin_subdir}/logger )
+set( kwiver_plugin_applets_subdir                 ${kwiver_plugin_subdir}/applets )
 
 # Install rules for CMake utilities
 #include( kwiver-install-utils )
 include( kwiver-utils )
 include( kwiver-depends )
-
-# project includes
-include_directories("${CMAKE_CURRENT_BINARY_DIR}")
-include_directories(${KWIVER_INCLUDE_DIRS})
-include_directories(${ARROWS_OCV_INCLUDE_DIRS})
-include_directories($(ARROWS_VXL_INCLUDE_DIRS))
-
-include_directories( SYSTEM ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( headers
   burnout_image_enhancer.h
@@ -95,15 +93,15 @@ set( sources
   burnout_track_descriptors.cxx
   )
 
-include_directories( SYSTEM ${VIDTK_INCLUDE_DIRS} )
+#include_directories( SYSTEM ${VIDTK_INCLUDE_DIRS} )
 
 kwiver_install_headers(
-  SUBDIR     burnout
+  SUBDIR     arrows/burnout
   ${headers}
   )
 kwiver_install_headers(
   ${CMAKE_CURRENT_BINARY_DIR}/kwiver_algo_burnout_export.h
-  NOPATH   SUBDIR     burnout
+  NOPATH   SUBDIR     arrows/burnout
   )
 
 kwiver_add_library( kwiver_algo_burnout
@@ -112,13 +110,18 @@ kwiver_add_library( kwiver_algo_burnout
   )
 
 target_link_libraries( kwiver_algo_burnout
-  PUBLIC               vital_algo
+  PUBLIC               kwiver::vital_algo
   PRIVATE              vidtk_descriptor vidtk_utilities_no_process vidtk_pipelines
-                       kwiversys
+                       kwiver::kwiversys
                        ${Boost_SYSTEM_LIBRARY}
                        ${Boost_FILESYSTEM_LIBRARY}
-                       kwiver_algo_ocv
-                       kwiver_algo_vxl
+                       kwiver::kwiver_algo_ocv
+                       kwiver::kwiver_algo_vxl
+  )
+
+target_include_directories( kwiver_algo_burnout SYSTEM
+  PUBLIC                    ${KWIVER_INCLUDE_DIRS}
+  PRIVATE                   ${VIDTK_INCLUDE_DIRS}
   )
 
 algorithms_create_plugin( kwiver_algo_burnout
@@ -135,6 +138,8 @@ configure_file(
   "${ARROWS_CONFIG_FILE}"
   @ONLY
   )
+
+kwiver_export_targets("${ARROWS_BURNOUT_BINARY_DIR}/arrows-burnout-config-targets.cmake")
 
 #TODO: Define package dependencies
 set(ARROWS_BURNOUT_DEPS "")
